@@ -1,7 +1,7 @@
 function App() {
   return (
     <>
-      <h1>Tweeter</h1>
+      <h1>Welcome To Tweeter</h1>
     </>
   );
 }
