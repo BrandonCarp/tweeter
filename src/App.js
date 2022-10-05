@@ -2,7 +2,6 @@ import { Link, NavLink, Route, Routes, useLocation } from "react-router-dom";
 import { Home } from "./Components/Home";
 import { TweetShowcase } from "./Components/TweetShowcase";
 import { UserSearch } from "./Components/UserSearch";
-import tweeterLogo from './Components/Imgs/tweeter logo.png';
 
 function App() {
   return (
