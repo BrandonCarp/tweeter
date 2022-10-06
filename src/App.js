@@ -6,13 +6,13 @@ import { UserSearch } from "./Components/UserSearch";
 function App() {
   return (
     <>
-      <nav >
-        <ul className="container relative ml-10 pt-5 space-x-10  flex ">
+      <nav className="">
+        <ul className="container relative ml-10 pt-5 space-x-10  flex-row md:flex">
           <li className="text-baselg">
             {/* Make a icon */}
             <NavLink to="/">Logo Here </NavLink>
           </li>
-          <div className="flex space-x-10 pl-10 ">
+          <div className="invisible flex space-x-10 pl-10 md:visible">
           <li className="">
             <NavLink to="/usersearch">Search Users</NavLink>
           </li>
@@ -20,20 +20,17 @@ function App() {
             <NavLink to="/showcase">Showcase</NavLink>
           </li>
           </div>
-          {/* <li className="">
-            <NavLink to="/usersearch">Search Users</NavLink>
-          </li>
-          <li>
-            <NavLink to="/showcase">Showcase</NavLink>
-          </li> */}
+          
         </ul>
       </nav>
 
-      <Routes>
+<Routes>
         <Route path="/" element={<Home />} />
         <Route path="/usersearch" element={<UserSearch />} />
         <Route path="/showcase" element={<TweetShowcase />} />
       </Routes>
+
+      
     </>
   );
 }
