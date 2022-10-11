@@ -10,6 +10,9 @@ module.exports = {
       lg: "992px",
       xl: "1200px",
     },
+    fontFamily: {
+      'alkalami': ['alkalami'],
+    },
     extend: {
       colors: {
         primaryDark: "#111114",
