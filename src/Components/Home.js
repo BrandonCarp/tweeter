@@ -1,3 +1,4 @@
+import { Navbar } from "./Navbar";
 import homeImg from "./Imgs/homePage.jpg";
 import { NavLink } from "react-router-dom";
 import { BsArrowRightCircle } from "react-icons/bs";
@@ -6,6 +7,7 @@ import { About } from "./About";
 export function Home() {
   return (
     <>
+      <Navbar />
       <div className=" relative mx-auto   ">
         <div className="flex flex-col items-center  justify-center space-y-5">
           <h1 className="text-[1.2rem]  md:text-xl">
