@@ -1,12 +1,9 @@
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { GiHamburgerMenu } from "react-icons/gi";
-
-
+import { motion } from "framer-motion";
 
 export function Navbar() {
-  const [burgerMenu, setBurgerMenu] = useState(false);
-
   return (
     <>
       <nav className="relative mx-auto mb-10 mt-3 md:mb-[5rem]">
@@ -16,20 +13,19 @@ export function Navbar() {
               <GiHamburgerMenu />
             </NavLink>
           </li>
-          
-              <li className="text-baselg flex   justify-center  ">
-                {/* Make a icon */}
-                <NavLink to="/">Tweeter</NavLink>
-              </li>
-        
 
-          <div className="invisible absolute right-0 mr-5  space-x-5 flex md:visible">
-            <li className="">
+          <li className="text-baselg flex   justify-center ">
+            {/* Make a icon */}
+            <NavLink to="/">Tweeter</NavLink>
+          </li>
+
+          <div className="invisible absolute right-0 mr-5  space-x-5 flex  md:visible">
+            <motion.li className="" whileHover={{ scale: 1.1 }}>
               <NavLink to="/usersearch">Search Users</NavLink>
-            </li>
-            <li>
+            </motion.li>
+            <motion.li whileHover={{ scale: 1.1 }}>
               <NavLink to="/showcase">Showcase</NavLink>
-            </li>
+            </motion.li>
           </div>
         </ul>
       </nav>
