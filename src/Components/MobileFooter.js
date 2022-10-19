@@ -15,7 +15,7 @@ export function MobileFooter() {
         </div>
       </div>
 
-      <div className="absolute bottom-0  w-screen h-[5rem] p-5 mx-auto border-t-[3px]   md:invisible">
+      <div className="absolute bottom-0  w-screen mb-5 pt-5  mx-auto border-t-[3px]   md:invisible">
         <div className="flex justify-center items-center">
           <ul className="flex space-x-10">
             <li className="hover:bg-gray-300 hover:rounded-full   p-2">
