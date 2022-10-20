@@ -9,9 +9,11 @@ module.exports = {
       md: "768px",
       lg: "992px",
       xl: "1200px",
+      tall: { raw: "(min-height: 850px)" },
+      short: { raw: "(min-height: 400px)" },
     },
     fontFamily: {
-      'alkalami': ['alkalami'],
+      alkalami: ["alkalami"],
     },
     extend: {
       colors: {

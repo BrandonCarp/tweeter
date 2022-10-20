@@ -4,6 +4,7 @@ import { TweetShowcase } from "./Components/TweetShowcase";
 import { UserSearch } from "./Components/UserSearch";
 import { HamburgerLinks } from "./Components/HamburgerLinks";
 import { MobileFooter } from "./Components/MobileFooter";
+import { GiClassicalKnowledge } from "react-icons/gi";
 
 function App() {
   return (
@@ -14,7 +15,7 @@ function App() {
         <Route path="/showcase" element={<TweetShowcase />} />
         <Route path="/hamburgerlink" element={<HamburgerLinks />} />
       </Routes>
-      <MobileFooter />
+      {/* <MobileFooter /> */}
     </>
   );
 }
