@@ -1,6 +1,7 @@
 import { Navbar } from "./Navbar";
-import { About } from "./About";
 import { Hero } from "./Hero";
+import { MobileFooter } from "./MobileFooter";
+
 import { AnimatePresence, motion } from "framer-motion";
 
 export function Home() {
@@ -16,7 +17,7 @@ export function Home() {
         </motion.div>
       </AnimatePresence>
       <Hero />
-      <About />
+      <MobileFooter />
     </>
   );
 }
