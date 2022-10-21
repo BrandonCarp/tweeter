@@ -9,7 +9,7 @@ module.exports = {
       md: "768px",
       lg: "992px",
       xl: "1200px",
-      tall: { raw: "(min-height: 850px)" },
+      tall: { raw: "(min-height: 830px)" },
       short: { raw: "(min-height: 400px)" },
     },
     fontFamily: {

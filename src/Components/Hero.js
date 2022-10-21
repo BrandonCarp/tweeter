@@ -5,7 +5,7 @@ import { BsArrowRightCircle } from "react-icons/bs";
 
 export function Hero() {
   return (
-    <div className=" relative container mx-auto  mt-20   ">
+    <div className=" relative container mx-auto  mt-20 ">
       <div className="flex flex-col items-center  justify-center      space-y-5">
         <motion.div
           initial={{ opacity: 0, x: -100 }}
@@ -34,7 +34,7 @@ export function Hero() {
           src={homeImg}
           alt="friends laughing"
         />
-        <div className="flex  flex-col items-center justify-center p-5   ">
+        <div className="flex  flex-col items-center justify-center p-5">
           <h1 className="md:text-xl text-md">Tweeter</h1>
           <p className=" p-5 text-sm">
             Tweeter is a application that is designed to help people connect,
