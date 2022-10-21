@@ -17,7 +17,6 @@ export function Home() {
         </motion.div>
       </AnimatePresence>
       <Hero />
-      <MobileFooter />
     </>
   );
 }

@@ -5,7 +5,7 @@ import { MdPersonSearch } from "react-icons/md";
 
 export function MobileFooter() {
   return (
-    <div className="absolute   bottom-0   md:relative">
+    <div className=" md:mt-[20rem] lg:mt-[15rem]">
       <div className="    w-screen    p-5 mx-auto   md:visible ">
         <div className="">
           <div className="mb-5 border-b-2 border-black-600  mx-[20%]"></div>
@@ -15,8 +15,8 @@ export function MobileFooter() {
         </div>
       </div>
 
-      <div className="h-20 flex items-center justify-center   border-t-[3px] md:invisible">
-        <ul className="flex space-x-10 ">
+      <div className=" tall:mt-[5rem] p-5 flex items-center justify-center   border-t-[3px] md:invisible">
+        <ul className=" flex space-x-10 ">
           <li className="hover:bg-gray-300 hover:rounded-full   p-2">
             <NavLink to="/">
               <AiFillHome className="text-md " />

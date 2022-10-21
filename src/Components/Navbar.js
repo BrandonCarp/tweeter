@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { motion } from "framer-motion";
@@ -14,7 +13,7 @@ export function Navbar() {
             </NavLink>
           </li>
 
-          <li className="text-baselg flex   justify-center ">
+          <li className="text-baselg flex pt-2   justify-center ">
             {/* Make a icon */}
             <NavLink to="/">Tweeter</NavLink>
           </li>

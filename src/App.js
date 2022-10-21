@@ -15,7 +15,7 @@ function App() {
         <Route path="/showcase" element={<TweetShowcase />} />
         <Route path="/hamburgerlink" element={<HamburgerLinks />} />
       </Routes>
-      {/* <MobileFooter /> */}
+      <MobileFooter />
     </>
   );
 }
