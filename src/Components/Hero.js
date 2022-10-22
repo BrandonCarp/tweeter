@@ -17,7 +17,7 @@ export function Hero() {
           </h1>
 
           <ul>
-            <li className=" md:text-baselg">
+            <li className=" md:text-baselg pt-3">
               <motion.p whileHover={{ scale: 1.1 }}>
                 <NavLink to="/usersearch">
                   <BsArrowRightCircle className="inline text-baselg mb-1 mr-2 " />
@@ -34,9 +34,9 @@ export function Hero() {
           src={homeImg}
           alt="friends laughing"
         />
-        <div className="flex  flex-col items-center justify-center p-5">
+        <div className=" mx-auto container relative flex  flex-col items-center justify-center">
           <h1 className="md:text-xl text-md">Tweeter</h1>
-          <p className=" p-5 text-sm">
+          <p className=" p-5 text-sm md:text-baselg md:px-[2.5rem]">
             Tweeter is a application that is designed to help people connect,
             and find communities of interest.
           </p>
