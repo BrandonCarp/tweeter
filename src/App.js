@@ -8,7 +8,7 @@ import { GiClassicalKnowledge } from "react-icons/gi";
 
 function App() {
   return (
-    <>
+    <div>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/usersearch" element={<UserSearch />} />
@@ -16,7 +16,7 @@ function App() {
         <Route path="/hamburgerlink" element={<HamburgerLinks />} />
       </Routes>
       <MobileFooter />
-    </>
+    </div>
   );
 }
 

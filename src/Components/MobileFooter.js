@@ -5,18 +5,33 @@ import { MdPersonSearch } from "react-icons/md";
 
 export function MobileFooter() {
   return (
-    <div className=" md:mt-[20rem] lg:mt-[15rem]">
-      <div className="    w-screen    p-5 mx-auto   md:visible ">
-        <div className="">
-          <div className="mb-5 border-b-2 border-black-600  mx-[20%]"></div>
+   <>
+     
+        <div className="mt-10 space-y-3 flex flex-col items-center md:items-start md:ml-[20%]"> 
+        <div className="flex flex-col  ">
+        <h1 className="text-baselg">Tweeter</h1>
+          <ul className="flex space-x-5 text-sm">
+            <li>Home</li>
+            <li>Search Users</li>
+            <li>Showcase</li>
+          </ul>
+        </div>
+        <div className="border-b-2 border-black-800 w-[80%]">
+
+        </div>
+      
+       
+        
           <div className="flex items-center justify-center ">
-            <h1 className="font-light mb-5">© Tweeter 2022</h1>
+            <h1 className="font-light mb-5">© 2022 Tweeter™. All Rights Reserved.</h1>
           </div>
         </div>
-      </div>
+     
 
-      <div className=" tall:mt-[5rem] p-5 flex items-center justify-center   border-t-[3px] md:invisible">
-        <ul className=" flex space-x-10 ">
+    
+
+      <div className=" ">
+        <ul className=" bottom-0 w-screen h-20 flex justify-center items-center border-t-[3px] md:invisible ">
           <li className="hover:bg-gray-300 hover:rounded-full   p-2">
             <NavLink to="/">
               <AiFillHome className="text-md " />
@@ -34,6 +49,6 @@ export function MobileFooter() {
           </li>
         </ul>
       </div>
-    </div>
+  </>
   );
 }
