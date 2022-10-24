@@ -1,6 +1,5 @@
 import { Navbar } from "./Navbar";
 import { Hero } from "./Hero";
-import { MobileFooter } from "./MobileFooter";
 
 import { AnimatePresence, motion } from "framer-motion";
 
