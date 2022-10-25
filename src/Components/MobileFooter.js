@@ -1,12 +1,12 @@
 import { NavLink } from "react-router-dom";
 import { AiFillHome } from "react-icons/ai";
-import { ImSearch } from "react-icons/im";
+import { BiHash } from "react-icons/bi";
 import { MdPersonSearch } from "react-icons/md";
 
 export function MobileFooter() {
   return (
     <>
-      <div className="mt-10 space-y-3 flex flex-col items-center md:items-start md:ml-[20%]">
+      <div className=" mt-20  space-y-3 flex flex-col items-center md:items-start md:ml-[20%]  md:h-20">
         <div className="flex flex-col  ">
           <h1 className="text-baselg">Tweeter</h1>
           <ul className="flex space-x-5 text-sm">
@@ -24,8 +24,8 @@ export function MobileFooter() {
         </div>
       </div>
 
-      <div className=" ">
-        <ul className=" bottom-0 w-screen h-20 flex justify-center items-center border-t-[3px] md:invisible ">
+      <div className="">
+        <ul className=" bottom-0 h-20 flex justify-center items-center border-t-[3px] md:invisible ">
           <li className="hover:bg-gray-300 hover:rounded-full   p-2">
             <NavLink to="/">
               <AiFillHome className="text-md " />
@@ -38,7 +38,7 @@ export function MobileFooter() {
           </li>
           <li className="hover:bg-gray-300 hover:rounded-full  p-2">
             <NavLink to="/showcase">
-              <ImSearch className="text-md " />
+              <BiHash className="text-md " />
             </NavLink>
           </li>
         </ul>
