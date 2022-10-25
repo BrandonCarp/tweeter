@@ -17,7 +17,7 @@ export function MobileFooter() {
         </div>
         <div className="border-b-2 border-black-800 w-[80%]"></div>
 
-        <div className="flex items-center justify-center ">
+        <div className="flex items-center justify-center p-5">
           <h1 className="font-light mb-5">
             © 2022 Tweeter™. All Rights Reserved.
           </h1>
