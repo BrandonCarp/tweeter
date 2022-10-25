@@ -23,7 +23,7 @@ export function Navbar() {
               <NavLink to="/usersearch">Search Users</NavLink>
             </motion.li>
             <motion.li whileHover={{ scale: 1.1 }}>
-              <NavLink to="/showcase">Showcase</NavLink>
+              <NavLink to="/showcase">Explore</NavLink>
             </motion.li>
           </div>
         </ul>

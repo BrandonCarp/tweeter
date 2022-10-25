@@ -1,10 +1,9 @@
 import { Route, Routes } from "react-router-dom";
-import { Home } from "./Components/Home";
+import { Home } from "./Components/Home Page/Home";
 import { TweetShowcase } from "./Components/TweetShowcase";
-import { UserSearch } from "./Components/UserSearch";
+import { UserSearch } from "./Components/User Search Page/UserSearch";
 import { HamburgerLinks } from "./Components/HamburgerLinks";
 import { MobileFooter } from "./Components/MobileFooter";
-import { GiClassicalKnowledge } from "react-icons/gi";
 
 function App() {
   return (
