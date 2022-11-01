@@ -8,6 +8,7 @@ import { MobileFooter } from "./Components/MobileFooter";
 function App() {
   return (
     <div>
+      {/* React Query - Zustand */}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/usersearch" element={<UserSearch />} />
