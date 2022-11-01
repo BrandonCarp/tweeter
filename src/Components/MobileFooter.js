@@ -7,9 +7,9 @@ export function MobileFooter() {
   return (
     <>
       <div className=" mt-20  space-y-3 flex flex-col items-center md:items-start md:ml-[20%]  md:h-20">
-        <div className="flex flex-col  ">
+        <div className="flex flex-col invisible md:visible  ">
           <h1 className="text-baselg">Tweeter</h1>
-          <ul className="flex space-x-5 text-sm">
+          <ul className=" flex space-x-5 text-sm ">
             <NavLink to="/">Home</NavLink>
             <NavLink to="/usersearch">Search Users</NavLink>
             <NavLink to="/showcase">Showcase</NavLink>
