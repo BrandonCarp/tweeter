@@ -1,54 +1,34 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
+import {BiSearch} from  "react-icons/bi"
 
 export function UserSearchBar() {
 
   const [searchInput, setSearchInput] = useState("");
+  const [searchUser, setSearchUser] = useState("");
 
 
-const handleSubmit = () => {
-  console.log(`form submitted`)
+const handleSubmit = (e) => {
+  e.preventDefault();
+setSearchUser(searchInput);
+
+
+  setSearchInput("");
 }
 
-const onButton = (e) => {
-e.preventDefault();
 
-console.log(searchInput);
-}
-
-  useEffect(() => {
-    const keyDownHandler = event => {
-    
-
-      if (event.key === 'Enter' || event.code === 'NumpadEnter') {
-        event.preventDefault();
-
-        // 👇️ your logic here
-        handleSubmit();
-      }
-    };
-
-    document.addEventListener('keydown', keyDownHandler);
-
-    return () => {
-      document.removeEventListener('keydown', keyDownHandler);
-    };
-  }, []);
-
-
-  
-
-  
   
   return (
     <>
-      <form  className="mt-1">
-        <div className=" border-2 border-gray-300">
+      <form onSubmit={handleSubmit} className="mt-1">
+        <div className="p-2 border-2 border-gray-300 rounded-full flex">
+        <button  className="ml-2" type="submit"><BiSearch  className="text-[1.5rem] text-gray-500" /></button>
         <input
           type="search"
           className=" bg-white h-10 px-5 pr-16 rounded-lg text-sm focus:outline-none  "
           placeholder="Search Users" value={searchInput} onChange={event => setSearchInput(event.target.value)}
         />
-        <button  className="   bg-gray-400 text-white  h-8 mr-1 px-1">Search</button>
+     
+        
         </div>
 
         
