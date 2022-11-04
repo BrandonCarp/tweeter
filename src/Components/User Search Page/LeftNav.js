@@ -5,28 +5,31 @@ import { BiHash } from "react-icons/bi";
 
 export function LeftNav() {
   return (
-    <div>
+    <div className="">
+      <div className="space-y-5 border-gray-400">
       <h1>Tweeter</h1>
-      <ul>
+      <ul className="space-y-5">
         <li>
           <NavLink to="/" className="flex">
             <AiFillHome className="text-md " />
-            <span className="pl-3">Home</span>
+            <span className="pl-3 invisible md:visible">Home</span>
           </NavLink>
         </li>
         <li>
           <NavLink to="/usersearch" className="flex">
             <MdPersonSearch className="text-md " />
-            <span className="pl-3">Search Users</span>
+            <span className="pl-3 invisible md:visible">Search Users</span>
           </NavLink>
         </li>
         <li>
           <NavLink to="/showcase" className="flex">
             <BiHash className="text-md " />
-            <span className="pl-3">Explore</span>
+            <span className="pl-3 invisible md:invisible">Explore</span>
           </NavLink>
         </li>
       </ul>
+      </div>
+     
     </div>
   );
 }
