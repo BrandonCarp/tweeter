@@ -1,24 +1,17 @@
 import { UserSearchBar } from "./UserSearchBar";
-import { Users } from "./Users";
+import { UserList } from "./UserList";
 
 export function UserSearch() {
-  return (
-  
-      <div className="relative mx-auto  ">
-        <div className="flex  display-center justify-center">
-       
+  const userData = ["Dio", "Morty", "rick", "rick flair"];
 
-         
-        
+  return (
+    <div className="relative mx-auto  ">
+      <div className="flex  display-center justify-center">
         <div>
-        <UserSearchBar />
-        
-        <Users />
-          </div>
-          
+          <UserSearchBar />
+          <UserList userData={userData} />
+        </div>
       </div>
-        
-      </div>
-    
+    </div>
   );
 }
