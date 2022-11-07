@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 export function Navbar() {
   return (
     <>
-      <nav className="relative container mx-auto  ">
+      <nav className="relative container mx-auto  p-5">
         <ul className="flex-row items-center   md:pl-10 md:flex ">
           <li className="absolute  left-0 ml-7 mt-3  text-baselg   md:invisible">
             <NavLink to="/hamburgerlink">

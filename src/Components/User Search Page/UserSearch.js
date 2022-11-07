@@ -1,4 +1,3 @@
-import { LeftNav } from "./LeftNav";
 import { UserSearchBar } from "./UserSearchBar";
 import { Users } from "./Users";
 
@@ -10,7 +9,7 @@ export function UserSearch() {
        
 
          
-        <LeftNav />
+        
         <div>
         <UserSearchBar />
         
