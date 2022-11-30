@@ -1,16 +1,24 @@
+import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { GiHamburgerMenu } from "react-icons/gi";
+import { Modal } from "../Modal";
 import { motion } from "framer-motion";
 
 export function Navbar() {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
     <>
       <nav className="relative container mx-auto  p-5">
         <ul className="flex-row items-center   md:pl-10 md:flex ">
           <li className="absolute  left-0 ml-7 mt-3  text-baselg   md:invisible">
-            <NavLink to="/hamburgerlink">
+            <button onClick={() => setIsOpen(true)}>
               <GiHamburgerMenu />
-            </NavLink>
+            </button>
+
+            <Modal onClose={() => setIsOpen(false)} open={isOpen}>
+              Hi
+            </Modal>
           </li>
 
           <li className="text-baselg flex pt-2   justify-center ">

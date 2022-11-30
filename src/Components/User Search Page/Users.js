@@ -5,7 +5,7 @@ import { BiHeart } from "react-icons/bi";
 
 export function Users({ name }) {
   return (
-    <div className=" relative mx-auto container border w-[85%]  ">
+    <div className=" relative mx-auto container border w-[85%] mb-5 ">
       <div className="flex container p-8 ">
         <img
           src={kohaku}
