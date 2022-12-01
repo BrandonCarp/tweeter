@@ -17,7 +17,7 @@ export function UserSearchBar() {
   };
 
   return (
-    <div className="relative mx-auto container">
+    <div className="sticky  mx-auto container ">
       <div className=" px-5 pt-1 pb-10 pt-5   flex flex-col md:items-center  ">
         <form onSubmit={handleSubmit} className=" items-center  md:w-[60%]">
           <div className="p-5 md:p-3  border-2 border-gray-300 rounded-full flex ">
