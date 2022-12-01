@@ -17,7 +17,25 @@ export function Navbar() {
             </button>
 
             <Modal onClose={() => setIsOpen(false)} open={isOpen}>
-              Hi
+              <ul className="space-y-3 text-baselg flex flex-col items-center">
+                <li className="">
+                  <NavLink to="/" className="">
+                    <button onClick={() => setIsOpen(false)}>Home</button>
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink to="/usersearch" className="">
+                    <button onClick={() => setIsOpen(false)}>
+                      Search Users
+                    </button>
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink to="/showcase" className="">
+                    <button onClick={() => setIsOpen(false)}>Explore</button>
+                  </NavLink>
+                </li>
+              </ul>
             </Modal>
           </li>
 
