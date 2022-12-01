@@ -7,12 +7,11 @@ import { HamburgerLinks } from "./Components/HamburgerLinks";
 import { MobileFooter } from "./Components/MobileFooter";
 import { AnimatePresence, motion } from "framer-motion";
 function App() {
-
   return (
-    <div>
-     
+    <>
       <AnimatePresence>
         <motion.div
+          className="sticky top-0 z-50 bg-white"
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0 }}
@@ -27,7 +26,7 @@ function App() {
         <Route path="/hamburgerlink" element={<HamburgerLinks />} />
       </Routes>
       <MobileFooter />
-    </div>
+    </>
   );
 }
 

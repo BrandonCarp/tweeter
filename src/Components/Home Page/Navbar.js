@@ -8,8 +8,8 @@ export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <>
-      <nav className="relative container mx-auto  p-5">
+    <div className=" sticky top-0">
+      <nav className=" relative container mx-auto p-5 ">
         <ul className="flex-row items-center   md:pl-10 md:flex ">
           <li className="absolute  left-0 ml-7 mt-3  text-baselg   md:invisible">
             <button onClick={() => setIsOpen(true)}>
@@ -54,6 +54,6 @@ export function Navbar() {
           </div>
         </ul>
       </nav>
-    </>
+    </div>
   );
 }
