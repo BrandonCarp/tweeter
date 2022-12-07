@@ -18,23 +18,23 @@ export function Navbar() {
 
             <Modal onClose={() => setIsOpen(false)} open={isOpen}>
               <ul className="space-y-3 text-baselg flex flex-col items-center">
-                <li className="">
-                  <NavLink to="/" className="">
+                <motion.li className="" whileHover={{ scale: 1.1 }}>
+                  <NavLink to="/" className=" p-1">
                     <button onClick={() => setIsOpen(false)}>Home</button>
                   </NavLink>
-                </li>
-                <li>
+                </motion.li>
+                <motion.li whileHover={{ scale: 1.1 }}>
                   <NavLink to="/usersearch" className="">
                     <button onClick={() => setIsOpen(false)}>
                       Search Users
                     </button>
                   </NavLink>
-                </li>
-                <li>
+                </motion.li>
+                <motion.li className="" whileHover={{ scale: 1.1 }}>
                   <NavLink to="/showcase" className="">
                     <button onClick={() => setIsOpen(false)}>Explore</button>
                   </NavLink>
-                </li>
+                </motion.li>
               </ul>
             </Modal>
           </li>
