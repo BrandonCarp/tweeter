@@ -1,4 +1,4 @@
-import { GrClose } from "react-icons/gr";
+import {GrClose} from "react-icons/gr";
 import ReactDom from "react-dom";
 
 const modal_styles = {
@@ -21,17 +21,16 @@ const overlay_styles = {
   zIndex: 1000,
 };
 
-export const Modal = ({ onClose, open, children }) => {
+
+export const TweetModal = ({onClose, open, children}) => {
   if (!open) return null;
-  return ReactDom.createPortal(
+  return  ReactDom.createPortal(
     <div className="" style={overlay_styles}>
-      <div className="rounded " style={modal_styles}>
-        <button onClick={onClose} className="fixed top-2 left-2">
-          <GrClose />
-        </button>
-        <h1 className="">{children}</h1>
-      </div>
-    </div>,
-    document.getElementById("portal")
-  );
+<div className="" style={modal_styles}>
+<button onClick={onClose} className="top-2 left-2">
+<GrClose />
+</button>
+</div>
+    </div>
+  )
 };
