@@ -27,7 +27,7 @@ export const Modal = ({ onClose, open, children }) => {
     <div className="" style={overlay_styles}>
       <div className="rounded " style={modal_styles}>
         <button onClick={onClose} className="fixed top-2 left-2">
-          <GrClose />
+          <GrClose />1
         </button>
         <h1 className="">{children}</h1>
       </div>
