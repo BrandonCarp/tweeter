@@ -1,3 +1,4 @@
+import React from "react";
 import { Route, Routes } from "react-router-dom";
 import { Home } from "./Components/Home Page/Home";
 import { TweetShowcase } from "./Components/TweetShowcase";
@@ -8,7 +9,7 @@ import { MobileFooter } from "./Components/MobileFooter";
 import { AnimatePresence, motion } from "framer-motion";
 function App() {
   return (
-    <>
+    <div>
       <AnimatePresence>
         <motion.div
           className="sticky top-0 z-50 bg-white"
@@ -26,7 +27,7 @@ function App() {
         <Route path="/hamburgerlink" element={<HamburgerLinks />} />
       </Routes>
       <MobileFooter />
-    </>
+    </div>
   );
 }
 
