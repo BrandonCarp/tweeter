@@ -1,3 +1,4 @@
+import React from "react";
 import { Route, Routes } from "react-router-dom";
 import { Home } from "./Components/Home Page/Home";
 import { TweetShowcase } from "./Components/TweetShowcase";
@@ -6,9 +7,10 @@ import { UserSearch } from "./Components/User Search Page/UserSearch";
 import { HamburgerLinks } from "./Components/HamburgerLinks";
 import { MobileFooter } from "./Components/MobileFooter";
 import { AnimatePresence, motion } from "framer-motion";
-function App() {
+
+export const App = (document: any) => {
   return (
-    <>
+    <div>
       <AnimatePresence>
         <motion.div
           className="sticky top-0 z-50 bg-white"
@@ -26,8 +28,6 @@ function App() {
         <Route path="/hamburgerlink" element={<HamburgerLinks />} />
       </Routes>
       <MobileFooter />
-    </>
+    </div>
   );
-}
-
-export default App;
+};

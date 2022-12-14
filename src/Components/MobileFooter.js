@@ -1,3 +1,4 @@
+import React from "react";
 import { NavLink } from "react-router-dom";
 import { AiFillHome } from "react-icons/ai";
 import { BiHash } from "react-icons/bi";
@@ -5,7 +6,7 @@ import { MdPersonSearch } from "react-icons/md";
 
 export function MobileFooter() {
   return (
-    <>
+    <div>
       <div className=" mt-20  space-y-3 flex flex-col items-center md:items-start md:ml-[20%]  md:h-20">
         <div className="flex flex-col invisible md:visible  ">
           <h1 className="text-baselg">Tweeter</h1>
@@ -43,6 +44,6 @@ export function MobileFooter() {
           </li>
         </ul>
       </div>
-    </>
+    </div>
   );
 }
