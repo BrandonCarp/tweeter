@@ -16,7 +16,7 @@ export function Hero() {
           <h1 className="text-[1.2rem]  md:text-xl">
             Connecting people online everyday
           </h1>
-
+{/* updatinggg */}
           <ul>
             <li className=" md:text-baselg pt-3">
               <motion.p whileHover={{ scale: 1.1 }}>
