@@ -7,7 +7,8 @@ import { UserSearch } from "./Components/User Search Page/UserSearch";
 import { HamburgerLinks } from "./Components/HamburgerLinks";
 import { MobileFooter } from "./Components/MobileFooter";
 import { AnimatePresence, motion } from "framer-motion";
-function App() {
+
+export const App = (document: any) => {
   return (
     <div>
       <AnimatePresence>
@@ -29,6 +30,4 @@ function App() {
       <MobileFooter />
     </div>
   );
-}
-
-export default App;
+};
