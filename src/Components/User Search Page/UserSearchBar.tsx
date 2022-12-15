@@ -1,3 +1,4 @@
+import React from "react";
 import { useState, useMemo } from "react";
 import { BiSearch } from "react-icons/bi";
 
@@ -16,6 +17,10 @@ export function UserSearchBar() {
     setQuery("");
   };
 
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setQuery(event.target.value)
+  }
+
   return (
     <div className="sticky  mx-auto container ">
       <div className=" px-5 pt-1 pb-10 pt-5   flex flex-col md:items-center  ">
@@ -29,7 +34,7 @@ export function UserSearchBar() {
               className=" bg-white pl-3 pr-16 rounded-lg  focus:outline-none  "
               placeholder="Search Users"
               value={query}
-              onChange={(e) => setQuery(e.target.value)}
+              onChange={handleChange}
             />
           </div>
         </form>
