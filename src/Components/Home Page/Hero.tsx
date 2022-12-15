@@ -1,10 +1,10 @@
-import React from "react";
+import React, { FC } from "react";
 import { motion } from "framer-motion";
 import { NavLink } from "react-router-dom";
 import homeImg from "./HomeImgs/homePage.jpg";
 import { BsArrowRightCircle } from "react-icons/bs";
 
-export function Hero() {
+export const Hero = () => {
   return (
     <div className=" relative container mx-auto  mt-20 ">
       <div className="flex flex-col items-center  justify-center      space-y-5">
@@ -16,7 +16,7 @@ export function Hero() {
           <h1 className="text-[1.2rem]  md:text-xl">
             Connecting people online everyday
           </h1>
-{/* updatinggg */}
+
           <ul>
             <li className=" md:text-baselg pt-3">
               <motion.p whileHover={{ scale: 1.1 }}>
@@ -45,4 +45,4 @@ export function Hero() {
       </div>
     </div>
   );
-}
+};

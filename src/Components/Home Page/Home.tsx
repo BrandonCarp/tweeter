@@ -1,12 +1,11 @@
-import React from "react";
+import React, {FC} from "react";
 import { Hero } from "./Hero";
 
 
 
-export function Home() {
+export const Home = () => {
   return (
     <>
-    
       <Hero />
     </>
   );

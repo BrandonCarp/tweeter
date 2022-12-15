@@ -1,3 +1,4 @@
+import React from "react";
 import { UserSearchBar } from "./UserSearchBar";
 import { UserList } from "./UserList";
 

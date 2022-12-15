@@ -1,9 +1,10 @@
+import React from "react";
 import { NavLink } from "react-router-dom";
 import { AiFillHome } from "react-icons/ai";
 import { MdPersonSearch } from "react-icons/md";
 import { BiHash } from "react-icons/bi";
 
-export function LeftNav() {
+export const LeftNav = () => {
   return (
     <div className="">
       <div className="space-y-5 border-gray-400">
