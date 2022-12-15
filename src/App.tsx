@@ -8,7 +8,9 @@ import { HamburgerLinks } from "./Components/HamburgerLinks";
 import { MobileFooter } from "./Components/MobileFooter";
 import { AnimatePresence, motion } from "framer-motion";
 
-export const App = (document: any) => {
+export const App = () => {
+
+
   return (
     <div>
       <AnimatePresence>

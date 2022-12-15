@@ -1,3 +1,5 @@
+import React from "react";
+
 import kohaku from "./Imgs/me and ko.jpg";
 import { BsChat } from "react-icons/bs";
 import { FaRetweet } from "react-icons/fa";
