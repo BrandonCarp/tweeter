@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 import homeImg from "./HomeImgs/homePage.jpg";
 import { BsArrowRightCircle } from "react-icons/bs";
 
-export function Hero() {
+export const Hero = () => {
   return (
     <div className=" relative container mx-auto  mt-20 ">
       <div className="flex flex-col items-center  justify-center      space-y-5">

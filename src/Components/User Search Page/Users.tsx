@@ -4,8 +4,9 @@ import kohaku from "./Imgs/me and ko.jpg";
 import { BsChat } from "react-icons/bs";
 import { FaRetweet } from "react-icons/fa";
 import { BiHeart } from "react-icons/bi";
+import { UserInfo } from "./interfaces";
 
-export function Users({ name }) {
+export const Users: React.FC<UserInfo> = ({ name }) => {
   return (
     <div className=" relative mx-auto container border w-[85%] mb-5 ">
       <div className="flex container p-8 ">
