@@ -8,6 +8,8 @@ import { motion } from "framer-motion";
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
+
+ 
   return (
     <>
       <nav className="sticky top-0 relative container mx-auto p-5 ">

@@ -2,6 +2,8 @@ import React from "react";
 import { UserSearchBar } from "./UserSearchBar";
 import { UserList } from "./UserList";
 
+
+
 export function UserSearch() {
   const userData: string[] = ["Dio", "Morty", "rick", "rick flair"];
 
