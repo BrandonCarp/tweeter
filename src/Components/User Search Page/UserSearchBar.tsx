@@ -11,8 +11,8 @@ export function UserSearchBar() {
   //   });
   // }, []);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const handleSubmit = (event: React.ChangeEvent<HTMLInputElement>) => {
+    event.preventDefault();
 
     setQuery("");
   };
