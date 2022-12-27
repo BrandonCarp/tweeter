@@ -5,19 +5,15 @@ import { BiSearch } from "react-icons/bi";
 export function UserSearchBar() {
   const [query, setQuery] = useState("");
 
-  // const filteredUsers = useMemo(() => {
-  //   return users.filter((user) => {
-  //     return user.toLowerCase().includes(query.toLowerCase());
-  //   });
-  // }, []);
 
-  const handleSubmit = (event: React.ChangeEvent<HTMLInputElement>) => {
+
+  const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
 
     setQuery("");
   };
 
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) =>  {
     setQuery(event.target.value)
   }
 

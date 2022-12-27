@@ -8,34 +8,40 @@ import { motion } from "framer-motion";
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
+const openModal = (e:  React.MouseEvent<HTMLButtonElement>) => {
+   setIsOpen(true);
+}
 
+const closeModal = (e: React.MouseEvent<HTMLButtonElement>) => {
+  setIsOpen(false);
+}
  
   return (
     <>
       <nav className="sticky top-0 relative container mx-auto p-5 ">
         <ul className="flex-row items-center   md:pl-10 md:flex ">
           <li className="absolute  left-0 ml-7 mt-3  text-baselg   md:invisible">
-            <button onClick={() => setIsOpen(true)}>
+            <button onClick={openModal}>
               <GiHamburgerMenu />
             </button>
 
-            <Modal onClose={() => setIsOpen(false)} open={isOpen}>
+            <Modal closeModal={closeModal} open={isOpen} >
               <ul className="space-y-3 text-baselg flex flex-col items-center">
                 <motion.li className="" whileHover={{ scale: 1.1 }}>
                   <NavLink to="/" className=" p-1">
-                    <button onClick={() => setIsOpen(false)}>Home</button>
+                    <button onClick={closeModal}>Home</button>
                   </NavLink>
                 </motion.li>
                 <motion.li whileHover={{ scale: 1.1 }}>
                   <NavLink to="/usersearch" className="">
-                    <button onClick={() => setIsOpen(false)}>
+                    <button onClick={closeModal}>
                       Search Users
                     </button>
                   </NavLink>
                 </motion.li>
                 <motion.li className="" whileHover={{ scale: 1.1 }}>
                   <NavLink to="/showcase" className="">
-                    <button onClick={() => setIsOpen(false)}>Explore</button>
+                    <button onClick={closeModal}>Explore</button>
                   </NavLink>
                 </motion.li>
               </ul>
