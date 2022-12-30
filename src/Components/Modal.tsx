@@ -1,11 +1,11 @@
 import React from "react";
 import { GrClose } from "react-icons/gr";
 import ReactDom from "react-dom";
-import { NavLink } from "react-router-dom";
 
-import { motion } from "framer-motion";
 
-const modal_styles: any = {
+
+
+const modal_styles: React.CSSProperties = {
   position: "fixed",
   top: "50%",
   left: "50%",
@@ -15,7 +15,7 @@ const modal_styles: any = {
   zIndex: 1000,
 };
 
-const overlay_styles: any = {
+const overlay_styles: React.CSSProperties = {
   position: "fixed",
   top: 0,
   left: 0,
@@ -25,8 +25,8 @@ const overlay_styles: any = {
   zIndex: 1000,
 };
 
-export const Modal = (props: { closeModal: any , open: boolean, children: any }) => {
-  if (!open) return null;
+export const Modal = (props: { closeModal: (e:  React.MouseEvent<HTMLButtonElement>) => void, open: boolean, children: React.ReactNode }) => {
+  if (!props.open) return null;
   return ReactDom.createPortal(
     <div className="" style={overlay_styles}>
       <div className="rounded " style={modal_styles}>

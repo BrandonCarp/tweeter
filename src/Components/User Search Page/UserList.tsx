@@ -1,9 +1,9 @@
-import React, {FC} from "react";
+import React from "react";
 import {Users} from './Users';
 
 
 
-export const UserList = ({ userData }: {userData: any}) => {
+export const UserList = ({userData} : {userData: string[]}) => {
   return (
     <>
       {userData.map((userData: string) => (
