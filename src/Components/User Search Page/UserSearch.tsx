@@ -5,7 +5,7 @@ import { UserList } from "./UserList";
 
 
 export function UserSearch() {
-  const userData: string[] = ["Dio", "Morty", "rick", "rick flair"];
+  const userData = ["Dio", "Morty", "rick", "rick flair"];
 
   return (
     <div className="relative mx-auto  ">

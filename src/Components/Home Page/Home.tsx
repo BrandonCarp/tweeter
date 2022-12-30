@@ -1,4 +1,4 @@
-import React, {FC} from "react";
+import React from "react";
 //@ts-ignore
 import { Hero } from "./Hero";
 
