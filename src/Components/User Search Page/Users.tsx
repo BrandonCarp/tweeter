@@ -1,17 +1,17 @@
 import React from "react";
 
-import kohaku from "./Imgs/me and ko.jpg";
+
 import { BsChat } from "react-icons/bs";
 import { FaRetweet } from "react-icons/fa";
 import { BiHeart } from "react-icons/bi";
 import { UserInfo } from "./interfaces";
 
-export const Users: React.FC<UserInfo> = ({ name }) => {
+export const Users: React.FC<UserInfo> = ({ name, picture }) => {
   return (
     <div className=" relative mx-auto container border w-[85%] mb-5 ">
       <div className="flex container p-8 ">
         <img
-          src={kohaku}
+          src={picture}
           alt="User Photo"
           className="h-16 mr-5  rounded-full"
         />
