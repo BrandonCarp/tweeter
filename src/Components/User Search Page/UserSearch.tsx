@@ -1,7 +1,8 @@
 import React from "react";
 import { UserSearchBar } from "./UserSearchBar";
 import { UserList } from "./UserList";
-import { ScrollFunc } from "../scrollFunc";
+import { ScrollButton } from "../ScrollButton";
+
 
 
 
@@ -17,7 +18,7 @@ export function UserSearch() {
         <div>
           <UserSearchBar />
           <UserList userData={userData} />
-          <button onClick={ScrollFunc}>Scroll Up</button>
+         <ScrollButton />
           
         </div>
       </div>
