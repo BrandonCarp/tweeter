@@ -4,7 +4,7 @@ import React from "react";
 import { BsChat } from "react-icons/bs";
 import { FaRetweet } from "react-icons/fa";
 import { BiHeart } from "react-icons/bi";
-import { UserInfo } from "./interfaces";
+import { UserInfo } from "../interfaces";
 
 export const Users: React.FC<UserInfo> = ({ name, picture }) => {
   return (
