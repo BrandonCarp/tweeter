@@ -10,16 +10,26 @@ export const Users: React.FC<UserInfo> = ({ name, picture }) => {
   return (
     <div className=" relative mx-auto container border w-[85%] mb-5 ">
       <div className="flex container p-8 ">
+
+        {/* <a href="https://twitter.com/elonmusk" className=" mr-5">
         <img
           src={picture}
           alt="User Photo"
-          className="h-16 mr-5  rounded-full"
+          className="h-[50px] w-[175px] rounded-full "
         />
+        </a> */}
+        <img
+          src={picture}
+          alt="User Photo"
+          className="h-14 mr-5 rounded-full"
+        />
+      
+       
         <div className="flex flex-col ">
           <div>
             <div className="flex">
-              {name}
-              <p className="">@{name}TweeterDevIO</p>
+              
+              <a href="https://twitter.com/elonmusk" className="">{name}@{name}TweeterDevIO</a>
             </div>
             <div className="py-4 ">
               <p>
