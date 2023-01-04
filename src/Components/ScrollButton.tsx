@@ -1,5 +1,5 @@
 import React, {useState} from "react"
-import {AiOutlineArrowUp} from 'react-icons/ai';
+import {FiArrowUpCircle} from 'react-icons/fi';
 
 
 
@@ -26,7 +26,8 @@ window.addEventListener('scroll' , toggleVisible);
 return (
 
   
-  <button className="fixed w-[100%] left-[43%]  bottom-[25%]  h-[50px]" style={{display: visible ? 'inline' : 'none'}} onClick={scrollClick}>Up Inc</button>
+  <button className="fixed  text-l    bottom-[25%]  right-[5%] md:right-[6%]" style={{display: visible ? 'inline' : 'none'}} onClick={scrollClick}><FiArrowUpCircle /></button>
+  
 
 )
 }
