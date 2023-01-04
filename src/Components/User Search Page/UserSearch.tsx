@@ -9,7 +9,7 @@ import { ScrollButton } from "../ScrollButton";
 
 
 export function UserSearch() {
-  const userData = ["Dio", "Morty", "rick", "rick flair"];
+  const userData = ["Dio", "Morty", "rick", "rick flair", "Jojo", "Yuta", "Michael Jackson"];
 
   
   return (
