@@ -27,7 +27,7 @@ export const App = () => {
       </AnimatePresence>
       <Routes>
 
-        <Route path="/" element={<Home />} />
+        <Route path="/home"  element={<Home />} />
         <Route path="/usersearch" element={<UserSearch />} />
         <Route path="/showcase" element={<TweetShowcase />} />
         <Route path="/hamburgerlink" element={<HamburgerLinks />} />

@@ -36,8 +36,8 @@ export const Hero = () => {
           alt="friends laughing"
         />
         <div className=" mx-auto container relative flex  flex-col items-center justify-center">
-          <h1 className="md:text-xl text-md">Tweeter</h1>
-          <p className=" p-5 text-sm md:text-baselg md:px-[2.5rem]">
+          <h1 className="md:text-xl text-md font-bold">Tweeter</h1>
+          <p className=" p-5 text-baselg  md:px-[2.5rem]">
             Tweeter is a application that is designed to help people connect,
             and find communities of interest.
           </p>

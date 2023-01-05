@@ -50,7 +50,7 @@ const closeModal = (e: React.MouseEvent<HTMLButtonElement>) => {
 
           <li className="text-baselg flex pt-2   justify-center ">
             {/* Make a icon */}
-            <NavLink to="/">Tweeter</NavLink>
+            <NavLink to="/" className="font-bold">Tweeter</NavLink>
           </li>
 
           <div className="invisible absolute right-0 mr-5  space-x-5 flex  md:visible">
