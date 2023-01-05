@@ -5,11 +5,14 @@ import { BiHash } from "react-icons/bi";
 import { MdPersonSearch } from "react-icons/md";
 
 export function MobileFooter() {
+  const activeClassName = " bg-gray-300 rounded-full bg-gray-300 p-2 "
+
+ 
   return (
     <div>
       <div className=" md:m-10 space-y-3 flex flex-col items-center md:items-start md:ml-[20%]  md:h-20">
         <div className="flex flex-col invisible md:visible  ">
-          <h1 className="text-baselg">Tweeter</h1>
+          <h1 className="text-baselg font-bold">Tweeter</h1>
           <ul className=" flex space-x-5 text-sm ">
             <NavLink to="/">Home</NavLink>
             <NavLink to="/usersearch">Search Users</NavLink>
@@ -27,21 +30,23 @@ export function MobileFooter() {
 
       <div className="">
         <ul className=" bottom-0 h-20 flex justify-center items-center border-t-[3px] md:invisible ">
-          <li className="hover:bg-gray-300 hover:rounded-full   p-2">
-            <NavLink to="/">
-              <AiFillHome className="text-md " />
+      
+
+          
+            <NavLink to="/home" className={({isActive}) => isActive ? activeClassName : undefined}  >
+              <AiFillHome className="text-md m-1" />
             </NavLink>
-          </li>
-          <li className="hover:bg-gray-300 hover:rounded-full  p-2">
-            <NavLink to="/usersearch">
-              <MdPersonSearch className="text-md " />
+        
+          
+            <NavLink to="/usersearch" className={({isActive}) => isActive ? activeClassName : undefined}  >
+              <MdPersonSearch className="text-md  m-1" />
             </NavLink>
-          </li>
-          <li className="hover:bg-gray-300 hover:rounded-full  p-2">
-            <NavLink to="/showcase">
-              <BiHash className="text-md " />
+       
+         
+            <NavLink to="/showcase" className={({isActive}) => isActive ? activeClassName : undefined} >
+              <BiHash className="text-md m-1" />
             </NavLink>
-          </li>
+    
         </ul>
       </div>
     </div>
