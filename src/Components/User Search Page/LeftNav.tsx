@@ -11,7 +11,7 @@ export const LeftNav = () => {
       <h1>Tweeter</h1>
       <ul className="space-y-5">
         <li>
-          <NavLink to="/" className="flex">
+          <NavLink to="/home" className="flex">
             <AiFillHome className="text-md " />
             <span className="pl-3 invisible md:visible">Home</span>
           </NavLink>

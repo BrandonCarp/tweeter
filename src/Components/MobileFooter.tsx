@@ -5,12 +5,12 @@ import { BiHash } from "react-icons/bi";
 import { MdPersonSearch } from "react-icons/md";
 
 export function MobileFooter() {
-  const activeClassName = " bg-gray-300 rounded-full bg-gray-300 p-2 "
+  const activeClassName: string = "rounded-full bg-gray-300 p-2 "
 
  
   return (
     <div>
-      <div className=" md:m-10 space-y-3 flex flex-col items-center md:items-start md:ml-[20%]  md:h-20">
+      <div className="md:mt-[20%] md:m-10 space-y-3 flex flex-col items-center md:items-start md:ml-[20%]  md:h-20">
         <div className="flex flex-col invisible md:visible  ">
           <h1 className="text-baselg font-bold">Tweeter</h1>
           <ul className=" flex space-x-5 text-sm ">
@@ -28,8 +28,8 @@ export function MobileFooter() {
         </div>
       </div>
 
-      <div className="">
-        <ul className=" bottom-0 h-20 flex justify-center items-center border-t-[3px] md:invisible ">
+<div className="sticky bottom-0  left-0 right-0 flex justify-center  border-t-[3px] h-20 bg-white md:invisible ">
+        <ul className="flex items-center ">
       
 
           
