@@ -1,7 +1,7 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 import { Home } from "./Components/Home Page/Home";
-import { TweetShowcase } from "./Components/TweetShowcase";
+import { TweetShowcase } from "./Components/Tweet Showcase/TweetShowcase";
 import { Navbar } from "./Components/Home Page/Navbar";
 import { UserSearch } from "./Components/User Search Page/UserSearch";
 import { HamburgerLinks } from "./Components/HamburgerLinks";
