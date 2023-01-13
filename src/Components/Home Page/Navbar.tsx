@@ -28,7 +28,7 @@ const closeModal = (e: React.MouseEvent<HTMLButtonElement>) => {
             <Modal closeModal={closeModal} open={isOpen} >
               <ul className="space-y-3 text-baselg flex flex-col items-center">
                 <motion.li className="" whileHover={{ scale: 1.1 }}>
-                  <NavLink to="/" className=" p-1">
+                  <NavLink to="/home" className=" p-1">
                     <button onClick={closeModal}>Home</button>
                   </NavLink>
                 </motion.li>
@@ -50,7 +50,7 @@ const closeModal = (e: React.MouseEvent<HTMLButtonElement>) => {
 
           <li className="text-baselg flex pt-2   justify-center ">
             {/* Make a icon */}
-            <NavLink to="/">Tweeter</NavLink>
+            <NavLink to="/home" className="font-bold">Tweeter</NavLink>
           </li>
 
           <div className="invisible absolute right-0 mr-5  space-x-5 flex  md:visible">
