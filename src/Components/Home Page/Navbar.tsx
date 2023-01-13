@@ -13,7 +13,7 @@ const openModal = (e:  React.MouseEvent<HTMLButtonElement>) => {
 }
 
 const closeModal = (e: React.MouseEvent<HTMLButtonElement>) => {
-  setIsOpen(false);
+ setIsOpen(false);
 }
  
   return (

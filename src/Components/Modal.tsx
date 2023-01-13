@@ -1,9 +1,6 @@
 import React from "react";
 import { GrClose } from "react-icons/gr";
 import ReactDom from "react-dom";
-import { NavLink } from "react-router-dom";
-
-import { motion } from "framer-motion";
 
 const modal_styles: any = {
   position: "fixed",
