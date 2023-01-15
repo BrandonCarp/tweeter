@@ -14,7 +14,7 @@ export function MobileFooter() {
         <div className="flex flex-col invisible md:visible  ">
           <h1 className="text-baselg font-bold">Tweeter</h1>
           <ul className=" flex space-x-5 text-sm ">
-            <NavLink to="/">Home</NavLink>
+            <NavLink to="/home">Home</NavLink>
             <NavLink to="/usersearch">Search Users</NavLink>
             <NavLink to="/showcase">Showcase</NavLink>
           </ul>
