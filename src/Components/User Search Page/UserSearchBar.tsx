@@ -27,7 +27,7 @@ export function UserSearchBar() {
             </button>
             <input
               type="text"
-              className=" bg-white pl-3 pr-16 rounded-lg  focus:outline-none  "
+              className=" text-white bg-black dark:text-black dark:bg-white pl-3 pr-16 rounded-lg  focus:outline-none  "
               placeholder="Search Users"
               value={query}
               onChange={handleChange}

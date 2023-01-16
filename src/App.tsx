@@ -12,8 +12,8 @@ import { ScrollToTop } from "./Components/ScrollToTop";
 export const App = () => {
 
 
-  return (
-    <div>
+  return  (
+    <div className="text-white bg-black dark:text-black dark:bg-white">
       <ScrollToTop />
       <AnimatePresence>
         <motion.div
@@ -22,12 +22,13 @@ export const App = () => {
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0 }}
         >
-          <Navbar />
+         <Navbar />
         </motion.div>
       </AnimatePresence>
       <Routes>
 
-        <Route path="/home"  element={<Home />} />
+        <Route path="/"  element={<Home />} />
+        <Route path="/home" element={<Home />} />
         <Route path="/usersearch" element={<UserSearch />} />
         <Route path="/showcase" element={<TweetShowcase />} />
         <Route path="/hamburgerlink" element={<HamburgerLinks />} />
