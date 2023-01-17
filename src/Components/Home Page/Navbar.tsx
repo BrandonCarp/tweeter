@@ -17,7 +17,7 @@ const closeModal = (e: React.MouseEvent<HTMLButtonElement>) => {
 }
  
   return (
-    <div className="text-white bg-black dark:text-black dark:bg-white">
+    <div className="text-primaryLight bg-secondaryPurple dark:text-black dark:primaryLight">
       <nav className="sticky top-0 relative container mx-auto p-5 ">
         <ul className="flex-row items-center   md:pl-10 md:flex ">
           <li className="absolute  left-0 ml-7 mt-3  text-baselg   md:invisible">

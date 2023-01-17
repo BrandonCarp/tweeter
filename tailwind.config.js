@@ -17,9 +17,14 @@ module.exports = {
     },
     extend: {
       colors: {
-        primaryDark: "#111114",
-        secondaryDark: "#131316",
-        secondaryOrange: "#262833",
+        primaryDark: "#171717",
+        primaryGray: "#171717",
+        secondaryGray: "#",
+        purpleGray: "#40375c",
+        primaryLight: "#ede9fe",
+        secondaryLight: "#cbd5e1",
+        primaryPurple: "#221C35",
+        secondaryPurple: "#5b21b6",
       },
       fontSize: {
         xs: ".75rem",

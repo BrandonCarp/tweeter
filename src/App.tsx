@@ -10,10 +10,9 @@ import { AnimatePresence, motion } from "framer-motion";
 import { ScrollToTop } from "./Components/ScrollToTop";
 
 export const App = () => {
-
-
+ 
   return  (
-    <div className="text-white bg-black dark:text-black dark:bg-white">
+    <div className="text-primaryLight bg-primaryPurple dark:text-black dark:bg-white">
       <ScrollToTop />
       <AnimatePresence>
         <motion.div
@@ -27,8 +26,9 @@ export const App = () => {
       </AnimatePresence>
       <Routes>
 
-        <Route path="/"  element={<Home />} />
-        <Route path="/home" element={<Home />} />
+        
+        
+        <Route path="/" element={<Home />} />
         <Route path="/usersearch" element={<UserSearch />} />
         <Route path="/showcase" element={<TweetShowcase />} />
         <Route path="/hamburgerlink" element={<HamburgerLinks />} />

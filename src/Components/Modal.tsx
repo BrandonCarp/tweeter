@@ -10,7 +10,7 @@ const modal_styles: React.CSSProperties = {
   top: "50%",
   left: "50%",
   transform: "translate(-50%, -50%)",
-  backgroundColor: "#fff",
+ 
   padding: "50px",
   zIndex: 1000,
 };
@@ -29,9 +29,9 @@ export const Modal = (props: { closeModal: (e:  React.MouseEvent<HTMLButtonEleme
   if (!props.open) return null;
   return ReactDom.createPortal(
     <div className="" style={overlay_styles}>
-      <div className="rounded " style={modal_styles}>
-        <button onClick={props.closeModal} className="fixed top-2 left-2">
-          <GrClose />
+      <div className="rounded bg-secondaryPurple  text-black" style={modal_styles}>
+        <button onClick={props.closeModal} className="fixed top-2 left-2 ">
+          <GrClose className="text-secondaryPurple primaryLight"/>
         </button>
         <h1 className="">{props.children}</h1>
         

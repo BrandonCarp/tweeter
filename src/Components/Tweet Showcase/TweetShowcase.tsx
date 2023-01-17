@@ -5,7 +5,7 @@ import {Users} from '../User Search Page/Users';
 // transfer to usershowcase comp then import here w map
 export const TweetShowcase = () => {
   return (
-    <>
+    <div className="">
       <h1>Tweeter Showcase</h1>
       <div className="relative container mx-auto">
         <div className="flex flex-col items-center justify-center">
@@ -32,6 +32,6 @@ className="h-[10rem] md:h-[15rem] rounded"
         </div>
         
       </div>
-    </>
+    </div>
   );
 };
