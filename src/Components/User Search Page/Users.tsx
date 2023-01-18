@@ -8,7 +8,7 @@ import { UserInfo } from "../interfaces";
 
 export const Users: React.FC<UserInfo> = ({ name, picture }) => {
   return (
-    <div className=" relative mx-auto container rounded w-[85%] mb-5 bg-purpleGray text-primaryLight">
+    <div className=" relative mx-auto container rounded w-[85%]  text-primaryLight   border  border-purpleGray ">
       <div className="flex container p-8 ">
 
         {/* <a href="https://twitter.com/elonmusk" className=" mr-5">
@@ -29,7 +29,7 @@ export const Users: React.FC<UserInfo> = ({ name, picture }) => {
           <div>
             <div className="flex">
               
-             {name} <a href="https://twitter.com/elonmusk" className="text-gray-400">@{name}TweeterDevIO</a>
+             {name} <a href="https://twitter.com/elonmusk" className="text-purpleGray">@{name}TweeterDevIO</a>
             </div>
             <div className="py-4 ">
               <p>
@@ -40,15 +40,15 @@ export const Users: React.FC<UserInfo> = ({ name, picture }) => {
             </div>
           </div>
 
-          <ul className="flex items-center  space-x-5 ">
+          <ul className="flex items-center  space-x-5 text-purpleGray">
             <li className="flex items-center">
-              <BsChat className="mr-2 text-gray-400" /> 1337
+              <BsChat className="mr-2 " /> 1337
             </li>
-            <li className="flex items-center">
-              <FaRetweet className="mr-2 text-gray-400" /> 420
+            <li className="flex items-center ">
+              <FaRetweet className="mr-2 " /> 420
             </li>
-            <li className="flex items-center">
-              <BiHeart className="mr-2 text-gray-400" /> 69
+            <li className="flex items-center ">
+              <BiHeart className="mr-2 " /> 69
             </li>
           </ul>
         </div>

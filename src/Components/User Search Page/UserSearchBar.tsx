@@ -19,9 +19,9 @@ export function UserSearchBar() {
 
   return (
     <div className="sticky  mx-auto container ">
-      <div className=" px-5 pt-1 pb-10 pt-5   flex flex-col md:items-center ">
+      <div className=" px-5 pt-1 pb-10 pt-5    flex flex-col md:items-center ">
         <form onSubmit={handleSubmit} className=" items-center  md:w-[55%] lg:w-[40%]">
-          <div className="p-5 md:p-3  border-3 border-gray-300 rounded-full flex ">
+          <div className="p-5 md:p-3  border-2 border-secondaryPurple rounded-full  rounded-full flex ">
             <button className="ml-2" type="submit">
               <BiSearch className="text-[1.5rem] text-gray-500" />
             </button>

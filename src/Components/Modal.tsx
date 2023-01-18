@@ -31,7 +31,7 @@ export const Modal = (props: { closeModal: (e:  React.MouseEvent<HTMLButtonEleme
     <div className="" style={overlay_styles}>
       <div className="rounded bg-secondaryPurple  text-black" style={modal_styles}>
         <button onClick={props.closeModal} className="fixed top-2 left-2 ">
-          <GrClose className="text-secondaryPurple primaryLight"/>
+          <GrClose className="text-white"/>
         </button>
         <h1 className="">{props.children}</h1>
         

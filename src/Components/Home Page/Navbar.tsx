@@ -1,12 +1,15 @@
-import React from "react";
-import { useState } from "react";
+import React, {useState, useEffect} from "react";
+
 import { NavLink } from "react-router-dom";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { Modal } from "../Modal";
 import { motion } from "framer-motion";
+// Icons
+import {BsFillSunFill, BsMoonFill, BsCheck} from 'react-icons/bs';
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [theme, setTheme] = useState('light');
 
 const openModal = (e:  React.MouseEvent<HTMLButtonElement>) => {
    setIsOpen(true);
@@ -25,8 +28,9 @@ const closeModal = (e: React.MouseEvent<HTMLButtonElement>) => {
               <GiHamburgerMenu />
             </button>
 
-            <Modal closeModal={closeModal} open={isOpen} >
-              <ul className="space-y-3 text-baselg flex flex-col items-center">
+            <Modal closeModal={closeModal} open={isOpen} 
+            >
+              <ul className="space-y-3 text-baselg flex flex-col items-center text-white">
                 <motion.li className="" whileHover={{ scale: 1.1 }}>
                   <NavLink to="/" className=" p-1">
                     <button onClick={closeModal}>Home</button>
@@ -52,6 +56,7 @@ const closeModal = (e: React.MouseEvent<HTMLButtonElement>) => {
             {/* Make a icon */}
             <NavLink to="/" className="font-bold">Tweeter</NavLink>
           </li>
+          <button>{}</button>
 
           <div className="invisible absolute right-0 mr-5  space-x-5 flex  md:visible">
             <motion.li className="" whileHover={{ scale: 1.1 }}>
