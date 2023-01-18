@@ -5,11 +5,20 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import { Modal } from "../Modal";
 import { motion } from "framer-motion";
 // Icons
-import {BsFillSunFill, BsMoonFill, BsCheck} from 'react-icons/bs';
+import {BsFillSunFill, BsMoonFill, BsCheck, BsSunFill} from 'react-icons/bs';
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-  const [theme, setTheme] = useState('light');
+  // const [theme, setTheme] = useState('light');
+
+
+  // const handleThemeSwitch = () => {
+  //  if(theme === 'light') {
+  //   setTheme('dark')
+  //  } else if(theme === 'dark') {
+  //   setTheme('light');
+  //  }
+  // }
 
 const openModal = (e:  React.MouseEvent<HTMLButtonElement>) => {
    setIsOpen(true);
@@ -52,20 +61,30 @@ const closeModal = (e: React.MouseEvent<HTMLButtonElement>) => {
             </Modal>
           </li>
 
-          <li className="text-baselg flex pt-2   justify-center ">
+          <li className="text-baselg flex pt-2   justify-center space-x-5">
             {/* Make a icon */}
+            
             <NavLink to="/" className="font-bold">Tweeter</NavLink>
+            
           </li>
-          <button>{}</button>
+         
+          
 
           <div className="invisible absolute right-0 mr-5  space-x-5 flex  md:visible">
+         
             <motion.li className="" whileHover={{ scale: 1.1 }}>
               <NavLink to="/usersearch">Search Users</NavLink>
             </motion.li>
             <motion.li whileHover={{ scale: 1.1 }}>
               <NavLink to="/showcase">Explore</NavLink>
             </motion.li>
+            
+            {/* <button  className="visible absolute right-3 bottom-7  md:static  ">{
+              theme === 'light' ? <BsMoonFill /> : <BsSunFill />
+            }</button> */}
+           
           </div>
+          
         </ul>
       </nav>
     </div>

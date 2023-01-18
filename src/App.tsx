@@ -1,4 +1,4 @@
-import React from "react";
+import React, {createContext, useContext, useState} from "react";
 import { Route, Routes } from "react-router-dom";
 import { Home } from "./Components/Home Page/Home";
 import { TweetShowcase } from "./Components/Tweet Showcase/TweetShowcase";
@@ -9,9 +9,13 @@ import { MobileFooter } from "./Components/MobileFooter";
 import { AnimatePresence, motion } from "framer-motion";
 import { ScrollToTop } from "./Components/ScrollToTop";
 
+const ThemeContext = createContext('');
+
 export const App = () => {
+  const [theme, setTheme] = useState('light');
  
   return  (
+   
     <div className="text-primaryLight bg-primaryPurple dark:text-black dark:bg-white">
       <ScrollToTop />
       <AnimatePresence>
@@ -35,5 +39,6 @@ export const App = () => {
       </Routes>
       <MobileFooter />
     </div>
+  
   );
 };
