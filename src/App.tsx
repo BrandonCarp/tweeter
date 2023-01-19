@@ -8,14 +8,30 @@ import { HamburgerLinks } from "./Components/HamburgerLinks";
 import { MobileFooter } from "./Components/MobileFooter";
 import { AnimatePresence, motion } from "framer-motion";
 import { ScrollToTop } from "./Components/ScrollToTop";
+import { useDarkMode } from "./Components/darkMode/useDarkMode";
 
-const ThemeContext = createContext('');
+type ThemeName = 'light' | 'dark' | string;
+type themeContextType = {
+  theme: ThemeName
+  setTheme: (name: ThemeName) => void
+}
+
+export const ThemeContext = createContext<ThemeContextType>({} as ThemeContextType);
+
+export const ThemeProvider = ({children}) => {
+  const [theme, setTheme] = useState<ThemeName>('light')
+}
+
 
 export const App = () => {
-  const [theme, setTheme] = useState('light');
- 
+const [theme, setTheme]= useState<ThemeName>('light');
+
+const toggleTheme = () => {
+  setTheme((curr) => (curr == "light" ? "dark" : "light"));
+}
+
   return  (
-   
+    <ThemeProvider >
     <div className="text-primaryLight bg-primaryPurple dark:text-black dark:bg-white">
       <ScrollToTop />
       <AnimatePresence>
@@ -39,6 +55,6 @@ export const App = () => {
       </Routes>
       <MobileFooter />
     </div>
-  
+    </ThemeProvider>
   );
 };
