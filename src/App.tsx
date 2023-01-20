@@ -8,30 +8,26 @@ import { HamburgerLinks } from "./Components/HamburgerLinks";
 import { MobileFooter } from "./Components/MobileFooter";
 import { AnimatePresence, motion } from "framer-motion";
 import { ScrollToTop } from "./Components/ScrollToTop";
-import { useDarkMode } from "./Components/darkMode/useDarkMode";
+import { setSyntheticLeadingComments } from "typescript";
 
 type ThemeName = 'light' | 'dark' | string;
-type themeContextType = {
-  theme: ThemeName
-  setTheme: (name: ThemeName) => void
-}
 
-export const ThemeContext = createContext<ThemeContextType>({} as ThemeContextType);
+export const ThemeContext = createContext<any>('');
 
-export const ThemeProvider = ({children}) => {
-  const [theme, setTheme] = useState<ThemeName>('light')
-}
+
 
 
 export const App = () => {
+
+  const toggleTheme = () => {
+    setTheme((curr) => (curr === 'light' ? 'dark' : 'light'));
+  }
+  
 const [theme, setTheme]= useState<ThemeName>('light');
 
-const toggleTheme = () => {
-  setTheme((curr) => (curr == "light" ? "dark" : "light"));
-}
 
   return  (
-    <ThemeProvider >
+    <ThemeContext.Provider value={{theme, toggleTheme}}>
     <div className="text-primaryLight bg-primaryPurple dark:text-black dark:bg-white">
       <ScrollToTop />
       <AnimatePresence>
@@ -45,16 +41,13 @@ const toggleTheme = () => {
         </motion.div>
       </AnimatePresence>
       <Routes>
-
-        
-        
-        <Route path="/" element={<Home />} />
-        <Route path="/usersearch" element={<UserSearch />} />
-        <Route path="/showcase" element={<TweetShowcase />} />
-        <Route path="/hamburgerlink" element={<HamburgerLinks />} />
-      </Routes>
+      <Route path="/" element={<Home />} />
+<Route path="/usersearch" element={<UserSearch />} />
+<Route path="/showcase" element={<TweetShowcase />} />
+<Route path="/hamburgerlink" element={<HamburgerLinks />} />
+</Routes>
       <MobileFooter />
     </div>
-    </ThemeProvider>
+    </ThemeContext.Provider>
   );
 };
