@@ -1,24 +1,16 @@
-import React, {useState, useEffect} from "react";
-
+import React, {useState } from "react";
+import ReactSwitch from "react-switch";
 import { NavLink } from "react-router-dom";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { Modal } from "../Modal";
 import { motion } from "framer-motion";
+import { ThemeContext } from "src/App";
 // Icons
-import {BsFillSunFill, BsMoonFill, BsCheck, BsSunFill} from 'react-icons/bs';
+// import {BsFillSunFill, BsMoonFill, BsCheck, BsSunFill} from 'react-icons/bs';
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-  // const [theme, setTheme] = useState('light');
 
-
-  // const handleThemeSwitch = () => {
-  //  if(theme === 'light') {
-  //   setTheme('dark')
-  //  } else if(theme === 'dark') {
-  //   setTheme('light');
-  //  }
-  // }
 
 const openModal = (e:  React.MouseEvent<HTMLButtonElement>) => {
    setIsOpen(true);
@@ -78,10 +70,7 @@ const closeModal = (e: React.MouseEvent<HTMLButtonElement>) => {
             <motion.li whileHover={{ scale: 1.1 }}>
               <NavLink to="/showcase">Explore</NavLink>
             </motion.li>
-            
-            {/* <button  className="visible absolute right-3 bottom-7  md:static  ">{
-              theme === 'light' ? <BsMoonFill /> : <BsSunFill />
-            }</button> */}
+           <ReactSwitch className="visible absolute right-3 bottom-7 md:static"  onChange={toggleTheme} checked={theme === 'dark'}
            
           </div>
           

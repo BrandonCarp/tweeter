@@ -1,5 +1,6 @@
-import React, {createContext, useContext, useState} from "react";
+import React, {createContext, useState} from "react";
 import { Route, Routes } from "react-router-dom";
+import './App.css';
 import { Home } from "./Components/Home Page/Home";
 import { TweetShowcase } from "./Components/Tweet Showcase/TweetShowcase";
 import { Navbar } from "./Components/Home Page/Navbar";
@@ -11,24 +12,29 @@ import { ScrollToTop } from "./Components/ScrollToTop";
 import { setSyntheticLeadingComments } from "typescript";
 
 type ThemeName = 'light' | 'dark' | string;
-
-export const ThemeContext = createContext<any>('');
+type ThemeContextType = {
+  theme: ThemeName
+  setTheme: (name: ThemeName) => void
+}
+export const ThemeContext = createContext<ThemeContextType>({} as ThemeContextType)
 
 
 
 
 export const App = () => {
 
+  const [theme, setTheme]= useState<ThemeName>('darkq');
+
   const toggleTheme = () => {
     setTheme((curr) => (curr === 'light' ? 'dark' : 'light'));
   }
   
-const [theme, setTheme]= useState<ThemeName>('light');
+
 
 
   return  (
     <ThemeContext.Provider value={{theme, toggleTheme}}>
-    <div className="text-primaryLight bg-primaryPurple dark:text-black dark:bg-white">
+    <div id={theme} className="">
       <ScrollToTop />
       <AnimatePresence>
         <motion.div
