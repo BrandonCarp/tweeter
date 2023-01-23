@@ -18,12 +18,13 @@ module.exports = {
     extend: {
       colors: {
         primaryDark: "#171717",
-        primaryGray: "#171717",
-        secondaryGray: "#",
+        secondaryDark: "#262626",
+        primaryGray: "#525252",
+        secondaryGray: "#737373",
         purpleGray: "#40375c",
         primaryLight: "#ede9fe",
         secondaryLight: "#cbd5e1",
-        primaryPurple: "#221C35",
+        primaryPurple: "#8b5cf6",
         secondaryPurple: "#5b21b6",
       },
       fontSize: {

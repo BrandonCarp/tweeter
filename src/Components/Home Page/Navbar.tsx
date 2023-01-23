@@ -1,4 +1,4 @@
-import React, {useState } from "react";
+import React, {useState, useContext } from "react";
 import ReactSwitch from "react-switch";
 import { NavLink } from "react-router-dom";
 import { GiHamburgerMenu } from "react-icons/gi";
@@ -70,7 +70,7 @@ const closeModal = (e: React.MouseEvent<HTMLButtonElement>) => {
             <motion.li whileHover={{ scale: 1.1 }}>
               <NavLink to="/showcase">Explore</NavLink>
             </motion.li>
-           <ReactSwitch className="visible absolute right-3 bottom-7 md:static"  onChange={toggleTheme} checked={theme === 'dark'}
+           {/* <ReactSwitch className="visible absolute right-3 bottom-7 md:static"  onChange={toggleTheme} checked={theme === 'dark'} /> */}
            
           </div>
           

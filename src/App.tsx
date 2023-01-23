@@ -9,21 +9,22 @@ import { HamburgerLinks } from "./Components/HamburgerLinks";
 import { MobileFooter } from "./Components/MobileFooter";
 import { AnimatePresence, motion } from "framer-motion";
 import { ScrollToTop } from "./Components/ScrollToTop";
-import { setSyntheticLeadingComments } from "typescript";
+import ReactSwitch from "react-switch";
+
 
 type ThemeName = 'light' | 'dark' | string;
 type ThemeContextType = {
   theme: ThemeName
   setTheme: (name: ThemeName) => void
 }
-export const ThemeContext = createContext<ThemeContextType>({} as ThemeContextType)
+export const ThemeContext = createContext<unknown>({} as ThemeContextType)
 
 
 
 
 export const App = () => {
 
-  const [theme, setTheme]= useState<ThemeName>('darkq');
+  const [theme, setTheme]= useState<ThemeName>('dark');
 
   const toggleTheme = () => {
     setTheme((curr) => (curr === 'light' ? 'dark' : 'light'));
@@ -43,7 +44,8 @@ export const App = () => {
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0 }}
         >
-         <Navbar />
+         <Navbar  />
+         {/* <ReactSwitch className="absolute bottom-10"  onChange={toggleTheme} checked={theme === 'dark'} /> */}
         </motion.div>
       </AnimatePresence>
       <Routes>
