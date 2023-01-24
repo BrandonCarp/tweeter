@@ -1,6 +1,6 @@
-import React, {createContext, useState} from "react";
+import React, { useState} from "react";
 import { Route, Routes } from "react-router-dom";
-import './App.css';
+import './Components/Styles/darkMode.css';
 import { Home } from "./Components/Home Page/Home";
 import { TweetShowcase } from "./Components/Tweet Showcase/TweetShowcase";
 import { Navbar } from "./Components/Home Page/Navbar";
@@ -9,15 +9,8 @@ import { HamburgerLinks } from "./Components/HamburgerLinks";
 import { MobileFooter } from "./Components/MobileFooter";
 import { AnimatePresence, motion } from "framer-motion";
 import { ScrollToTop } from "./Components/ScrollToTop";
-import ReactSwitch from "react-switch";
-
-
-type ThemeName = 'light' | 'dark' | string;
-type ThemeContextType = {
-  theme: ThemeName
-  setTheme: (name: ThemeName) => void
-}
-export const ThemeContext = createContext<unknown>({} as ThemeContextType)
+import {ThemeContext} from './Components/Context/ThemeContext';
+import { ThemeName } from "./Components/Types/ThemeName";
 
 
 
@@ -45,7 +38,7 @@ export const App = () => {
           exit={{ opacity: 0 }}
         >
          <Navbar  />
-         {/* <ReactSwitch className="absolute bottom-10"  onChange={toggleTheme} checked={theme === 'dark'} /> */}
+       
         </motion.div>
       </AnimatePresence>
       <Routes>

@@ -1,12 +1,14 @@
 import React, {useState, useContext } from "react";
-import ReactSwitch from "react-switch";
+import '../Styles/darkMode.css'
+import ReactSwitch from 'react-switch';
 import { NavLink } from "react-router-dom";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { Modal } from "../Modal";
 import { motion } from "framer-motion";
-import { ThemeContext } from "src/App";
-// Icons
-// import {BsFillSunFill, BsMoonFill, BsCheck, BsSunFill} from 'react-icons/bs';
+
+import { ThemeContext } from "../Context/ThemeContext";
+
+
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -19,9 +21,12 @@ const openModal = (e:  React.MouseEvent<HTMLButtonElement>) => {
 const closeModal = (e: React.MouseEvent<HTMLButtonElement>) => {
  setIsOpen(false);
 }
+
+const {toggleTheme} = useContext(ThemeContext)
+const {theme} = useContext(ThemeContext);
  
   return (
-    <div className="text-primaryLight bg-secondaryPurple dark:text-black dark:primaryLight">
+    <div id={theme} className="text-primaryLight bg-secondaryPurple dark:text-black dark:primaryLight">
       <nav className="sticky top-0 relative container mx-auto p-5 ">
         <ul className="flex-row items-center   md:pl-10 md:flex ">
           <li className="absolute  left-0 ml-7 mt-3  text-baselg   md:invisible">
@@ -70,7 +75,7 @@ const closeModal = (e: React.MouseEvent<HTMLButtonElement>) => {
             <motion.li whileHover={{ scale: 1.1 }}>
               <NavLink to="/showcase">Explore</NavLink>
             </motion.li>
-           {/* <ReactSwitch className="visible absolute right-3 bottom-7 md:static"  onChange={toggleTheme} checked={theme === 'dark'} /> */}
+           <ReactSwitch className="visible absolute bottom-8 md:bottom-0  md:static"  onChange={toggleTheme} checked={theme === 'dark'} />
            
           </div>
           
