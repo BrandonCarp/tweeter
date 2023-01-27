@@ -26,6 +26,7 @@ module.exports = {
         secondaryLight: "#cbd5e1",
         primaryPurple: "#8b5cf6",
         secondaryPurple: "#5b21b6",
+        borderLight: "#cbd5e1",
       },
       fontSize: {
         xs: ".75rem",

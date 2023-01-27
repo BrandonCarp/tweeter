@@ -1,14 +1,17 @@
-import React from "react";
+import React, {useContext} from "react";
 import { NavLink } from "react-router-dom";
 import { BsHouse } from "react-icons/bs";
 import { BiHash } from "react-icons/bi";
 import { MdPersonSearch } from "react-icons/md";
+import { ThemeContext } from "./Context/ThemeContext";
+
 
 export function MobileFooter() {
-
+  
+  const {theme} = useContext(ThemeContext);
  
   return (
-    <div className=" ">
+    <div className="">
       <div className="md:mt-[20%] mb-20 md:mb-0  space-y-3 flex flex-col items-center md:items-start md:ml-[20%]  md:h-20">
         <div className="flex flex-col invisible md:visible  ">
           <h1 className="text-baselg font-bold">Tweeter</h1>
@@ -27,7 +30,7 @@ export function MobileFooter() {
         </div>
       </div>
 
-<div className="fixed md:sticky bottom-0  left-0 right-0 flex justify-center   h-20  md:invisible ">
+<div id={theme} className="bg-white mainFooter fixed md:sticky bottom-0  left-0 right-0 flex justify-center   h-20  md:invisible ">
         <ul className="flex items-center ">
       
 

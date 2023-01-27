@@ -6,9 +6,11 @@ import { FaRetweet } from "react-icons/fa";
 import { BiHeart } from "react-icons/bi";
 import { UserInfo } from "../interfaces";
 
+import "../Styles/darkMode.css"
+
 export const Users: React.FC<UserInfo> = ({ name, picture }) => {
   return (
-    <div className=" relative mx-auto container rounded w-[85%]    border  border-purpleGray ">
+    <div className=" relative mx-auto  rounded w-[85%] userBorder  ">
       <div className="flex container p-8 ">
 
         {/* <a href="https://twitter.com/elonmusk" className=" mr-5">
@@ -29,9 +31,9 @@ export const Users: React.FC<UserInfo> = ({ name, picture }) => {
           <div>
             <div className="flex">
               
-             {name} <a href="https://twitter.com/elonmusk" className="text-purpleGray">@{name}TweeterDevIO</a>
+             {name} <a href="https://twitter.com/elonmusk" className="text-secondaryGray">@{name}TweeterDevIO</a>
             </div>
-            <div className="py-4 ">
+            <div className="py-4  ">
               <p>
                 第三章 第七章 第五章 第十章. 復讐者」. 復讐者」. .復讐者」
                 伯母さん . 第七章 第四章 第三章.復讐者」 伯母さん. 第十二章
@@ -40,7 +42,7 @@ export const Users: React.FC<UserInfo> = ({ name, picture }) => {
             </div>
           </div>
 
-          <ul className="flex items-center  space-x-5 text-purpleGray">
+          <ul className="flex items-center  space-x-5 text-secondaryGray">
             <li className="flex items-center">
               <BsChat className="mr-2 " /> 1337
             </li>

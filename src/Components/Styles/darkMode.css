@@ -1,9 +1,24 @@
 #dark  {
-  background-color: #221C35;
+  background-color: #171717;
   color: #fff;
 }
+.mainNav {
+  border-bottom: .5px solid #737373;
+}
 
-#dark .darkTest {
-  
+.mainFooter {
+  border-top: .5px solid #737373;
+}
+
+#dark .navDark {
+  border-color: #737373;
+}
+
+#dark .darkModal {
+  color: black;
+}
+
+.userBorder {
+  border: .5px solid #737373;
 }
 

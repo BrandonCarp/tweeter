@@ -1,6 +1,9 @@
-import React from "react";
+import React,{useContext} from "react";
 import { GrClose } from "react-icons/gr";
 import ReactDom from "react-dom";
+import "./Styles/darkMode.css"
+
+import { ThemeContext } from "./Context/ThemeContext";
 
 
 
@@ -10,7 +13,7 @@ const modal_styles: React.CSSProperties = {
   top: "50%",
   left: "50%",
   transform: "translate(-50%, -50%)",
- 
+ backgroundColor: "#fff",
   padding: "50px",
   zIndex: 1000,
 };
@@ -26,10 +29,11 @@ const overlay_styles: React.CSSProperties = {
 };
 
 export const Modal = (props: { closeModal: (e:  React.MouseEvent<HTMLButtonElement>) => void, open: boolean, children: React.ReactNode }) => {
+  const {theme} = useContext(ThemeContext);
   if (!props.open) return null;
   return ReactDom.createPortal(
-    <div className="" style={overlay_styles}>
-      <div className="rounded" style={modal_styles}>
+    <div  className="" style={overlay_styles}>
+      <div  className="rounded darkModal" style={modal_styles}>
         <button onClick={props.closeModal} className="fixed top-2 left-2 ">
           <GrClose className=""/>
         </button>

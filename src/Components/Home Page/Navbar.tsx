@@ -26,7 +26,7 @@ const {toggleTheme} = useContext(ThemeContext)
 const {theme} = useContext(ThemeContext);
  
   return (
-    <div id={theme} className="darkTest ">
+    <div id={theme} className="mainNav navDark">
       <nav className="sticky top-0 relative container mx-auto p-5 ">
         <ul className="flex-row items-center   md:pl-10 md:flex ">
           <li className="absolute  left-0 ml-7 mt-3  text-baselg   md:invisible">
