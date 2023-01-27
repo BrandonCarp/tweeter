@@ -8,7 +8,7 @@ export function MobileFooter() {
 
  
   return (
-    <div className="text-primaryLight bg-primaryPurple dark:text-black dark:bg-white">
+    <div className=" ">
       <div className="md:mt-[20%] mb-20 md:mb-0  space-y-3 flex flex-col items-center md:items-start md:ml-[20%]  md:h-20">
         <div className="flex flex-col invisible md:visible  ">
           <h1 className="text-baselg font-bold">Tweeter</h1>
@@ -27,13 +27,13 @@ export function MobileFooter() {
         </div>
       </div>
 
-<div className="fixed md:sticky bottom-0  left-0 right-0 flex justify-center   h-20  md:invisible text-primaryLight bg-secondaryPurple dark:text-black dark:bg-white">
+<div className="fixed md:sticky bottom-0  left-0 right-0 flex justify-center   h-20  md:invisible ">
         <ul className="flex items-center ">
       
 
           
             <NavLink to="/"   >
-              <BsHouse className="text-md m-1 text-primaryLight" />
+              <BsHouse className="text-md m-1 " />
             </NavLink>
         
           

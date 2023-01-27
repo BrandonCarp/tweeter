@@ -8,7 +8,7 @@ import { UserInfo } from "../interfaces";
 
 export const Users: React.FC<UserInfo> = ({ name, picture }) => {
   return (
-    <div className=" relative mx-auto container rounded w-[85%]  text-primaryLight   border  border-purpleGray ">
+    <div className=" relative mx-auto container rounded w-[85%]    border  border-purpleGray ">
       <div className="flex container p-8 ">
 
         {/* <a href="https://twitter.com/elonmusk" className=" mr-5">

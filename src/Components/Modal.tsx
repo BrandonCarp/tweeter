@@ -29,9 +29,9 @@ export const Modal = (props: { closeModal: (e:  React.MouseEvent<HTMLButtonEleme
   if (!props.open) return null;
   return ReactDom.createPortal(
     <div className="" style={overlay_styles}>
-      <div className="rounded bg-secondaryPurple  text-black" style={modal_styles}>
+      <div className="rounded" style={modal_styles}>
         <button onClick={props.closeModal} className="fixed top-2 left-2 ">
-          <GrClose className="text-white"/>
+          <GrClose className=""/>
         </button>
         <h1 className="">{props.children}</h1>
         
