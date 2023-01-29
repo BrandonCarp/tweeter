@@ -22,3 +22,7 @@
   border: .5px solid #737373;
 }
 
+#dark .overlayStyles {
+  text: white;
+}
+
