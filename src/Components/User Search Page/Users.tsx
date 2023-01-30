@@ -10,8 +10,8 @@ import "../Styles/darkMode.css"
 
 export const Users: React.FC<UserInfo> = ({ name, picture }) => {
   return (
-    <div className=" relative mx-auto  rounded w-[85%] userBorder  ">
-      <div className="flex container p-8 ">
+    <div className=" relative mx-auto  rounded  userBorder mx-1 ">
+      <div className="flex container p-5 ">
 
         {/* <a href="https://twitter.com/elonmusk" className=" mr-5">
         <img
@@ -23,7 +23,7 @@ export const Users: React.FC<UserInfo> = ({ name, picture }) => {
         <img
           src={picture}
           alt="tweeters profile"
-          className="h-14 mr-5 rounded-full"
+          className="h-12 mr-2 rounded-full"
         />
       
        

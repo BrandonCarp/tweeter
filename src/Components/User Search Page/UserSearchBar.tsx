@@ -31,7 +31,7 @@ export function UserSearchBar() {
             </button>
             <input id={theme}
               type="text"
-              className=" pl-3 pr-16 rounded-lg  focus:outline-none  "
+              className=" pl-3  rounded-lg  focus:outline-none  "
               placeholder="Search Users"
               value={query}
               onChange={handleChange}

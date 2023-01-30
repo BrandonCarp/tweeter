@@ -22,7 +22,15 @@
   border: .5px solid #737373;
 }
 
-#dark .overlayStyles {
-  text: white;
+
+/* .darkModal {
+  background-color: white;
 }
+
+#dark .darkModal {
+  color: white;
+  background-color: #171717;
+} */
+ 
+
 

@@ -8,6 +8,7 @@ import { ThemeContext } from "./Context/ThemeContext";
 
 
 
+
 const modal_styles: React.CSSProperties = {
   position: "fixed",
   top: "50%",
@@ -32,8 +33,8 @@ export const Modal = (props: { closeModal: (e:  React.MouseEvent<HTMLButtonEleme
   const {theme} = useContext(ThemeContext);
   if (!props.open) return null;
   return ReactDom.createPortal(
-    <div  id={theme} className='overlayStyles' style={overlay_styles} >
-      <div  className="rounded darkModal" style={modal_styles}>
+    <div  className=' ' style={overlay_styles} >
+      <div   className="rounded " style={modal_styles}>
         <button onClick={props.closeModal} className="fixed top-2 left-2 ">
           <GrClose className=""/>
         </button>
