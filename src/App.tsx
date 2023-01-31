@@ -6,7 +6,7 @@ import { TweetShowcase } from "./Components/Tweet Showcase/TweetShowcase";
 import { Navbar } from "./Components/Home Page/Navbar";
 import { UserSearch } from "./Components/User Search Page/UserSearch";
 import { HamburgerLinks } from "./Components/HamburgerLinks";
-import { MobileFooter } from "./Components/MobileFooter";
+import { Footer } from "./Components/Footer";
 import { AnimatePresence, motion } from "framer-motion";
 import { ScrollToTop } from "./Components/ScrollToTop";
 import {ThemeContext} from './Components/Context/ThemeContext';
@@ -47,7 +47,7 @@ export const App = () => {
 <Route path="/showcase" element={<TweetShowcase />} />
 <Route path="/hamburgerlink" element={<HamburgerLinks />} />
 </Routes>
-      <MobileFooter />
+      <Footer />
     </div>
     </ThemeContext.Provider>
   );
