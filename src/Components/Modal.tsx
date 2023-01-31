@@ -43,7 +43,7 @@ export const Modal = (props: { closeModal: (e:  React.MouseEvent<HTMLButtonEleme
       initial={{ y: -150}}
       animate={{ y: 0}}
       
-      transition={{ease:"easeIn", duration: .3}}
+      transition={{ease:"easeIn", duration: .4}}
       id={theme} style={modal_styles}  className="" >
         <button onClick={props.closeModal} className="fixed top-2 left-2 ">
           <AiOutlineClose id={theme} className="text-[1.4rem]"/>
