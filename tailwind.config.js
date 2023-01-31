@@ -27,6 +27,8 @@ module.exports = {
         primaryPurple: "#8b5cf6",
         secondaryPurple: "#5b21b6",
         borderLight: "#cbd5e1",
+        transparentBg: "rgba(0, 0, 0, .7)",
+        linkedBlue: "#0072b1",
       },
       fontSize: {
         xs: ".75rem",

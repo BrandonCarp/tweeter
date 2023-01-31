@@ -16,17 +16,21 @@ export function Navbar() {
 
 const openModal = (e:  React.MouseEvent<HTMLButtonElement>) => {
    setIsOpen(true);
+   if (typeof window != 'undefined' && window.document) {
+    document.body.style.overflow = 'hidden';
+}
 }
 
 const closeModal = (e: React.MouseEvent<HTMLButtonElement>) => {
  setIsOpen(false);
+ document.body.style.overflow = 'unset';
 }
 
 const {toggleTheme} = useContext(ThemeContext)
 const {theme} = useContext(ThemeContext);
  
   return (
-    <div id={theme} className="mainNav navDark">
+    <div id={theme}  className="mainNav navDark ">
       <nav className="sticky top-0 relative container mx-auto p-5 ">
         <ul className="flex-row items-center   md:pl-10 md:flex ">
           <li className="absolute  left-0 ml-7 mt-3  text-baselg   md:invisible">
@@ -34,9 +38,8 @@ const {theme} = useContext(ThemeContext);
               <GiHamburgerMenu />
             </button>
 
-            <Modal closeModal={closeModal} open={isOpen} 
-            >
-              <ul className="space-y-3 text-baselg flex flex-col items-center ">
+<Modal  closeModal={closeModal} open={isOpen} >
+              <ul  className=" space-y-3 text-baselg flex flex-col items-center ">
                 <motion.li className="" whileHover={{ scale: 1.1 }}>
                   <NavLink to="/" className=" p-1">
                     <button onClick={closeModal}>Home</button>
@@ -56,12 +59,14 @@ const {theme} = useContext(ThemeContext);
                 </motion.li>
               </ul>
             </Modal>
+
+            
           </li>
 
           <li className="text-baselg flex pt-2   justify-center space-x-5">
         
             
-            <NavLink to="/" className="font-bold">Tweeter</NavLink>
+            <NavLink to="/" className="font-bold ">Tweeter</NavLink>
             
           </li>
          

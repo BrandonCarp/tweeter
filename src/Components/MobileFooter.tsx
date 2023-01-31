@@ -12,7 +12,7 @@ export function MobileFooter() {
  
   return (
     <div className="">
-      <div className="md:mt-[20%] mb-20 md:mb-0  space-y-3 flex flex-col items-center md:items-start md:ml-[20%]  md:h-20">
+      <div className="md:mt-10 mb-20 md:mb-0  space-y-3 flex flex-col items-center md:items-start md:ml-[20%]  md:h-20">
         <div className="flex flex-col invisible md:visible  ">
           <h1 className="text-baselg font-bold">Tweeter</h1>
           <ul className=" flex space-x-5 text-sm ">

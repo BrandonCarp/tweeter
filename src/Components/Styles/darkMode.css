@@ -2,35 +2,32 @@
   background-color: #171717;
   color: #fff;
 }
+
+#light {
+  background-color: #fff;
+  color: black;
+}
 .mainNav {
   border-bottom: .5px solid #737373;
 }
-
 .mainFooter {
   border-top: .5px solid #737373;
 }
 
-#dark .navDark {
-  border-color: #737373;
+#dark .mainFooter {
+  background-color: #171717;
 }
 
-#dark .darkModal {
-  color: black;
-}
 
 .userBorder {
   border: .5px solid #737373;
 }
 
 
-/* .darkModal {
-  background-color: white;
-}
 
-#dark .darkModal {
-  color: white;
-  background-color: #171717;
+/* #dark .purpleTheme  {
+  color: #7c3aed;
 } */
- 
+
 
 
