@@ -11,6 +11,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { ScrollToTop } from "./Components/ScrollToTop";
 import {ThemeContext} from './Components/Context/ThemeContext';
 import { ThemeName } from "./Components/Types/ThemeName";
+import { MobileFooter } from "./Components/MobileFooter";
 
 
 
@@ -28,11 +29,11 @@ export const App = () => {
 
   return  (
     <ThemeContext.Provider value={{theme, toggleTheme}}>
-    <div id={theme} className="">
+    <div id={theme}>
       <ScrollToTop />
       <AnimatePresence>
-        <motion.div
-          className="sticky top-0 z-50 bg-white"
+        <motion.div 
+          className="sticky top-0 z-50"
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0 }}
