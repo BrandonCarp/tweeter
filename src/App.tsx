@@ -29,7 +29,7 @@ export const App = () => {
 
   return  (
     <ThemeContext.Provider value={{theme, toggleTheme}}>
-    <div id={theme}>
+    <div id={theme} className="">
       <ScrollToTop />
       <AnimatePresence>
         <motion.div 
@@ -48,8 +48,9 @@ export const App = () => {
 <Route path="/showcase" element={<TweetShowcase />} />
 <Route path="/hamburgerlink" element={<HamburgerLinks />} />
 </Routes>
-      <Footer />
+<Footer />
     </div>
+    
     </ThemeContext.Provider>
   );
 };

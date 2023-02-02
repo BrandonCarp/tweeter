@@ -3,9 +3,12 @@ import { motion } from "framer-motion";
 import { NavLink } from "react-router-dom";
 import homeImg from "./HomeImgs/homePage.jpg";
 import { BsArrowRightCircle } from "react-icons/bs";
+import { Footer } from "../Footer";
 
 export const Hero = () => {
   return (
+    <>
+    
     <div className=" relative container mx-auto  mt-20 ">
     <div className="flex flex-col items-center  justify-center      space-y-5">
       <motion.div
@@ -37,12 +40,15 @@ export const Hero = () => {
       />
       <div className=" mx-auto container relative flex  flex-col items-center justify-center">
         <h1 className="md:text-xl text-md font-bold">Tweeter</h1>
-        <p className=" text-center p-5 text-baselg md:mb-10  md:px-[2.5rem]">
+        <p className=" text-center p-5 text-baselg md:mb-10 md:px-[2.5rem]">
           Tweeter is a application that is designed to help people connect,
           and find communities of interest.
         </p>
       </div>
     </div>
+   
   </div>
+  {/* <Footer /> */}
+  </>
   );
 }
