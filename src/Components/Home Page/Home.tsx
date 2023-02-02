@@ -6,7 +6,7 @@ import { Hero } from "./Hero";
 
 export const Home = () => {
   return (
-    <div className="">
+    <div className=" pt-10">
       <Hero />
     </div>
   );

@@ -25,7 +25,7 @@ export function UserSearch() {
         </div>
       </div>
     </div>
-    <Footer />
+    {/* <Footer /> */}
     </>
   );
 }

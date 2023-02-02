@@ -3,13 +3,13 @@ import { motion } from "framer-motion";
 import { NavLink } from "react-router-dom";
 import homeImg from "./HomeImgs/homePage.jpg";
 import { BsArrowRightCircle } from "react-icons/bs";
-import { Footer } from "../Footer";
+
 
 export const Hero = () => {
   return (
     <>
     
-    <div className=" relative container mx-auto  mt-20 ">
+    <div className=" relative container mx-auto   ">
     <div className="flex flex-col items-center  justify-center      space-y-5">
       <motion.div
         initial={{ opacity: 0, x: -100 }}
