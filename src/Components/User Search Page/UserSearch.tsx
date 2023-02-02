@@ -2,7 +2,7 @@ import React from "react";
 import { UserSearchBar } from "./UserSearchBar";
 import { UserList } from "./UserList";
 import { ScrollButton } from "../ScrollButton";
-import { Footer } from "../Footer";
+
 
 
 
@@ -15,8 +15,8 @@ export function UserSearch() {
   
   return (
     <>
-    <div className="relative mx-auto  " id="topApp">
-      <div className="flex  display-center justify-center">
+    <div className="relative mx-auto  container " id="topApp">
+      <div className="">
         <div>
           <UserSearchBar />
           <UserList userData={userData} />

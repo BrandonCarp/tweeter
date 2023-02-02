@@ -10,8 +10,9 @@ import "../Styles/darkMode.css"
 
 export const Users: React.FC<UserInfo> = ({ name, picture }) => {
   return (
-    <div className=" relative mx-auto  rounded  userBorder mx-1 ">
-      <div className="flex container p-5 ">
+    
+    <div className=" relative mx-auto container   rounded  userBorder   ">
+      <div className="flex   p-5">
 
         {/* <a href="https://twitter.com/elonmusk" className=" mr-5">
         <img
@@ -29,15 +30,14 @@ export const Users: React.FC<UserInfo> = ({ name, picture }) => {
        
         <div className="flex flex-col ">
           <div>
-            <div className="flex">
+            <div className="flex text-mdsm ">
               
-             {name} <a href="https://twitter.com/elonmusk" className="text-secondaryGray">@{name}TweeterDevIO</a>
+             {name} <a href="https://twitter.com/elonmusk" className="text-secondaryGray pl-[5px]">@{name}TweeterDevIO</a>
             </div>
             <div className="py-4  ">
               <p>
                 第三章 第七章 第五章 第十章. 復讐者」. 復讐者」. .復讐者」
-                伯母さん . 第七章 第四章 第三章.復讐者」 伯母さん. 第十二章
-                第十一章 第十三章 第十
+                伯母さん . 第七章 第四章 
               </p>
             </div>
           </div>

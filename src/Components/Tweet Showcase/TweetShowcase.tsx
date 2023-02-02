@@ -12,7 +12,7 @@ export const TweetShowcase = () => {
         <div className="flex flex-col items-center justify-center ">
           {/* Favorite Users */}
           {/* Map these set limit to 5 Users */}
-        {/*  */}
+          <FavoriteUsers />
         </div>
         
       </div>

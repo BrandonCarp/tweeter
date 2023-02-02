@@ -11,7 +11,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { ScrollToTop } from "./Components/ScrollToTop";
 import {ThemeContext} from './Components/Context/ThemeContext';
 import { ThemeName } from "./Components/Types/ThemeName";
-import { MobileFooter } from "./Components/MobileFooter";
+
 
 
 
