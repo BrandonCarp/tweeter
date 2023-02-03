@@ -29,6 +29,7 @@ module.exports = {
         borderLight: "#cbd5e1",
         transparentBg: "rgba(0, 0, 0, .7)",
         linkedBlue: "#0072b1",
+        borderGray: "#737373",
       },
       fontSize: {
         xs: ".75rem",
