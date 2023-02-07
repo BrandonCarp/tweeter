@@ -24,12 +24,12 @@ className="h-[10rem] md:h-[15rem] rounded"
 <h3 className="text-center">yoyo@twitteruser</h3>
 {/* Tweet Carasal map the top then map these */}
 <div className="flex space-x-5 justify-center">
-<Carousel />
+
   
 
 </div>
 <div className="flex items-center justify-center space-x-10">
-
+<Carousel />
 </div>
 
           </div>
