@@ -18,7 +18,7 @@ import { ThemeName } from "./Components/Types/ThemeName";
 
 export const App = () => {
 
-  const [theme, setTheme]= useState<ThemeName>('dark');
+  const [theme, setTheme]= useState<ThemeName>('light');
 
   const toggleTheme = () => {
     setTheme((curr) => (curr === 'light' ? 'dark' : 'light'));

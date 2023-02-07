@@ -2,6 +2,7 @@ import React, {useContext} from "react"
 import userPhoto from '../User Search Page/Imgs/me and ko.jpg';
 import { ThemeContext } from "../Context/ThemeContext";
 import "../Styles/darkMode.css"
+import { Carousel } from "./Carousel";
 
 
 
@@ -11,8 +12,8 @@ export const FavoriteUsers = () => {
     <>
  <div className=" border-y border-borderGray w-screen my-5">
   <div className="mx-auto relative container  ">
+    <button>Remove</button>
     <div className="flex  justify-center p-10">
-    <p>x</p>
           <div className="  rounded">
            
 <img src={userPhoto} 
@@ -23,13 +24,12 @@ className="h-[10rem] md:h-[15rem] rounded"
 <h3 className="text-center">yoyo@twitteruser</h3>
 {/* Tweet Carasal map the top then map these */}
 <div className="flex space-x-5 justify-center">
-
-  <h1>img2</h1><h1>img3</h1>
-
+<Carousel />
+  
 
 </div>
 <div className="flex items-center justify-center space-x-10">
-<button className="">Btn 1</button> <button className="rounded ">Btn 2</button>
+
 </div>
 
           </div>
