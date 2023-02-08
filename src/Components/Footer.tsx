@@ -1,20 +1,16 @@
-import React, {useContext, useRef} from "react";
+import React, { useContext, useRef } from "react";
 import { NavLink } from "react-router-dom";
 import { ThemeContext } from "./Context/ThemeContext";
 import { MobileFooter } from "./MobileFooter";
 
-
-
 export function Footer() {
-  
-  const {theme} = useContext(ThemeContext);
+  const { theme } = useContext(ThemeContext);
   const windowWidth = useRef([window.innerWidth]);
-  
-//  windowWidth.current
-  return (
-   <div className="relative container mx-auto ">
 
-   <div className="mb-[4.5rem]  space-y-5 flex flex-col items-center md:items-start md:ml-[20%] md:mb-0 md:mt-5  ">
+  //  windowWidth.current
+  return (
+    <div className="relative container mx-auto pb-5">
+      <div className="mb-[4.5rem]   flex flex-col items-center md:items-start md:ml-[20%] md:mb-0 md:mt-5  ">
         <div className="flex flex-col invisible md:visible  ">
           <h1 className="text-baselg font-bold">Tweeter</h1>
           <ul className=" flex space-x-5 text-sm ">
@@ -31,8 +27,7 @@ export function Footer() {
           </h1>
         </div>
       </div>
-<MobileFooter />
-</div>
-   
+      <MobileFooter />
+    </div>
   );
 }

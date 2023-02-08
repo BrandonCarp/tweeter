@@ -1,9 +1,9 @@
 import React from "react";
 import picture from "../User Search Page/Imgs/me and ko.jpg";
+import bingChilling from "../User Search Page/Imgs/john cena.jpg";
 import { BsChat } from "react-icons/bs";
 import { FaRetweet } from "react-icons/fa";
 import { BiHeart } from "react-icons/bi";
-import { UserInfo } from "../interfaces";
 
 export const CarouselItem = () => {
   return (
@@ -11,7 +11,7 @@ export const CarouselItem = () => {
       <div className="relative mx-auto container  rounded  userBorder  p-5  ">
         <div className="flex items-center w-[100%]">
           <img
-            src={picture}
+            src={bingChilling}
             alt="tweeters profile"
             className="h-8 mr-2 rounded-full"
           />
@@ -20,7 +20,7 @@ export const CarouselItem = () => {
             href="https://twitter.com/elonmusk"
             className="text-secondaryGray text-mdsm p-[1px] px-5"
           >
-            Name @TweeterDevIO
+            johnloves@bingChilling
           </a>
         </div>
 
