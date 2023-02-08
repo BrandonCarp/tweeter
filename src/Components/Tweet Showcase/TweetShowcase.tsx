@@ -4,7 +4,7 @@ import { UserSearchBar } from "../User Search Page/UserSearchBar";
 
 export const TweetShowcase = () => {
   return (
-    <div className="mt-5">
+    <div className="mt-5 ">
       <UserSearchBar />
       <FavoriteUsers />
     </div>

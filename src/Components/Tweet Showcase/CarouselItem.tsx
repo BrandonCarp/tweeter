@@ -18,7 +18,7 @@ export const CarouselItem = () => {
 
           <a
             href="https://twitter.com/elonmusk"
-            className="text-secondaryGray text-mdsm p-[1px] px-5"
+            className="text-secondaryGray text-mdsm p-[1px] "
           >
             johnloves@bingChilling
           </a>
