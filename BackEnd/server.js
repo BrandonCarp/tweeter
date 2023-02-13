@@ -1,17 +1,10 @@
-// const http = require("http");
+const { writeFile, writeFileSync } = require("fs");
 
-// const HOSTNAME = process.env.HOSTMAN || "localhost";
-// const PORT = process.env.PORT || 3000;
+const newContent = "some new text again woo";
 
-// const server = http.createServer((request, response) => {
-//   response.statusCode = 200;
-//   response.setHeader("Content-Type", "text/plain");
-//   response.end("Hello World");
-// });
-
-// server.listen(PORT, HOSTNAME, () => {
-//   console.log(`Server running at http://${HOSTNAME}:${PORT}/`);
-// });
-
-console.log(`File Name${__filename}`);
-console.log(`Directory Name${__dirname}`);
+try {
+  writeFileSync("backend/hi.txt", newContent);
+  console.log("contentWritten");
+} catch (err) {
+  console.error(err);
+}
