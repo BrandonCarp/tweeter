@@ -25,6 +25,7 @@
     "react-toggle-dark-mode": "^1.1.1",
     "typescript": "^4.9.4",
     "web-vitals": "^2.1.4"
+    
   },
   "scripts": {
     "start": "react-scripts start",

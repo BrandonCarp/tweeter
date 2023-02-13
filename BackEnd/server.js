@@ -1,10 +1,5 @@
-const { writeFile, writeFileSync } = require("fs");
+import { addNums } from "./addNums.js";
 
-const newContent = "some new text again woo";
+const sum = addNums(2, 2);
 
-try {
-  writeFileSync("backend/hi.txt", newContent);
-  console.log("contentWritten");
-} catch (err) {
-  console.error(err);
-}
+console.log(sum);
