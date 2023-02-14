@@ -4,15 +4,31 @@ const fs = require("fs");
 const PORT = process.env.PORT || 3000;
 
 const server = http.createServer((req, res) => {
-  res.statusCode = 200;
   res.setHeader("Content-Type", "text/html");
-  fs.readFile("BackEnd/index.html", (err, data) => {
+
+  let path = "./";
+
+  switch (req.url) {
+    case "/":
+      path += "backend/index.html";
+      res.statusCode = 200;
+      break;
+    case "/about":
+      path += "backend/about.html";
+      res.statusCode = 200;
+      break;
+    default:
+      res.setHeader("Location", "/");
+      res.statusCode = 301;
+      break;
+  }
+
+  fs.readFile(path, (err, data) => {
     if (err) {
       console.error(err);
       response.end();
     } else {
-      res.write(data);
-      res.end();
+      res.end(data);
     }
   });
 });
