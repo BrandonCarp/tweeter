@@ -1,7 +1,7 @@
 const http = require("http");
 const fs = require("fs");
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 8000;
 
 const server = http.createServer((req, res) => {
   res.setHeader("Content-Type", "text/html");
@@ -26,7 +26,7 @@ const server = http.createServer((req, res) => {
   fs.readFile(path, (err, data) => {
     if (err) {
       console.error(err);
-      response.end();
+      res.end();
     } else {
       res.end(data);
     }
