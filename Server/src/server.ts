@@ -1,12 +1,24 @@
-import express from 'express'
+import express, {NextFunction, Request, Response} from "express";
+import routes from "./routes";
+import helmet from 'helmet';
 
-const server = express()
+const app = express();
+
+app.use(helmet());
+
 const PORT = 8000;
-// Updates yes
-server.get('/', (req, res) => {
-return res.send('Hello Sir')
-});
 
-server.listen(PORT, () => {
-  console.log(`Application listening at http://localhost:${PORT}`)
-});
+app.use(express.json())
+
+
+app.get('/', (req, res) => {
+  res.sendStatus(200)
+})
+
+routes(app)
+
+
+
+app.listen(PORT, () => {
+  console.log(`Application is listening on http://localhost:${PORT}`)
+})
