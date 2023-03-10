@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Route, Routes } from "react-router-dom";
 import "./Components/Styles/darkMode.css";
 import { Home } from "./Components/Home Page/Home";
@@ -11,13 +11,24 @@ import { AnimatePresence, motion } from "framer-motion";
 import { ScrollToTop } from "./Components/ScrollToTop";
 import { ThemeContext } from "./Components/Context/ThemeContext";
 import { ThemeName } from "./Components/Types/ThemeName";
+import axios from "axios";
 
 export const App = () => {
   const [theme, setTheme] = useState<ThemeName>("light");
-
+  // const [apiState, setApiState] = useState([]);
   const toggleTheme = () => {
     setTheme((curr) => (curr === "light" ? "dark" : "light"));
   };
+
+  // const fetchData = async () => {
+  //   const res = await axios.get("http://localhost:8000/api/data");
+  //   console.log(res.data);
+  //   setApiState(res.data.characters);
+  // };
+
+  // useEffect(() => {
+  //   fetchData();
+  // });
 
   return (
     <div id={theme} className="h-[100vh]">

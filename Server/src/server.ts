@@ -10,8 +10,7 @@ app.use(cors({
 }))
 
 
-// api
-// https://api.github.com/
+
 
 
 const PORT = 8000;

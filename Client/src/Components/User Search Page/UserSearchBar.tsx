@@ -34,7 +34,7 @@ export function UserSearchBar() {
               id={theme}
               type="text"
               className=" pl-3  rounded-lg  focus:outline-none  "
-              placeholder="Search Users"
+              placeholder="Search Videos"
               value={query}
               onChange={handleChange}
             />
