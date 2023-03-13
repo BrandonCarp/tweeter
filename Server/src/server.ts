@@ -17,10 +17,12 @@ const PORT = 8000;
 
 app.use(express.json())
 
-app.use(function (req, res, next) {
+app.use(function (req: Request, res: Response, next: NextFunction) {
   res.setHeader('Cross-Origin-Resource-Policy', 'same-site')
   next()
 })
+
+
 
 
 app.get('/', (req, res) => {
