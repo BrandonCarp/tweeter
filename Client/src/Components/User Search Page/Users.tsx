@@ -17,8 +17,11 @@ export const Users: React.FC<UserInfo> = ({ name, picture }) => {
             allowFullScreen
           ></iframe>
           <div className="py-3">
-            <a href="https://www.youtube.com/">Title of Video goes here</a>
-            <h5 className="text-gray-400 text-sm">LVNDMARK</h5>
+            <a href="https://www.youtube.com/">
+              1 hour of Studio Ghibli | Relaxing Piano Music (relax, study,
+              sleep)
+            </a>
+            <h5 className="text-gray-400 text-sm">Studio Ghibli</h5>
             <h5 className="text-gray-400 text-sm">55k views 1 day ago</h5>
           </div>
         </div>

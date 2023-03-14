@@ -12,17 +12,11 @@ export function UserSearchBar() {
 
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
-    // fetch("http://localhost:8000/api/data", {
-    //   method: "POST",
-    //   mode: "cors",
-    //   body: JSON.stringify(query),
-    // });
     fetchData(query);
-    // setQuery("");
   };
 
   const fetchData = async (query: any) => {
-    const res = await axios.get(`http://localhost:8000/api/data/${query}`);
+    const res = await axios.get(`http://localhost:8000/data/?q=${query}`);
     console.log(res.data);
     setApiState(res.data.characters);
   };
