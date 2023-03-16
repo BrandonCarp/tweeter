@@ -2,23 +2,16 @@ import React, { useState, useContext } from "react";
 import { BiSearch } from "react-icons/bi";
 import "../Styles/darkMode.css";
 import { ThemeContext } from "../Context/ThemeContext";
-import axios from "axios";
 
-export function UserSearchBar() {
+export function UserSearchBar({ fetchData }: any) {
   const [query, setQuery] = useState("");
 
   const { theme } = useContext(ThemeContext);
-  const [apiState, setApiState] = useState({});
-
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
     fetchData(query);
-  };
 
-  const fetchData = async (query: any) => {
-    const res = await axios.get(`http://localhost:8000/data/?q=${query}`);
-    console.log(res.data);
-    setApiState(res.data.characters);
+    setQuery("");
   };
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
