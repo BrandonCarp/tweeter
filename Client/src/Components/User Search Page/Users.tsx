@@ -4,7 +4,35 @@ import { UserInfo } from "../interfaces";
 
 import "../Styles/darkMode.css";
 
-export const Users: React.FC<UserInfo> = ({ name, picture }) => {
+{
+  /* <Users
+// @ts-ignore
+key={userData.etag}
+// @ts-ignore
+videoId={userData.videoId}
+// @ts-ignore
+videoTitle={userData.snippet.title}
+// @ts-ignore
+channelTitle={userData.snippet.channelTitle}
+// @ts-ignore
+videoPic={userData.snippet.thumbnails.high.url}
+// @ts-ignore
+publishTime={userData.snippet.publishTime}
+/> */
+}
+
+export const Users: React.FC<UserInfo> = ({
+  // @ts-ignore
+  videoId,
+  // @ts-ignore
+  videoTitle,
+  // @ts-ignore
+  channelTitle,
+  // @ts-ignore
+  videoPic,
+  // @ts-ignore
+  publishTime,
+}) => {
   return (
     <div className="">
       <div className="flex justify-center md:px-3">
@@ -13,16 +41,15 @@ export const Users: React.FC<UserInfo> = ({ name, picture }) => {
             className="w-[100%] h-[300px]"
             width=""
             height=""
-            src="https://www.youtube.com/embed/bHFKkCcUjW0"
+            src={`https://www.youtube.com/embed/${videoId}`}
             allowFullScreen
           ></iframe>
           <div className="py-3">
-            <a href="https://www.youtube.com/">
-              1 hour of Studio Ghibli | Relaxing Piano Music (relax, study,
-              sleep)
+            <a href={`https://www.youtube.com/watch?v=${videoId}`}>
+              {videoTitle}
             </a>
-            <h5 className="text-gray-400 text-sm">Studio Ghibli</h5>
-            <h5 className="text-gray-400 text-sm">55k views 1 day ago</h5>
+            <h5 className="text-gray-400 text-sm">{channelTitle}</h5>
+            <h5 className="text-gray-400 text-sm">{publishTime}</h5>
           </div>
         </div>
       </div>

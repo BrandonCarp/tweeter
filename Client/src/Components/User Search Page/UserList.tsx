@@ -11,7 +11,21 @@ export const UserList = ({ userData }: UserListProps) => {
     <div className="">
       <div className="flex flex-wrap justify-center ">
         {userData.map((userData) => (
-          <Users key={userData} name={userData} picture={kohaku} />
+          // @ts-ignore
+          <Users
+            // @ts-ignore
+            key={userData.etag}
+            // @ts-ignore
+            videoId={userData.videoId}
+            // @ts-ignore
+            videoTitle={userData.snippet.title}
+            // @ts-ignore
+            channelTitle={userData.snippet.channelTitle}
+            // @ts-ignore
+            videoPic={userData.snippet.thumbnails.high.url}
+            // @ts-ignore
+            publishTime={userData.snippet.publishTime}
+          />
         ))}
       </div>
     </div>

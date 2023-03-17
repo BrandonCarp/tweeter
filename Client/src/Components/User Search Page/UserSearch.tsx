@@ -18,8 +18,8 @@ export function UserSearch() {
 
   const fetchData = async (query: String) => {
     const res = await axios.get(`http://localhost:8000/data/?q=${query}`);
-    console.log(res.data.items);
-    setApiState(res.data.characters);
+
+    setApiState(res.data.items);
   };
 
   return (
@@ -28,7 +28,16 @@ export function UserSearch() {
         <div className="">
           <div>
             <UserSearchBar fetchData={fetchData} />
-            <UserList userData={userData} />
+            <button
+              onClick={(e) => {
+                // @ts-ignore
+                console.log(apiState);
+              }}
+            >
+              {" "}
+              test
+            </button>
+            <UserList userData={apiState} />
             <ScrollButton />
           </div>
         </div>
