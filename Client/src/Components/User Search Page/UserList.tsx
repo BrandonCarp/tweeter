@@ -16,13 +16,11 @@ export const UserList = ({ userData }: UserListProps) => {
             // @ts-ignore
             key={userData.etag}
             // @ts-ignore
-            videoId={userData.videoId}
+            videoId={userData.id.videoId}
             // @ts-ignore
             videoTitle={userData.snippet.title}
             // @ts-ignore
             channelTitle={userData.snippet.channelTitle}
-            // @ts-ignore
-            videoPic={userData.snippet.thumbnails.high.url}
             // @ts-ignore
             publishTime={userData.snippet.publishTime}
           />

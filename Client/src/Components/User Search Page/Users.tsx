@@ -39,11 +39,10 @@ export const Users: React.FC<UserInfo> = ({
         <div className="my-5 text-center w-screen  md:w-[350px]">
           <iframe
             className="w-[100%] h-[300px]"
-            width=""
-            height=""
-            src={`https://www.youtube.com/embed/${videoId}`}
+            src={`https:/www.youtube.com/embed/${videoId}`}
             allowFullScreen
           ></iframe>
+
           <div className="py-3">
             <a href={`https://www.youtube.com/watch?v=${videoId}`}>
               {videoTitle}

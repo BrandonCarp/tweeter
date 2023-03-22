@@ -30,7 +30,7 @@ app.get(['/'], (req: Request, res: Response) => {
 
 app.get(['/data'], (req: Request, res: Response) => {
   const search = req.query.q;
-axios.get(`https://www.googleapis.com/youtube/v3/search?key=AIzaSyAT1esraP58Q36MlSj25D1oOIXgIwo3xq4&q=${search}&type=video&part=snippet&maxResults=20`)
+axios.get(`https://www.googleapis.com/youtube/v3/search?key=AIzaSyAT1esraP58Q36MlSj25D1oOIXgIwo3xq4&q=${search}&type=video&part=snippet&maxResults=21`)
 .then(function (response: Response) {
   // @ts-ignore
   res.send(response.data)
