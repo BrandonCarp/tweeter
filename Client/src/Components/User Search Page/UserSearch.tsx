@@ -17,30 +17,40 @@ export function UserSearch() {
   // const {isLoading, data: dailyVids} = useQuery(
   //   [`fetchData`,]
   // )
+  type UserListProps = {
+    userData: object;
+  };
 
-  const fetchData = async (query: String) => {
+  const fetchData = async (query: UserListProps) => {
     const res = await axios.get(`http://localhost:8000/data/?q=${query}`);
 
     setApiState(res.data.items);
-    console.log(apiState);
+    console.log(res.data);
   };
+
+  // const fetchMore = async() => {
+  //    const res = await axios.get(`http://localhost:8000/data/?q=${apiState}`);
+
+  // }
 
   return (
     <>
-      <div className="relative mx-auto  container " id="topApp">
+      <div className="relative mx-auto container">
         <div className="">
-          <div>
+          <div className="">
             <UserSearchBar fetchData={fetchData} />
             <button
               onClick={(e) => {
-                // @ts-ignore
-                console.log(apiState[0]);
+                console.log(apiState);
               }}
             >
               Test
             </button>
             <UserList userData={apiState} />
-            <button className=""> More</button>
+            <div className="flex items-center justify-center">
+              <button className="">More</button>
+            </div>
+
             <ScrollButton />
           </div>
         </div>
