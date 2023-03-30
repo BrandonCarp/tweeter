@@ -31,7 +31,7 @@ export const App = () => {
   // });
 
   return (
-    <div id={theme} className="h-[100vh]">
+    <div id={theme} className="h-[100vh]  ">
       <ThemeContext.Provider value={{ theme, toggleTheme }}>
         <div id={theme} className="">
           <ScrollToTop />

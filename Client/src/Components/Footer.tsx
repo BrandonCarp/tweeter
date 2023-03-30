@@ -9,7 +9,7 @@ export function Footer() {
 
   //  windowWidth.current
   return (
-    <div className="relative container mx-auto pb-5">
+    <div className=" container mx-auto pb-5  mt-auto">
       <div className="mb-[4.5rem]   flex flex-col items-center md:items-start md:ml-[20%] md:mb-0 md:mt-5  ">
         <div className="flex flex-col invisible md:visible  ">
           <h1 className="text-baselg font-bold">DailyVid</h1>

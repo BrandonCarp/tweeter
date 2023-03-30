@@ -32,10 +32,11 @@ export function UserSearch() {
   //    const res = await axios.get(`http://localhost:8000/data/?q=${apiState}`);
 
   // }
+  // Work on footer
 
   return (
     <>
-      <div className="relative mx-auto container">
+      <div className="relative mx-auto container h-[60vh] md:h-[70vh]  flex-col justify-start">
         <div className="">
           <div className="">
             <UserSearchBar fetchData={fetchData} />
