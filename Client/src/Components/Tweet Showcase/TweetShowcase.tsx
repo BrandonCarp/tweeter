@@ -1,11 +1,26 @@
-import React from "react";
+import React, { useState } from "react";
 import { FavoriteUsers } from "./FavoriteUsers";
-import { UserSearchBar } from "../User Search Page/UserSearchBar";
+import { ChannelSearchBar } from "./ChannelSearchBar";
+import { UserListProps } from "../Types/ThemeName";
+import axios from "axios";
 
 export const TweetShowcase = () => {
+  const [channelNames, setChannelNames] = useState();
+
+  const fetchChannels = async (query: UserListProps) => {
+    const res = await axios.get(
+      `http://localhost:8000/data/channels/?q=${query}`
+    );
+
+    setChannelNames(res.data.items);
+    console.log(res.data);
+  };
   return (
     <div className="mt-5 ">
-      <UserSearchBar />
+      <ChannelSearchBar fetchChannels={fetchChannels} />
+      <div>
+        <h1>Channel Names</h1>
+      </div>
       <FavoriteUsers />
     </div>
   );

@@ -3,6 +3,7 @@ import { UserSearchBar } from "./UserSearchBar";
 import { UserList } from "./UserList";
 import { ScrollButton } from "../ScrollButton";
 import axios from "axios";
+import { UserListProps } from "../Types/ThemeName";
 // import { useQuery } from "@tanstack/react-query";
 
 // create a search more at bottom and add that
@@ -17,12 +18,11 @@ export function UserSearch() {
   // const {isLoading, data: dailyVids} = useQuery(
   //   [`fetchData`,]
   // )
-  type UserListProps = {
-    userData: object;
-  };
 
   const fetchData = async (query: UserListProps) => {
-    const res = await axios.get(`http://localhost:8000/data/?q=${query}`);
+    const res = await axios.get(
+      `http://localhost:8000/data/search/?q=${query}`
+    );
 
     setApiState(res.data.items);
     console.log(res.data);
