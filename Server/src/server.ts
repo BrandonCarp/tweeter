@@ -1,8 +1,11 @@
 import express, {NextFunction, Request, Response} from "express";
+require("dotenv").config();
+console.log(process.env.YOUTUBE_API_KEY)
 import routes from "./routes";
 const axios = require('axios');
 
 const cors = require('cors');
+const YOUTUBE_API_KEY = process.env.YOUTUBE_API_KEY;
 
 
 const app = express();
@@ -29,7 +32,7 @@ app.get(['/'], (req: Request, res: Response) => {
 
 app.get(['/data/search'], (req: Request, res: Response) => {
   const search = req.query.q;
-axios.get(`https://www.googleapis.com/youtube/v3/search?key=AIzaSyAT1esraP58Q36MlSj25D1oOIXgIwo3xq4&q=${search}&type=video&part=snippet&maxResults=21`)
+axios.get(`https://www.googleapis.com/youtube/v3/search?key=${YOUTUBE_API_KEY}&q=${search}&type=video&part=snippet&maxResults=21`)
 .then(function (response: Response) {
   // @ts-ignore
   res.send(response.data)
@@ -40,7 +43,7 @@ axios.get(`https://www.googleapis.com/youtube/v3/search?key=AIzaSyAT1esraP58Q36M
 
 app.get(['/data/channels'], (req: Request, res: Response) => {
   const search = req.query.q;
-axios.get(`https://youtube.googleapis.com/youtube/v3/search?key=AIzaSyAT1esraP58Q36MlSj25D1oOIXgIwo3xq4&part=snippet&q=${search}&type=channel&maxResults=15`)
+axios.get(`https://youtube.googleapis.com/youtube/v3/search?key=${YOUTUBE_API_KEY}&part=snippet&q=${search}&type=channel&maxResults=15`)
 .then(function (response: Response) {
   // @ts-ignore
   res.send(response.data)
