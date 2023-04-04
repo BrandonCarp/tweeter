@@ -15,6 +15,7 @@ export  type PlaylistItemsResponse = {
 
 export type PlaylistItem = {
   id: string;
+  items: {
   snippet: {
     title: string;
     resourceId: {
@@ -22,4 +23,5 @@ export type PlaylistItem = {
       videoId: string;
     }
   }
+}
 }

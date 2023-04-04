@@ -9,7 +9,7 @@ export const TweetShowcase = () => {
 
   const fetchChannels = async (query: UserListProps) => {
     const res = await axios.get(
-      `http://localhost:8000/data/channels/?q=${query}`
+      `http://localhost:8000/data/channels/videos/?q=${query}`
     );
 
     setChannelNames(res.data.items);

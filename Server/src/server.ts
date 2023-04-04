@@ -1,7 +1,6 @@
 import express, {NextFunction, Request, Response} from "express";
 require("dotenv").config();
-console.log(process.env.YOUTUBE_API_KEY)
-import { PlaylistItem } from "./interface";
+import { PlaylistItemsResponse } from "./interface";
 import { AxiosResponse } from "axios";
 const axios = require('axios');
 
@@ -34,7 +33,7 @@ app.get(['/'], (req: Request, res: Response) => {
 app.get(['/data/search'], (req: Request, res: Response) => {
   const search = req.query.q;
 axios.get(`https://www.googleapis.com/youtube/v3/search?key=${YOUTUBE_API_KEY}&q=${search}&type=video&part=snippet&maxResults=21`)
-.then(function (response: AxiosResponse<PlaylistItem[]>) {
+.then(function (response: AxiosResponse<PlaylistItemsResponse[]>) {
  
   res.send(response.data)
 }).catch(function (error: Error) {
@@ -45,7 +44,7 @@ axios.get(`https://www.googleapis.com/youtube/v3/search?key=${YOUTUBE_API_KEY}&q
 app.get(['/data/channels'], (req: Request, res: Response) => {
   const search = req.query.q;
 axios.get(`https://youtube.googleapis.com/youtube/v3/search?key=${YOUTUBE_API_KEY}&part=snippet&q=${search}&type=channel&maxResults=15`)
-.then(function (response: AxiosResponse<PlaylistItem[]>) {
+.then(function (response: AxiosResponse<PlaylistItemsResponse[]>) {
   
   res.send(response.data)
 }).catch(function (error: Error) {
@@ -53,25 +52,39 @@ axios.get(`https://youtube.googleapis.com/youtube/v3/search?key=${YOUTUBE_API_KE
 })
 })
 
-// ABove is fine below  I need to on click fetch playlist of channel
+// Above is fine below  I need to on click fetch playlist of channel
 // then map through results and get video Id of each.
 // map through each video result and pass in data of videoId search
 
 app.get(['/data/channels/videos'], (req: Request, res: Response) => {
   const search = req.query.q;
 axios.get(`https://www.googleapis.com/youtube/v3/playlists?key=${YOUTUBE_API_KEY}&part=snippet&channelId=${search}&maxResults=5`)
-.then(function (response: AxiosResponse<PlaylistItem[]>) {
-   fetchVideos(response.data)
-  res.send(response.data)
+.then(function (response: AxiosResponse<PlaylistItemsResponse[]>) {
+  //@ts-ignore
+   const videos = Promise.all(response.data.items.map(fetchVideos));
+   console.log(videos)
+   
+  
+   
+  //@ts-ignore
+  // res.send(videos)
 }).catch(function (error: Error) {
-  console.log(error)
+  // console.log(error)
 })
 })
 
-const fetchVideos = async (responseData) => {
-  const 
+const fetchVideos = async (video: any, res: Response) => {
+  const id = await Promise.all([
+     axios.get(`https://www.googleapis.com/youtube/v3/playlistItems?
+     
+    part=snippet,contentDetails&playlistId=${video.id}9&maxResults=10&key=${YOUTUBE_API_KEY}`)
+     .then(function (response: AxiosResponse<PlaylistItemsResponse[]>){
+      return id;
+     })
+  ]) 
 }
 
+// res.data.items.id
 // Search Channels
 // Click On desired channel,  which adds it to another state AND resets the previous search
 // On that Click we fetch the playlist data
