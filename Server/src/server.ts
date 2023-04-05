@@ -52,32 +52,35 @@ axios.get(`https://youtube.googleapis.com/youtube/v3/search?key=${YOUTUBE_API_KE
 })
 })
 
-// Above is fine below  I need to on click fetch playlist of channel
-// then map through results and get video Id of each.
-// map through each video result and pass in data of videoId search
+// THE FUNCTIONS BELOW
 
 app.get(['/data/channels/videos'], (req: Request, res: Response) => {
   const search = req.query.q;
 axios.get(`https://www.googleapis.com/youtube/v3/playlists?key=${YOUTUBE_API_KEY}&part=snippet&channelId=${search}&maxResults=5`)
 .then(function (response: AxiosResponse<PlaylistItemsResponse[]>) {
-  //@ts-ignore
-    const videos = Promise.all(fetchVideos(response.data.value));
+     //@ts-ignore
+  fetchVideos(response.data.value)
     
 }).catch(function (error: Error) {
 })
 })
 
 const fetchVideos =  (playlistData: any, res: Response) => {
-   const videos = Promise.all(playlistData.map(fetchVideoId))
-   return videos;
+   const videos = Promise.all(playlistData.map((video: any) => {
+     axios.get(`https://www.googleapis.com/youtube/v3/playlistItems?part=snippet,contentDetails&playlistId=${video.id}9&maxResults=10&key=${YOUTUBE_API_KEY}`)
+    .then(function (response: AxiosResponse<PlaylistItemsResponse[]>) {
+      res.send(response.data)
+    })
+   }))
+   
 }
 
-const fetchVideoId = async (video: any, res: Response) => {
-   const [data] = await Promise.all([
-    axios.get(`https://www.googleapis.com/youtube/v3/playlistItems?part=snippet,contentDetails&playlistId=${video.id}9&maxResults=10&key=${YOUTUBE_API_KEY}`)
-   ])
-   return data;
-}
+// const fetchVideoId = async (video: any, res: Response) => {
+//    const [data] = await Promise.all([
+//     axios.get(`https://www.googleapis.com/youtube/v3/playlistItems?part=snippet,contentDetails&playlistId=${video.id}9&maxResults=10&key=${YOUTUBE_API_KEY}`)
+//    ])
+//    return data;
+// }
 // const videos = await axios.get(`https://www.googleapis.com/youtube/v3/playlistItems?part=snippet,contentDetails&playlistId=${video.id}9&maxResults=10&key=${YOUTUBE_API_KEY}`);
 //   return videos;
 
