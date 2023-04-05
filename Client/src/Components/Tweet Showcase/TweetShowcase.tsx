@@ -20,6 +20,7 @@ export const TweetShowcase = () => {
       <ChannelSearchBar fetchChannels={fetchChannels} />
       <div>
         <h1>Channel Names</h1>
+        <button onClick={(e) => console.log(channelNames)}>Click Test</button>
       </div>
       <FavoriteUsers />
     </div>
