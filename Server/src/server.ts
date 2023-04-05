@@ -66,11 +66,10 @@ axios.get(`https://www.googleapis.com/youtube/v3/playlists?key=${YOUTUBE_API_KEY
 })
 
 const fetchVideos =  (playlistData: any, res: Response) => {
-   const videos = Promise.all(playlistData.map((video: any) => {
-     axios.get(`https://www.googleapis.com/youtube/v3/playlistItems?part=snippet,contentDetails&playlistId=${video.id}9&maxResults=10&key=${YOUTUBE_API_KEY}`)
-    .then(function (response: AxiosResponse<PlaylistItemsResponse[]>) {
-      res.send(response.data)
-    })
+   const videos = Promise.all(playlistData.map(async (video: any) => {
+    const response: AxiosResponse<PlaylistItemsResponse[]> = 
+     await axios.get(`https://www.googleapis.com/youtube/v3/playlistItems?part=snippet,contentDetails&playlistId=${video.id}9&maxResults=10&key=${YOUTUBE_API_KEY}`)
+     res.send(response.data)
    }))
    
 }
