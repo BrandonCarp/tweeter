@@ -59,20 +59,23 @@ app.get(['/data/channels/videos'], (req: Request, res: Response) => {
 axios.get(`https://www.googleapis.com/youtube/v3/playlists?key=${YOUTUBE_API_KEY}&part=snippet&channelId=${search}&maxResults=5`)
 .then(function (response: AxiosResponse<PlaylistItemsResponse[]>) {
      //@ts-ignore
-  fetchVideos(response.data.value)
-    
+  Promise.all(response.data.items.map(video => fetchVideos(video)))
+  res.send(videos)
 }).catch(function (error: Error) {
 })
 })
 
+
+
 const fetchVideos =  (playlistData: any, res: Response) => {
-   const videos = Promise.all(playlistData.map(async (video: any) => {
-    const response: AxiosResponse<PlaylistItemsResponse[]> = 
-     await axios.get(`https://www.googleapis.com/youtube/v3/playlistItems?part=snippet,contentDetails&playlistId=${video.id}9&maxResults=10&key=${YOUTUBE_API_KEY}`)
-     res.send(response.data)
+Promise.all(playlistData.map((video: any) => {
+      axios.get(`https://www.googleapis.com/youtube/v3/playlistItems?part=snippet,contentDetails&playlistId=${video.id}9&maxResults=10&key=${YOUTUBE_API_KEY}`)
+     
    }))
    
 }
+
+// type of respone may be incorrect ?
 
 // const fetchVideoId = async (video: any, res: Response) => {
 //    const [data] = await Promise.all([
