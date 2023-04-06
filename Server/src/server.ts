@@ -52,28 +52,33 @@ axios.get(`https://youtube.googleapis.com/youtube/v3/search?key=${YOUTUBE_API_KE
 })
 })
 
-// THE FUNCTIONS BELOW
+// The functions below!!
 
 app.get(['/data/channels/videos'], (req: Request, res: Response) => {
   const search = req.query.q;
-axios.get(`https://www.googleapis.com/youtube/v3/playlists?key=${YOUTUBE_API_KEY}&part=snippet&channelId=${search}&maxResults=5`)
-.then(function (response: AxiosResponse<PlaylistItemsResponse[]>) {
-     //@ts-ignore
-  Promise.all(response.data.items.map(video => fetchVideos(video)))
-  res.send(videos)
-}).catch(function (error: Error) {
-})
-})
-
-
-
-const fetchVideos =  (playlistData: any, res: Response) => {
-Promise.all(playlistData.map((video: any) => {
-      axios.get(`https://www.googleapis.com/youtube/v3/playlistItems?part=snippet,contentDetails&playlistId=${video.id}9&maxResults=10&key=${YOUTUBE_API_KEY}`)
+const videos = axios.get(`https://www.googleapis.com/youtube/v3/playlists?key=${YOUTUBE_API_KEY}&part=snippet&channelId=${search}&maxResults=5`)
+.then((response: AxiosResponse<any>) => (
      
-   }))
-   
-}
+  Promise.all(response.data.items.map((video: any) => fetchVideos(video)))
+))
+res.send(videos)
+})
+
+
+const fetchVideos = async (playlistData: any) => {
+    const res = await axios.get(`https://www.googleapis.com/youtube/v3/playlistItems?part=snippet,contentDetails&playlistId=${playlistData.id}&maxResults=10&key=${YOUTUBE_API_KEY}`)
+     return res;
+   }
+
+  //  const fetchData = async (query: UserListProps) => {
+  //   const res = await axios.get(
+  //     `http://localhost:8000/data/search/?q=${query}`
+  //   );
+
+  //   setApiState(res.data.items);
+  //   console.log(res.data);
+  // };
+
 
 // type of respone may be incorrect ?
 

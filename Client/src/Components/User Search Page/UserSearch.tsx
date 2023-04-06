@@ -36,7 +36,7 @@ export function UserSearch() {
 
   return (
     <>
-      <div className="relative mx-auto container h-[60vh] md:h-[70vh]  flex-col justify-start">
+      <div className="relative mx-auto container   flex-col justify-start">
         <div className="">
           <div className="">
             <UserSearchBar fetchData={fetchData} />

@@ -5,7 +5,7 @@ import { UserListProps } from "../Types/ThemeName";
 import axios from "axios";
 
 export const TweetShowcase = () => {
-  const [channelNames, setChannelNames] = useState();
+  const [channelNames, setChannelNames] = useState([]);
 
   const fetchChannels = async (query: UserListProps) => {
     const res = await axios.get(
@@ -13,7 +13,6 @@ export const TweetShowcase = () => {
     );
 
     setChannelNames(res.data.items);
-    console.log(res.data);
   };
   return (
     <div className="mt-5 ">
