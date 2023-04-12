@@ -55,21 +55,34 @@ axios.get(`https://youtube.googleapis.com/youtube/v3/search?key=${YOUTUBE_API_KE
 })
 })
 
-// The functions below!!
+// BElow
 
-app.get(['/data/channels/videos'], async (req: Request, res: Response) => {
+app.get(['/data/channels/videos'],  (req: Request, res: Response) => {
   const search = req.query.q;
-  try {
-    //@ts-ignore
-    const getItems = async id => await axios.get(`https://www.googleapis.com/youtube/v3/playlistItems?part=snippet,contentDetails&playlistId=${id}&maxResults=10&key=${YOUTUBE_API_KEY}`);
-    const results = await axios.get(`https://www.googleapis.com/youtube/v3/playlists?key=${YOUTUBE_API_KEY}&part=snippet&channelId=${search}&maxResults=5`);
-    //@ts-ignore
-    const videos = await Promise.all(results.items.map(video => getItems(video.id)));
-    return res.send(videos);
-  } catch {
-    console.log('Error')
-  }
-});
+ axios.get(`https://www.googleapis.com/youtube/v3/playlists?key=${YOUTUBE_API_KEY}&part=snippet&channelId=${search}&maxResults=5`)
+.then(function (response: AxiosResponse<PlaylistItemsResponse[]>) {
+  const videos =  Promise.all(response.results.items.map(video => getItems(video.id)));
+
+  
+}).catch(function (error: Error) {
+  console.log(error)
+})
+})
+
+
+// app.get(['/data/channels/videos'], async (req: Request, res: Response) => {
+//   const search = req.query.q;
+//   try {
+//     const results = await axios.get(`https://www.googleapis.com/youtube/v3/playlists?key=${YOUTUBE_API_KEY}&part=snippet&channelId=${search}&maxResults=5`);
+//     //@ts-ignore
+//     const getItems = async id => await axios.get(`https://www.googleapis.com/youtube/v3/playlistItems?part=snippet,contentDetails&playlistId=${id}&maxResults=10&key=${YOUTUBE_API_KEY}`);
+//     //@ts-ignore
+//     const videos = await Promise.all(results.items.map(video => getItems(video.id)));
+//     return res.send(videos);
+//   } catch {
+//     console.log('Error')
+//   }
+// });
 
 // const [videos] = axios.get(`https://www.googleapis.com/youtube/v3/playlists?key=${YOUTUBE_API_KEY}&part=snippet&channelId=${search}&maxResults=5`)
 // .then((response: AxiosResponse<any>) => (
