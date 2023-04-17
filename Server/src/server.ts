@@ -17,10 +17,10 @@ const PORT = 8000;
 
 app.use(express.json())
 
-// const fetchVideos = async (playlistData: any) => {
-//   const res = await axios.get(`https://www.googleapis.com/youtube/v3/playlistItems?part=snippet,contentDetails&playlistId=${playlistData.id}&maxResults=10&key=${YOUTUBE_API_KEY}`)
-//    return res;
-//  }
+const fetchVideos = async (playlistData: any) => {
+  const res = await axios.get(`https://www.googleapis.com/youtube/v3/playlistItems?part=snippet,contentDetails&playlistId=${playlistData.id}&maxResults=10&key=${YOUTUBE_API_KEY}`)
+   return res;
+ }
 
 app.use(function (req: Request, res: Response, next: NextFunction) {
   res.setHeader('Cross-Origin-Resource-Policy', 'same-site')
@@ -48,21 +48,28 @@ app.get(['/data/channels'], (req: Request, res: Response) => {
   const search = req.query.q;
 axios.get(`https://youtube.googleapis.com/youtube/v3/search?key=${YOUTUBE_API_KEY}&part=snippet&q=${search}&type=channel&maxResults=15`)
 .then(function (response: AxiosResponse<PlaylistItemsResponse[]>) {
-  
-  res.send(response.data)
+   res.send(response.data)
 }).catch(function (error: Error) {
   console.log(error)
 })
 })
 
 // BElow
+//@ts-ignore
 
-app.get(['/data/channels/videos'],  (req: Request, res: Response) => {
+// const getItems = async id => await axios.get(`https://www.googleapis.com/youtube/v3/playlistItems?part=snippet,contentDetails&playlistId=${id}&maxResults=10&key=${YOUTUBE_API_KEY}`);
+
+
+app.get(['/data/channels/videos'], async (req: Request, res: Response) => {
   const search = req.query.q;
  axios.get(`https://www.googleapis.com/youtube/v3/playlists?key=${YOUTUBE_API_KEY}&part=snippet&channelId=${search}&maxResults=5`)
-.then(function (response: AxiosResponse<PlaylistItemsResponse[]>) {
-  const videos =  Promise.all(response.results.items.map(video => getItems(video.id)));
-
+.then(function (response: any) {
+  const videoData = response.data;
+  //@ts-ignore
+  const videos =  await Promise.all(videoData.map(video => fetchVideos(video.id)));
+ return res.send(videos)
+// const data = response.data;
+// console.log(data)
   
 }).catch(function (error: Error) {
   console.log(error)
@@ -80,7 +87,7 @@ app.get(['/data/channels/videos'],  (req: Request, res: Response) => {
 //     const videos = await Promise.all(results.items.map(video => getItems(video.id)));
 //     return res.send(videos);
 //   } catch {
-//     console.log('Error')
+//     console.log(res)
 //   }
 // });
 
