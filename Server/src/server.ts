@@ -1,6 +1,6 @@
 import express, {NextFunction, Request, Response} from "express";
 require("dotenv").config();
-import { PlaylistItemsResponse } from "./interface";
+import { YoutubePlaylistItem, YoutubePlaylist, YoutubePlaylistItemsResponse } from "./interface";
 import { AxiosResponse } from "axios";
 const axios = require('axios');
 
@@ -17,10 +17,7 @@ const PORT = 8000;
 
 app.use(express.json())
 
-const fetchVideos = async (playlistData: any) => {
-  const res = await axios.get(`https://www.googleapis.com/youtube/v3/playlistItems?part=snippet,contentDetails&playlistId=${playlistData.id}&maxResults=10&key=${YOUTUBE_API_KEY}`)
-   return res;
- }
+
 
 app.use(function (req: Request, res: Response, next: NextFunction) {
   res.setHeader('Cross-Origin-Resource-Policy', 'same-site')
@@ -36,7 +33,7 @@ app.get(['/'], (req: Request, res: Response) => {
 app.get(['/data/search'], (req: Request, res: Response) => {
   const search = req.query.q;
 axios.get(`https://www.googleapis.com/youtube/v3/search?key=${YOUTUBE_API_KEY}&q=${search}&type=video&part=snippet&maxResults=21`)
-.then(function (response: AxiosResponse<PlaylistItemsResponse[]>) {
+.then(function (response: AxiosResponse<YoutubePlaylistItemsResponse[]>) {
  
   res.send(response.data)
 }).catch(function (error: Error) {
@@ -47,61 +44,39 @@ axios.get(`https://www.googleapis.com/youtube/v3/search?key=${YOUTUBE_API_KEY}&q
 app.get(['/data/channels'], (req: Request, res: Response) => {
   const search = req.query.q;
 axios.get(`https://youtube.googleapis.com/youtube/v3/search?key=${YOUTUBE_API_KEY}&part=snippet&q=${search}&type=channel&maxResults=15`)
-.then(function (response: AxiosResponse<PlaylistItemsResponse[]>) {
+.then(function (response: AxiosResponse<YoutubePlaylistItemsResponse[]>) {
    res.send(response.data)
 }).catch(function (error: Error) {
   console.log(error)
 })
 })
 
-// BElow
-//@ts-ignore
 
-// const getItems = async id => await axios.get(`https://www.googleapis.com/youtube/v3/playlistItems?part=snippet,contentDetails&playlistId=${id}&maxResults=10&key=${YOUTUBE_API_KEY}`);
+// UCiYcA0gJzg855iSKMrX3oHg
 
-
-// app.get(['/data/channels/videos'], async (req: Request, res: Response) => {
-//   const search = req.query.q;
-//  axios.get(`https://www.googleapis.com/youtube/v3/playlists?key=${YOUTUBE_API_KEY}&part=snippet&channelId=${search}&maxResults=5`)
-// .then (function (response: any)  {
-//   const videoData =  response.data;
-//   //@ts-ignore
-//   const videos = await Promise.all(videoData.map(video => fetchVideos(video.id)));
-// //  return res.send(videos)
-
-// console.log(videos)
-  
-// }).catch(function (error: Error) {
-//   console.log(error)
-// })
-// })
-
-  // @ts-ignore
-  // const getItems = async id => await axios.get(
-  //   `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet,contentDetails&playlistId=${id}&maxResults=10&key=${YOUTUBE_API_KEY}`
-  // );
 
 
 app.get(["/data/channels/videos"], async (req: Request, res: Response) => {
   const search = req.query.q;
-  //@ts-ignore
-  const getItems = async id => await axios.get(
+  const getItems = async (id: string): Promise<YoutubePlaylistItem> => await axios.get(
     `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet,contentDetails&playlistId=${id}&maxResults=10&key=${YOUTUBE_API_KEY}`
   );
   try {
      const results = await axios.get(
-        `https://www.googleapis.com/youtube/v3/playlists?key=${YOUTUBE_API_KEY}&part=snippet&channelId=${search}&maxResults=5`
+        `https://www.googleapis.com/youtube/v3/playlists?key=${YOUTUBE_API_KEY}&part=snippet&channelId=${search}&maxResults=3`
     )
     const resultItems = results.data.items;
-    // @ts-ignore
-    const videos = await Promise.all(resultItems.map(video => getItems(video.id)));
-    
-    console.log(videos)
-     res.send(videos);
-  } catch {
-    // send error response
+    const videos = await Promise.all(resultItems.map((video: YoutubePlaylist) => getItems(video.id)));
+    const videoData = videos.map(video => video.data.items.map((item: YoutubePlaylistItem) => item.snippet));
+ 
+     res.send(videoData);
+  } catch (error) {
+    console.error(error);
+    res.status(500).send('Error fetching video data')
   }
 });
+
+
 
 app.listen(PORT, () => {
   console.log(`Application is listening on http://localhost:${PORT}`)

@@ -12,7 +12,7 @@ export const TweetShowcase = () => {
       `http://localhost:8000/data/channels/videos/?q=${query}`
     );
 
-    setChannelNames(res.data.items);
+    setChannelNames(res.data);
   };
   return (
     <div className="mt-5 ">

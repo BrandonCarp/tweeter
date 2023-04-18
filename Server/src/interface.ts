@@ -1,27 +1,67 @@
-export  type PlaylistItemsResponse = {
-  data: {
-    items: {
-      id: string;
-      snippet: {
-        title: string;
-        resourceId: {
-          kind: string;
-          videoId: string;
-        }
-      }
-    }[]
-  }
+
+export interface YoutubeVideoSnippet {
+  title: string;
+  description: string;
+  publishedAt: string;
+  thumbnails: {
+    default: {
+      url: string;
+    };
+    medium: {
+      url: string;
+    };
+    high: {
+      url: string;
+    };
+  };
 }
 
-export type PlaylistItem = {
+export interface YoutubeVideo {
+  snippet: YoutubeVideoSnippet;
+}
+
+export interface YoutubePlaylistItem {
   id: string;
-  items: {
   snippet: {
     title: string;
-    resourceId: {
-      kind: string;
-      videoId: string;
-    }
-  }
+    description: string;
+    thumbnails: {
+      default: {
+        url: string;
+      };
+      medium: {
+        url: string;
+      };
+      high: {
+        url: string;
+      };
+    };
+  };
 }
+
+export interface YoutubePlaylistItemsResponse {
+  items: YoutubePlaylistItem[];
+}
+
+export interface YoutubePlaylist {
+  id: string;
+  snippet: {
+    title: string;
+    description: string;
+    thumbnails: {
+      default: {
+        url: string;
+      };
+      medium: {
+        url: string;
+      };
+      high: {
+        url: string;
+      };
+    };
+  };
+}
+
+export interface YoutubePlaylistsResponse {
+  items: YoutubePlaylist[];
 }
