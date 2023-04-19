@@ -11,14 +11,14 @@ import { ThemeContext } from "../Context/ThemeContext";
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
-  const openModal = (e: React.MouseEvent<HTMLButtonElement>) => {
+  const openModal = (e) => {
     setIsOpen(true);
     if (typeof window != "undefined" && window.document) {
       document.body.style.overflow = "hidden";
     }
   };
 
-  const closeModal = (e: React.MouseEvent<HTMLButtonElement>) => {
+  const closeModal = (e) => {
     setIsOpen(false);
     document.body.style.overflow = "unset";
   };

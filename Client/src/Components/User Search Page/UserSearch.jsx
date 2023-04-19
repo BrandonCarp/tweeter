@@ -19,7 +19,7 @@ export function UserSearch() {
   //   [`fetchData`,]
   // )
 
-  const fetchData = async (query: UserListProps) => {
+  const fetchData = async (query) => {
     const res = await axios.get(
       `http://localhost:8000/data/search/?q=${query}`
     );

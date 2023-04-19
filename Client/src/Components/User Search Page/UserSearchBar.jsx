@@ -3,18 +3,18 @@ import { BiSearch } from "react-icons/bi";
 import "../Styles/darkMode.css";
 import { ThemeContext } from "../Context/ThemeContext";
 
-export function ChannelSearchBar({ fetchChannels }: any) {
+export function UserSearchBar({ fetchData }) {
   const [query, setQuery] = useState("");
 
   const { theme } = useContext(ThemeContext);
-  const handleSubmit = (event: React.FormEvent) => {
+  const handleSubmit = (event) => {
     event.preventDefault();
-    fetchChannels(query);
+    fetchData(query);
 
     setQuery("");
   };
 
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (event) => {
     setQuery(event.target.value);
     console.log();
   };

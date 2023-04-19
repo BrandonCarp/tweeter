@@ -4,16 +4,16 @@ import { UserInfo } from "../interfaces";
 
 import "../Styles/darkMode.css";
 
-export const Users: React.FC<UserInfo> = ({
-  // @ts-ignore
+export const Users = ({
+ 
   videoId,
-  // @ts-ignore
+
   videoTitle,
-  // @ts-ignore
+
   channelTitle,
-  // @ts-ignore
+  
   videoPic,
-  // @ts-ignore
+
   publishTime,
 }) => {
   return (

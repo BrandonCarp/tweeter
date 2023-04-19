@@ -5,7 +5,7 @@ import { GrClose } from "react-icons/gr";
 export function HamburgerLinks() {
   const navigate = useNavigate();
 
-  const pageNavigation = (event: React.MouseEvent<HTMLButtonElement>) => {
+  const pageNavigation = (event) => {
     navigate(-1)
   };
   return (

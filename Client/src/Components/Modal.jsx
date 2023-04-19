@@ -9,7 +9,7 @@ import { ThemeContext } from "./Context/ThemeContext";
 
 
 
-const modal_styles: React.CSSProperties = {
+const modal_styles = {
   position: "fixed",
   top: 0,
   width: "100%",
@@ -17,7 +17,7 @@ const modal_styles: React.CSSProperties = {
  padding: "15px",
   zIndex: 1000,
 };
-const overlay_styles: React.CSSProperties = {
+const overlay_styles = {
   position: "fixed",
   top: 0,
   left: 0,
@@ -30,7 +30,7 @@ const overlay_styles: React.CSSProperties = {
 
 
 
-export const Modal = (props: { closeModal: (e:  React.MouseEvent<HTMLButtonElement>) => void, open: boolean, children: React.ReactNode }) => {
+export const Modal = ({ closeModal, open, children}) => {
   const {theme} = useContext(ThemeContext);
   if (!props.open) return null;
   return ReactDom.createPortal(
@@ -55,6 +55,6 @@ export const Modal = (props: { closeModal: (e:  React.MouseEvent<HTMLButtonEleme
      
     
    ,
-    document.getElementById("portal")!
+    document.getElementById("portal")
   );
 };
