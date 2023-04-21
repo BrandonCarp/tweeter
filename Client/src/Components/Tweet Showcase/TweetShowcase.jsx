@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { FavoriteUsers } from "./FavoriteUsers";
 import { ChannelSearchBar } from "./ChannelSearchBar";
-import { UserListProps } from "../Types/ThemeName";
 import { ChannelList } from "./ChannelList";
 import axios from "axios";
 

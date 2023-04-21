@@ -30,9 +30,9 @@ const overlay_styles = {
 
 
 
-export const Modal = ({ closeModal, open, children}) => {
+export const Modal = ( closeModal, open, children) => {
   const {theme} = useContext(ThemeContext);
-  if (!props.open) return null;
+  if (open) return null;
   return ReactDom.createPortal(
 
     <AnimatePresence>
@@ -45,10 +45,10 @@ export const Modal = ({ closeModal, open, children}) => {
       
       transition={{ease:"easeIn", duration: .4}}
       id={theme} style={modal_styles}  className="" >
-        <button onClick={props.closeModal} className="fixed top-2 left-2 ">
+        <button onClick={closeModal} className="fixed top-2 left-2 ">
           <AiOutlineClose id={theme} className="text-[1.4rem]"/>
         </button>
-        <h1 className="">{props.children}</h1>
+        <h1 className="">{children}</h1>
        </motion.div>
     </div>
     </AnimatePresence>

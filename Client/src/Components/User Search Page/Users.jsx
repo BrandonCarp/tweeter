@@ -1,6 +1,6 @@
 import React from "react";
 import templatePic from "./Imgs/youtubepic.jpg";
-import { UserInfo } from "../interfaces";
+
 
 import "../Styles/darkMode.css";
 

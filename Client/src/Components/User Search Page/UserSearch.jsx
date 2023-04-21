@@ -3,7 +3,6 @@ import { UserSearchBar } from "./UserSearchBar";
 import { UserList } from "./UserList";
 import { ScrollButton } from "../ScrollButton";
 import axios from "axios";
-import { UserListProps } from "../Types/ThemeName";
 // import { useQuery } from "@tanstack/react-query";
 
 // create a search more at bottom and add that
