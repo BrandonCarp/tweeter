@@ -1,11 +1,9 @@
 import React,{useContext} from "react";
 import { AiOutlineClose } from "react-icons/ai";
-import ReactDom from "react-dom";
 import "./Styles/darkMode.css"
 import { AnimatePresence, motion } from "framer-motion";
-
 import { ThemeContext } from "./Context/ThemeContext";
-
+import { NavLink } from "react-router-dom";
 
 
 
@@ -30,10 +28,10 @@ const overlay_styles = {
 
 
 
-export const Modal = ( closeModal, open, children) => {
+export const Modal = ( {closeModal} ) => {
   const {theme} = useContext(ThemeContext);
-  if (open) return null;
-  return ReactDom.createPortal(
+  
+  return (
 
     <AnimatePresence>
  <div
@@ -48,13 +46,26 @@ export const Modal = ( closeModal, open, children) => {
         <button onClick={closeModal} className="fixed top-2 left-2 ">
           <AiOutlineClose id={theme} className="text-[1.4rem]"/>
         </button>
-        <h1 className="">{children}</h1>
+        <ul className=" space-y-3 text-baselg flex flex-col items-center ">
+                <motion.li className="" whileHover={{ scale: 1.1 }}>
+                  <NavLink to="/" className=" p-1">
+                    <button onClick={closeModal}>Home</button>
+                  </NavLink>
+                </motion.li>
+                <motion.li whileHover={{ scale: 1.1 }}>
+                  <NavLink to="/usersearch" className="">
+                    <button onClick={closeModal}>Video Search</button>
+                  </NavLink>
+                </motion.li>
+                <motion.li className="" whileHover={{ scale: 1.1 }}>
+                  <NavLink to="/showcase" className="">
+                    <button onClick={closeModal}>Explore</button>
+                  </NavLink>
+                </motion.li>
+              </ul>
        </motion.div>
     </div>
     </AnimatePresence>
      
-    
-   ,
-    document.getElementById("portal")
   );
 };

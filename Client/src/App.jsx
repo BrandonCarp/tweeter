@@ -50,7 +50,7 @@ export const App = () => {
             <Route path="/showcase" element={<TweetShowcase />} />
             <Route path="/hamburgerlink" element={<HamburgerLinks />} />
           </Routes>
-          <Footer />
+          {/* <Footer /> */}
         </div>
       </ThemeContext.Provider>
     </div>

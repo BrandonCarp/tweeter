@@ -17,7 +17,7 @@ export const ScrollButton = () => {
     }
   }
 
-const scrollClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+const scrollClick = (e) => {
   window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
 }
 

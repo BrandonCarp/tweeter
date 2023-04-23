@@ -3,6 +3,8 @@ import { motion } from "framer-motion";
 import { NavLink } from "react-router-dom";
 import homeImg from "./HomeImgs/homePage.jpg";
 import { BsArrowRightCircle } from "react-icons/bs";
+import { Footer } from "../Footer";
+import { MobileFooter } from "../MobileFooter";
 
 export const Hero = () => {
   return (
@@ -45,7 +47,8 @@ export const Hero = () => {
           </div>
         </div>
       </div>
-      {/* <Footer /> */}
+      <Footer />
+      <MobileFooter />
     </>
   );
 };

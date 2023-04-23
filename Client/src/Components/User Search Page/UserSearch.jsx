@@ -3,6 +3,9 @@ import { UserSearchBar } from "./UserSearchBar";
 import { UserList } from "./UserList";
 import { ScrollButton } from "../ScrollButton";
 import axios from "axios";
+import { Footer } from "../Footer";
+import { MobileFooter } from "../MobileFooter";
+import loading from './Imgs/loading.gif';
 // import { useQuery } from "@tanstack/react-query";
 
 // create a search more at bottom and add that
@@ -39,23 +42,17 @@ export function UserSearch() {
         <div className="">
           <div className="">
             <UserSearchBar fetchData={fetchData} />
-            <button
-              onClick={(e) => {
-                console.log(apiState);
-              }}
-            >
-              Test
-            </button>
-            <UserList userData={apiState} />
-            <div className="flex items-center justify-center">
-              <button className="">More</button>
-            </div>
-
+            {apiState.length > 5 ? <UserList userData={apiState} /> : <img className=" mx-auto " src={loading} /> }
+        
+           
             <ScrollButton />
           </div>
         </div>
       </div>
-      {/* <Footer /> */}
+      <div className=" bottom-0 left-0 right-0">
+        <Footer />
+      </div>
+      <MobileFooter />
     </>
   );
 }

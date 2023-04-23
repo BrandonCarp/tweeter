@@ -2,32 +2,37 @@ import React, { useState } from "react";
 import { FavoriteUsers } from "./FavoriteUsers";
 import { ChannelSearchBar } from "./ChannelSearchBar";
 import { ChannelList } from "./ChannelList";
+import loading from './Imgs/loading.gif';
 import axios from "axios";
 
 export const TweetShowcase = () => {
-  const [channelNames, setChannelNames] = useState([]);
+  const [channelData, setChannelData] = useState([]);
+  const [favoriteChannels, setFavoriteChannels] = useState([]);
 
   const fetchChannels = async (query) => {
     const res = await axios.get(
       `http://localhost:8000/data/channels/?q=${query}`
     );
 
-    setChannelNames(res.data);
+    setChannelData(res.data);
   };
-  // Api for fetching channel PLAYLISTS
-  // const res = await axios.get(
-  //   `http://localhost:8000/data/channels/videos/?q=${query}`
-  // );
+
+  const fetchPlayList = async (query) => {
+    const res = await axios.get(`http://localhost:8000/data/channels/videos/?q=${query}`);
+
+     setFavoriteChannels(res.data);
+  }
+  
   return (
     <div className="mt-5 ">
       <ChannelSearchBar fetchChannels={fetchChannels} />
       <div>
-        <h1>Channel Names</h1>
-        <button onClick={(e) => console.log(channelNames)}>Click Test</button>
+        {/* <button onClick={(e) => console.log(channelNames)}>Click Test</button> */}
       </div>
       {/* Favorite Users selection there */}
       {/* <FavoriteUsers /> */}
-      <ChannelList channels={channelNames} />
+      <button onClick={(e) => console.log(channelData.items[0].snippet.channelTitle)}>Click</button>
+      {channelData.length > 1 ? <ChannelList channelData={channelData.items} /> : <img className=" mx-auto " src={loading} /> }
     </div>
   );
 };

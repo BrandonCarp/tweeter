@@ -5,7 +5,6 @@ import { NavLink } from "react-router-dom";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { Modal } from "../Modal";
 import { motion } from "framer-motion";
-
 import { ThemeContext } from "../Context/ThemeContext";
 
 export function Navbar() {
@@ -13,14 +12,14 @@ export function Navbar() {
 
   const openModal = (e) => {
     setIsOpen(true);
-    if (typeof window != "undefined" && window.document) {
-      document.body.style.overflow = "hidden";
-    }
+    // if (typeof window != "undefined" && window.document) {
+    //   document.body.style.overflow = "hidden";
+    // }
   };
 
   const closeModal = (e) => {
     setIsOpen(false);
-    document.body.style.overflow = "unset";
+    // document.body.style.overflow = "unset";
   };
 
   const { toggleTheme } = useContext(ThemeContext);
@@ -34,26 +33,9 @@ export function Navbar() {
             <button onClick={openModal}>
               <GiHamburgerMenu />
             </button>
-
-            <Modal closeModal={closeModal} open={isOpen}>
-              <ul className=" space-y-3 text-baselg flex flex-col items-center ">
-                <motion.li className="" whileHover={{ scale: 1.1 }}>
-                  <NavLink to="/" className=" p-1">
-                    <button onClick={closeModal}>Home</button>
-                  </NavLink>
-                </motion.li>
-                <motion.li whileHover={{ scale: 1.1 }}>
-                  <NavLink to="/usersearch" className="">
-                    <button onClick={closeModal}>Video Search</button>
-                  </NavLink>
-                </motion.li>
-                <motion.li className="" whileHover={{ scale: 1.1 }}>
-                  <NavLink to="/showcase" className="">
-                    <button onClick={closeModal}>Explore</button>
-                  </NavLink>
-                </motion.li>
-              </ul>
-            </Modal>
+          
+           {isOpen && <Modal closeModal={closeModal} open={isOpen}/>}
+           
           </li>
 
           <li className="text-baselg flex pt-2   justify-center space-x-5">
