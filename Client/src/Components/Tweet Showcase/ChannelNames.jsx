@@ -1,10 +1,10 @@
 import React from "react";
 
-export const ChannelNames = ({channelName,channelId, myFetch}) => {
+export const ChannelNames = ({channelName,channelId,  myFetch}) => {
   return (
     <>
-    <button onClick={e => myFetch(channelId)}>{channelName}</button>
     
+    <button onClick={e => myFetch(channelId)}>{channelName}</button>
     </>
   )
 }

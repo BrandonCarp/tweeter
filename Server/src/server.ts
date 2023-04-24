@@ -32,7 +32,7 @@ app.get(['/'], (req: Request, res: Response) => {
 
 app.get(['/data/search'], (req: Request, res: Response) => {
   const search = req.query.q;
-axios.get(`https://www.googleapis.com/youtube/v3/search?key=${YOUTUBE_API_KEY}&q=${search}&type=video&part=snippet&maxResults=10`)
+axios.get(`https://www.googleapis.com/youtube/v3/search?key=${YOUTUBE_API_KEY}&q=${search}&type=video&part=snippet&maxResults=6`)
 .then(function (response: AxiosResponse<YoutubePlaylistItemsResponse[]>) {
  
   res.send(response.data)
@@ -43,16 +43,13 @@ axios.get(`https://www.googleapis.com/youtube/v3/search?key=${YOUTUBE_API_KEY}&q
 
 app.get(['/data/channels'], (req: Request, res: Response) => {
   const search = req.query.q;
-axios.get(`https://youtube.googleapis.com/youtube/v3/search?key=${YOUTUBE_API_KEY}&part=snippet&q=${search}&type=channel&maxResults=10`)
+axios.get(`https://youtube.googleapis.com/youtube/v3/search?key=${YOUTUBE_API_KEY}&part=snippet&q=${search}&type=channel&maxResults=5`)
 .then(function (response: AxiosResponse<YoutubePlaylistItemsResponse[]>) {
    res.send(response.data)
 }).catch(function (error: Error) {
   console.log(error)
 })
 })
-
-
-// UCiYcA0gJzg855iSKMrX3oHg
 
 
 

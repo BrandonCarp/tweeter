@@ -5,7 +5,7 @@ import { ThemeContext } from "../Context/ThemeContext";
 import "../Styles/darkMode.css";
 import { Carousel } from "./Carousel";
 
-export const FavoriteUsers = () => {
+export const FavoriteUsers = ({}) => {
   const theme = useContext(ThemeContext);
   return (
     <>

@@ -42,7 +42,7 @@ export const Hero = () => {
             <h1 className="md:text-xl text-md font-bold">DailyVid</h1>
             <p className=" text-center p-5 text-baselg md:mb-10 md:px-[2.5rem]">
               DailyVid is a application that is designed to help people connect,
-              and find communities of interest.
+              and find videos of interest.
             </p>
           </div>
         </div>
