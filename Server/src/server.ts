@@ -32,7 +32,7 @@ app.get(['/'], (req: Request, res: Response) => {
 
 app.get(['/data/search'], (req: Request, res: Response) => {
   const search = req.query.q;
-axios.get(`https://www.googleapis.com/youtube/v3/search?key=${YOUTUBE_API_KEY}&q=${search}&type=video&part=snippet&maxResults=21`)
+axios.get(`https://www.googleapis.com/youtube/v3/search?key=${YOUTUBE_API_KEY}&q=${search}&type=video&part=snippet&maxResults=10`)
 .then(function (response: AxiosResponse<YoutubePlaylistItemsResponse[]>) {
  
   res.send(response.data)
