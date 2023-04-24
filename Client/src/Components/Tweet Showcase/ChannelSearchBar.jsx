@@ -16,7 +16,6 @@ export function ChannelSearchBar({ fetchChannels }) {
 
   const handleChange = (event) => {
     setQuery(event.target.value);
-    console.log();
   };
 
   return (

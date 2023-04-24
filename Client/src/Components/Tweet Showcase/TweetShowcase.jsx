@@ -14,7 +14,7 @@ export const TweetShowcase = () => {
       `http://localhost:8000/data/channels/?q=${query}`
     );
 
-    setChannelData(res.data);
+    setChannelData(res.data.items);
   };
 
   const fetchPlayList = async (query) => {
@@ -31,8 +31,8 @@ export const TweetShowcase = () => {
       </div>
       {/* Favorite Users selection there */}
       {/* <FavoriteUsers /> */}
-      <button onClick={(e) => console.log(channelData.items[0].snippet.channelTitle)}>Click</button>
-      {channelData.length > 1 ? <ChannelList channelData={channelData.items} /> : <img className=" mx-auto " src={loading} /> }
+      <button onClick={(e) => console.log(channelData)}>Click</button>
+    <ChannelList channelData={channelData} /> 
     </div>
   );
 };
