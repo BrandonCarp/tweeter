@@ -31,8 +31,8 @@ export const TweetShowcase = () => {
       </div>
       {/* Favorite Users selection there */}
       {/* <FavoriteUsers /> */}
-      <button onClick={(e) => console.log(channelData)}>Click</button>
-    <ChannelList channelData={channelData} /> 
+      <button onClick={(e) => console.log(favoriteChannels)}>Click</button>
+    <ChannelList myFetch={fetchPlayList} channelData={channelData} /> 
     </div>
   );
 };
