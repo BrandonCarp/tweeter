@@ -43,7 +43,7 @@ axios.get(`https://www.googleapis.com/youtube/v3/search?key=${YOUTUBE_API_KEY}&q
 
 app.get(['/data/channels'], (req: Request, res: Response) => {
   const search = req.query.q;
-axios.get(`https://youtube.googleapis.com/youtube/v3/search?key=${YOUTUBE_API_KEY}&part=snippet&q=${search}&type=channel&maxResults=5`)
+axios.get(`https://youtube.googleapis.com/youtube/v3/search?key=${YOUTUBE_API_KEY}&part=snippet&q=${search}&type=channel&maxResults=8`)
 .then(function (response: AxiosResponse<YoutubePlaylistItemsResponse[]>) {
    res.send(response.data)
 }).catch(function (error: Error) {

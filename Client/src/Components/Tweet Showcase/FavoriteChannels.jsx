@@ -5,7 +5,7 @@ export const FavoriteChannels = ({channelData}) => {
   return (
     <>
     {channelData.map((data) => {
-      <FavoriteUsers />
+      <FavoriteUsers key={data.id.videoId} videoId={data.id.videoId} title={data.title}/>
     })}
     </>
   )

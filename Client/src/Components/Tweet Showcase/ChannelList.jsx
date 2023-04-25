@@ -6,7 +6,7 @@ export const ChannelList = ({ channelData, myFetch}) => {
     <>
     <div>
       {channelData.map((data) =>(
-        <ChannelNames myFetch={myFetch}  channelId={data.snippet.channelId}  key={data.id.channelId} channelName={data.snippet.channelTitle}/>
+        <ChannelNames myFetch={myFetch}  channelId={data.snippet.channelId}  key={data.id.channelId} userName={data.snippet.channelTitle} thumbnail={data.snippet.thumbnails.default.url}/>
       ))}
       </ div>
     </>

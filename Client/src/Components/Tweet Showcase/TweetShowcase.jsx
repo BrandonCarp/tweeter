@@ -15,20 +15,21 @@ export const TweetShowcase = () => {
     const res = await axios.get(
       `http://localhost:8000/data/channels/?q=${query}`
     );
-
+    
     setChannelData(res.data.items);
   };
 
-  const fetchPlayList = async (query) => {
-    const res = await axios.get(`http://localhost:8000/data/channels/videos/?q=${query}`);
+  const fetchRecent = async (query) => {
+    const res = await axios.get(`http://localhost:8000/data/search/?q=${query}`);
 
-        if(favoriteChannels.length >= 5){
-          favoriteChannels.filter(favoriteChannels[0])
-        } else {
-        setFavoriteChannels((prevFavorites) => {
-          return [res.data, ...prevFavorites];
-        })}
-  }
+if(favoriteChannels.length >= 5) {
+  favoriteChannels.filter(favoriteChannels[0])
+} else {
+  setFavoriteChannels((prevFavorites) => {
+    return [res.data, ...prevFavorites];
+  })
+}}
+  
   
   return (
     <>
@@ -41,7 +42,7 @@ export const TweetShowcase = () => {
       <FavoriteChannels  channelData={favoriteChannels}/>
       
       <button onClick={(e) => console.log(favoriteChannels)}>Click</button>
-    {channelData.length > 5 ? <ChannelList myFetch={fetchPlayList} channelData={channelData} /> : <img className=" mx-auto " src={loading} />} 
+    {channelData.length > 1 ? <ChannelList myFetch={fetchRecent} channelData={channelData} /> : <img className=" mx-auto " src={loading} />} 
     </div>
     <Footer />
     <MobileFooter />
