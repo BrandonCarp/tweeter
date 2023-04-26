@@ -12,7 +12,7 @@ export const ChannelNames = ({channelId,  myFetch, userName, thumbnail}) => {
       userName: userName,
       thumbnail: thumbnail
     }
-     myFetch(channelId, channel)
+     myFetch(channelId, userName, thumbnail)
   }
   return (
     <>

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { FavoriteChannels } from "./FavoriteChannels";
+import { FavChannels } from "./FavChannels";
 import { ChannelSearchBar } from "./ChannelSearchBar";
 import { ChannelList } from "./ChannelList";
 import loading from './Imgs/loading.gif';
@@ -19,18 +19,17 @@ export const TweetShowcase = () => {
     setChannelData(res.data.items);
   };
 
-  const fetchRecent = async (query, channelInfo) => {
+  const fetchRecent = async (query, userName, thumbnail) => {
     const res = await axios.get(`http://localhost:8000/data/search/?q=${query}`);
 
-if(favoriteChannels.length >= 5) {
-  favoriteChannels.filter(favoriteChannels)
-} else {
-  setFavoriteChannels((prevFavorites) => {
-    return ({
-     channel: res.data,channelInfo, ...prevFavorites});
-  })
-}}
+  const newChannel = {
+    userName,
+    thumbnail,
+    data: res.data
+  }
   
+  setFavoriteChannels(prevChannel => [...prevChannel, newChannel]);
+};
   
   return (
     <>
@@ -40,7 +39,7 @@ if(favoriteChannels.length >= 5) {
         {/* <button onClick={(e) => console.log(channelNames)}>Click Test</button> */}
       </div>
       {/* Favorite Users selection there */}
-      {/* <FavoriteChannels  channelData={favoriteChannels}/> */}
+      <FavChannels  channelData={favoriteChannels}/>
       
       <button onClick={(e) => console.log(channelData)}>Data</button>
       <button onClick={(e) => console.log(favoriteChannels)}>Fav</button>
@@ -51,3 +50,5 @@ if(favoriteChannels.length >= 5) {
     </>
   );
 };
+
+
