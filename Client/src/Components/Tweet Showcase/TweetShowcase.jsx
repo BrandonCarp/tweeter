@@ -19,14 +19,15 @@ export const TweetShowcase = () => {
     setChannelData(res.data.items);
   };
 
-  const fetchRecent = async (query) => {
+  const fetchRecent = async (query, channelInfo) => {
     const res = await axios.get(`http://localhost:8000/data/search/?q=${query}`);
 
 if(favoriteChannels.length >= 5) {
-  favoriteChannels.filter(favoriteChannels[0])
+  favoriteChannels.filter(favoriteChannels)
 } else {
   setFavoriteChannels((prevFavorites) => {
-    return [res.data, ...prevFavorites];
+    return ({
+     channel: res.data,channelInfo, ...prevFavorites});
   })
 }}
   
@@ -39,9 +40,10 @@ if(favoriteChannels.length >= 5) {
         {/* <button onClick={(e) => console.log(channelNames)}>Click Test</button> */}
       </div>
       {/* Favorite Users selection there */}
-      <FavoriteChannels  channelData={favoriteChannels}/>
+      {/* <FavoriteChannels  channelData={favoriteChannels}/> */}
       
-      <button onClick={(e) => console.log(favoriteChannels)}>Click</button>
+      <button onClick={(e) => console.log(channelData)}>Data</button>
+      <button onClick={(e) => console.log(favoriteChannels)}>Fav</button>
     {channelData.length > 1 ? <ChannelList myFetch={fetchRecent} channelData={channelData} /> : <img className=" mx-auto " src={loading} />} 
     </div>
     <Footer />

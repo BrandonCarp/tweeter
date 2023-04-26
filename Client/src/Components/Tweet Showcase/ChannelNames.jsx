@@ -1,9 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 
-export const ChannelNames = ({channelName,channelId,  myFetch, userName, thumbnail}) => {
+
+export const ChannelNames = ({channelId,  myFetch, userName, thumbnail}) => {
+  // const [youtubeChannel, setYoutubeChannel] = useState({
+  //   userName: channelName,
+  //   thumbnail: thumbnail
+  // })
+
+  const buttonClick = (e) => {
+    const channel = {
+      userName: userName,
+      thumbnail: thumbnail
+    }
+     myFetch(channelId, channel)
+  }
   return (
     <>
-    <button onClick={e => myFetch(channelId, userName, thumbnail)}>{channelName}</button>
+    <button onClick={buttonClick}>{userName}</button>
     </>
   )
 }
