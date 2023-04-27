@@ -43,7 +43,7 @@ axios.get(`https://www.googleapis.com/youtube/v3/search?key=${YOUTUBE_API_KEY}&q
 
 app.get(['/data/channels'], (req: Request, res: Response) => {
   const search = req.query.q;
-axios.get(`https://youtube.googleapis.com/youtube/v3/search?key=${YOUTUBE_API_KEY}&part=snippet&q=${search}&type=channel&maxResults=8`)
+axios.get(`https://youtube.googleapis.com/youtube/v3/search?key=${YOUTUBE_API_KEY}&part=snippet&q=${search}&type=channel&maxResults=5`)
 .then(function (response: AxiosResponse<YoutubePlaylistItemsResponse[]>) {
    res.send(response.data)
 }).catch(function (error: Error) {
@@ -53,25 +53,25 @@ axios.get(`https://youtube.googleapis.com/youtube/v3/search?key=${YOUTUBE_API_KE
 
 
 
-app.get(["/data/channels/videos"], async (req: Request, res: Response) => {
-  const search = req.query.q;
-  const getItems = async (id: string): Promise<YoutubePlaylistItem> => await axios.get(
-    `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet,contentDetails&playlistId=${id}&maxResults=10&key=${YOUTUBE_API_KEY}`
-  );
-  try {
-     const results = await axios.get(
-        `https://www.googleapis.com/youtube/v3/playlists?key=${YOUTUBE_API_KEY}&part=snippet&channelId=${search}&maxResults=3`
-    )
-    const resultItems = results.data.items;
-    const videos = await Promise.all(resultItems.map((video: YoutubePlaylist) => getItems(video.id)));
-    const videoData = videos.map(video => video.data.items.map((item: YoutubePlaylistItem) => item.snippet));
+// app.get(["/data/channels/videos"], async (req: Request, res: Response) => {
+//   const search = req.query.q;
+//   const getItems = async (id: string): Promise<YoutubePlaylistItem> => await axios.get(
+//     `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet,contentDetails&playlistId=${id}&maxResults=10&key=${YOUTUBE_API_KEY}`
+//   );
+//   try {
+//      const results = await axios.get(
+//         `https://www.googleapis.com/youtube/v3/playlists?key=${YOUTUBE_API_KEY}&part=snippet&channelId=${search}&maxResults=3`
+//     )
+//     const resultItems = results.data.items;
+//     const videos = await Promise.all(resultItems.map((video: YoutubePlaylist) => getItems(video.id)));
+//     const videoData = videos.map(video => video.data.items.map((item: YoutubePlaylistItem) => item.snippet));
  
-     res.send(videoData);
-  } catch (error) {
-    console.error(error);
-    res.status(500).send('Error fetching video data')
-  }
-});
+//      res.send(videoData);
+//   } catch (error) {
+//     console.error(error);
+//     res.status(500).send('Error fetching video data')
+//   }
+// });
 
 
 

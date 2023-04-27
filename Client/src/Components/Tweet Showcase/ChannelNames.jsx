@@ -12,7 +12,7 @@ export const ChannelNames = ({channelId,  myFetch, userName, thumbnail}) => {
   }
   return (
     <div className="relative mx-auto container">
-      <button onClick={buttonClick}>{userName}</button>
+      <button onClick={buttonClick}><h1 className="text-lg">{userName}</h1></button>
     </div>
   )
 }

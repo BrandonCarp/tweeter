@@ -31,14 +31,22 @@ export const TweetShowcase = () => {
   
   setFavoriteChannels(prevChannel => [...prevChannel, newChannel]);
 };
+
+const deleteChannel = (channelName) => {
+  const newFavorites = favoriteChannels.filter((channel) => channel !== channelName);
+  setFavoriteChannels(newFavorites);
+};
   
   return (
     <>
     <div className="mt-5 flex-col items-center justify-center mx-auto">
       <ChannelSearchBar fetchChannels={fetchChannels} />
  
-      {favoriteChannels.length > 0 ? <FavChannels  favChannels={favoriteChannels}/> : null}
-    {channelData.length > 1 ? <ChannelList myFetch={fetchRecent} channelData={channelData} /> : <img className=" mx-auto " alt="loading" src={loading} />} 
+      {favoriteChannels.length > 0 ? <FavChannels  favChannels={favoriteChannels} delBtn={deleteChannel}/> : null}
+      <div className="flex">
+      {channelData.length > 1 ? <ChannelList myFetch={fetchRecent} channelData={channelData} /> : <img className=" mx-auto " alt="loading" src={loading} />} 
+      </div>
+    
     </div>
     <Footer />
     <MobileFooter />
