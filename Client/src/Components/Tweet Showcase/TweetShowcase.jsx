@@ -7,6 +7,7 @@ import {Footer} from '../Footer';
 import axios from "axios";
 import { MobileFooter } from "../MobileFooter";
 
+
 export const TweetShowcase = () => {
   const [channelData, setChannelData] = useState([]);
   const [favoriteChannels, setFavoriteChannels] = useState([]);
@@ -33,17 +34,11 @@ export const TweetShowcase = () => {
   
   return (
     <>
-    <div className="mt-5 ">
+    <div className="mt-5 flex-col items-center justify-center mx-auto">
       <ChannelSearchBar fetchChannels={fetchChannels} />
-      <div>
-        {/* <button onClick={(e) => console.log(channelNames)}>Click Test</button> */}
-      </div>
-      {/* Favorite Users selection there */}
-      <FavChannels  channelData={favoriteChannels}/>
-      
-      <button onClick={(e) => console.log(channelData)}>Data</button>
-      <button onClick={(e) => console.log(favoriteChannels)}>Fav</button>
-    {channelData.length > 1 ? <ChannelList myFetch={fetchRecent} channelData={channelData} /> : <img className=" mx-auto " src={loading} />} 
+ 
+      {favoriteChannels.length > 0 ? <FavChannels  favChannels={favoriteChannels}/> : null}
+    {channelData.length > 1 ? <ChannelList myFetch={fetchRecent} channelData={channelData} /> : <img className=" mx-auto " alt="loading" src={loading} />} 
     </div>
     <Footer />
     <MobileFooter />

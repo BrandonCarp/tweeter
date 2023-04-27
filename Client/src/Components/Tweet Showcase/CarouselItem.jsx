@@ -16,7 +16,7 @@ export const CarouselItem = ({videoId, title, channelName}) => {
           
             <div className="py-3">
               <h1>{title}</h1>
-              <h5 className="text-gray-400 text-sm">{channelName}</h5>
+              {/* <h5 className="text-gray-400 text-sm">{channelName}</h5> */}
               
             </div>
           </div>

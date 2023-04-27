@@ -2,10 +2,6 @@ import React, { useState } from "react";
 
 
 export const ChannelNames = ({channelId,  myFetch, userName, thumbnail}) => {
-  // const [youtubeChannel, setYoutubeChannel] = useState({
-  //   userName: channelName,
-  //   thumbnail: thumbnail
-  // })
 
   const buttonClick = (e) => {
     const channel = {
@@ -15,10 +11,8 @@ export const ChannelNames = ({channelId,  myFetch, userName, thumbnail}) => {
      myFetch(channelId, userName, thumbnail)
   }
   return (
-    <>
-    <button onClick={buttonClick}>{userName}</button>
-    </>
+    <div className="relative mx-auto container">
+      <button onClick={buttonClick}>{userName}</button>
+    </div>
   )
 }
-
-// ChannelNames myFetch={myFetch}  channelId={data.snippet.channelId}  key={data.id.channelId} channelName={data.snippet.channelTitle} thumbnail={data.snippet.thumbnails.default.url}/>
