@@ -6,14 +6,15 @@ import loading from './Imgs/loading.gif';
 import {Footer} from '../Footer';
 import axios from "axios";
 import { MobileFooter } from "../MobileFooter";
+import {useQuery} from "@tanstack/react-query";
 
 
 export const TweetShowcase = () => {
   const [channelData, setChannelData] = useState([]);
   const [favoriteChannels, setFavoriteChannels] = useState([]);
  
-  const fetchChannels = async (query) => {
-    const res = await axios.get(
+  const fetchChannels =  async (query) => {
+    const res =  await axios.get(
       `http://localhost:8000/data/channels/?q=${query}`
     );
     
@@ -28,9 +29,20 @@ export const TweetShowcase = () => {
     thumbnail,
     data: res.data
   }
+
   
   setFavoriteChannels(prevChannel => [...prevChannel, newChannel]);
 };
+
+const {isLoading, data: youtubeChannels} = useQuery(
+  [`fetchChannels`, channelData],
+  () => fetchChannels()
+);
+
+const {isLoadingRecent, data: recentChannels} = useQuery(
+  [`fetchRecent`, favoriteChannels],
+  () => fetchRecent()
+);
 
 const deleteChannel = (channelName) => {
   const newFavorites = favoriteChannels.filter((channel) => channel !== channelName);
@@ -42,9 +54,9 @@ const deleteChannel = (channelName) => {
     <div className="mt-5 flex-col items-center justify-center mx-auto">
       <ChannelSearchBar fetchChannels={fetchChannels} />
  
-      {favoriteChannels.length > 0 ? <FavChannels  favChannels={favoriteChannels} delBtn={deleteChannel}/> : null}
+      {isLoadingRecent ? (null) : <FavChannels  favChannels={favoriteChannels} delBtn={deleteChannel}/> }
       <div className="flex">
-      {channelData.length > 1 ? <ChannelList myFetch={fetchRecent} channelData={channelData} /> : <img className=" mx-auto " alt="loading" src={loading} />} 
+       {isLoading ? (<img className=" mx-auto " alt="loading" src={loading} />) : <ChannelList myFetch={fetchRecent} channelData={channelData} />  }
       </div>
     
     </div>
