@@ -1,15 +1,17 @@
-import React from "react";
+import React, {useContext} from "react";
 import { motion } from "framer-motion";
 import { NavLink } from "react-router-dom";
 import homeImg from "./HomeImgs/homePage.jpg";
 import { BsArrowRightCircle } from "react-icons/bs";
 import { Footer } from "../Footer";
 import { MobileFooter } from "../MobileFooter";
+import { ThemeContext } from "../Context/ThemeContext";
 
 export const Hero = () => {
+  const { theme } = useContext(ThemeContext);
   return (
     <>
-      <div className=" relative container mx-auto   ">
+      <div id={ThemeContext} className=" relative container mx-auto  ">
         <div className="flex flex-col items-center  justify-center      space-y-5">
           <motion.div
             initial={{ opacity: 0, x: -100 }}
@@ -38,14 +40,16 @@ export const Hero = () => {
             src={homeImg}
             alt="friends laughing"
           />
-          <div className=" mx-auto container relative flex  flex-col items-center justify-center">
+          <div className=" mx-auto container relative flex  flex-col items-center justify-center ">
             <h1 className="md:text-xl text-md font-bold">DailyVid</h1>
             <p className=" text-center p-5 text-baselg md:mb-10 md:px-[2.5rem]">
               DailyVid is a application that is designed to help people connect,
               and find videos of interest.
             </p>
           </div>
-        </div>
+        </div> 
+       
+        
       </div>
       <Footer />
       <MobileFooter />

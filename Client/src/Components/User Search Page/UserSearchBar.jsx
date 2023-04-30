@@ -20,8 +20,8 @@ export function UserSearchBar({ fetchData }) {
   };
 
   return (
-    <div id={theme} className="sticky  mx-auto container mt-5 ">
-      <div className=" px-5 pt-1 pb-10 pt-5    flex flex-col md:items-center ">
+    <div id={theme} className="sticky  mx-auto container  mt-5 ">
+      <div className=" px-5 pt-1  pb-10 pt-5    flex flex-col md:items-center ">
         <form
           onSubmit={handleSubmit}
           className=" items-center  md:w-[55%] lg:w-[40%]"

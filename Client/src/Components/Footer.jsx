@@ -7,10 +7,9 @@ export function Footer() {
   const { theme } = useContext(ThemeContext);
   const windowWidth = useRef([window.innerWidth]);
 
-  //  windowWidth.current
   return (
-    <div className=" container mx-auto invisible md:visible  md:pb-0 md:bottom-0  md:left-0 md:right-0  md:relative ">
-      <div className="  flex flex-col items-center md:items-start md:ml-[20%] md:mb-0 md:mt-5  ">
+    <div id={theme} className=" container mx-auto invisible md:visible  bottom-0 left-0 right-0 mt-auto ">
+      <div className="  flex flex-col items-center md:items-start md:ml-[20%] ">
         <div className="flex flex-col invisible md:visible  ">
           <h1 className="text-baselg font-bold">DailyVid</h1>
           <ul className=" flex space-x-5 text-sm ">
@@ -22,7 +21,7 @@ export function Footer() {
         <div className="border-b-2 border-black-800 w-[80%]"></div>
 
         <div className="flex items-center justify-center ">
-          <h1 className="font-light pb-5">
+          <h1 className="font-light ">
             © 2023 DailyVid. All Rights Reserved.
           </h1>
         </div>

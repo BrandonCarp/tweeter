@@ -5,21 +5,12 @@ import { ScrollButton } from "../ScrollButton";
 import axios from "axios";
 import { Footer } from "../Footer";
 import { MobileFooter } from "../MobileFooter";
-import loading from './Imgs/loading.gif';
-// import { useQuery } from "@tanstack/react-query";
 
-// create a search more at bottom and add that
-// as the function to react query
-// set up similar functionality as my users page in showcase tab
-// set up loading gif functionality
-// fix footer
-// done ?
+
 export function UserSearch() {
   const [apiState, setApiState] = useState([]);
 
-  // const {isLoading, data: dailyVids} = useQuery(
-  //   [`fetchData`,]
-  // )
+ 
 
   const fetchData = async (query) => {
     const res = await axios.get(
@@ -27,31 +18,25 @@ export function UserSearch() {
     );
 
     setApiState(res.data.items);
-    console.log(res.data);
+  
   };
 
-  // const fetchMore = async() => {
-  //    const res = await axios.get(`http://localhost:8000/data/?q=${apiState}`);
-
-  // }
-  // Work on footer
+ 
 
   return (
     <>
-      <div className="relative mx-auto container   flex-col justify-start">
-        <div className="">
-          <div className="">
+      <div className="relative mx-auto container   flex-col  ">
+        <div className="h-[70vh]  ">
+        <h1 className=" flex justify-center text-l mt-10">Video Search</h1>
             <UserSearchBar fetchData={fetchData} />
-            {apiState.length > 5 ? <UserList userData={apiState} /> : <img className=" mx-auto " src={loading} /> }
-        
-           
+
+            <UserList userData={apiState} /> 
+    
             <ScrollButton />
           </div>
+         
+          <Footer />
         </div>
-      </div>
-      <div className=" bottom-0 left-0 right-0">
-        <Footer />
-      </div>
       <MobileFooter />
     </>
   );

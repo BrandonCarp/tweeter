@@ -6,7 +6,7 @@ import loading from './Imgs/loading.gif';
 import {Footer} from '../Footer';
 import axios from "axios";
 import { MobileFooter } from "../MobileFooter";
-import {useQuery} from "@tanstack/react-query";
+// import {useQuery} from "@tanstack/react-query";
 
 
 export const TweetShowcase = () => {
@@ -34,15 +34,15 @@ export const TweetShowcase = () => {
   setFavoriteChannels(prevChannel => [...prevChannel, newChannel]);
 };
 
-const {isLoading, data: youtubeChannels} = useQuery(
-  [`fetchChannels`, channelData],
-  () => fetchChannels()
-);
+// const {isLoading, data: youtubeChannels} = useQuery(
+//   [`fetchChannels`, channelData],
+//   () => fetchChannels()
+// );
 
-const {isLoadingRecent, data: recentChannels} = useQuery(
-  [`fetchRecent`, favoriteChannels],
-  () => fetchRecent()
-);
+// const {isLoadingRecent, data: recentChannels} = useQuery(
+//   [`fetchRecent`, favoriteChannels],
+//   () => fetchRecent()
+// );
 
 const deleteChannel = (channelName) => {
   const newFavorites = favoriteChannels.filter((channel) => channel !== channelName);
@@ -51,12 +51,12 @@ const deleteChannel = (channelName) => {
   
   return (
     <>
-    <div className="mt-5 flex-col items-center justify-center mx-auto">
+    <div className="mt-5 flex-col items-center justify-center mx-auto min-h-[70vh]">
       <ChannelSearchBar fetchChannels={fetchChannels} />
  
-      {isLoadingRecent ? (null) : <FavChannels  favChannels={favoriteChannels} delBtn={deleteChannel}/> }
+       <FavChannels  favChannels={favoriteChannels} delBtn={deleteChannel}/> 
       <div className="flex">
-       {isLoading ? (<img className=" mx-auto " alt="loading" src={loading} />) : <ChannelList myFetch={fetchRecent} channelData={channelData} />  }
+<ChannelList myFetch={fetchRecent} channelData={channelData} /> 
       </div>
     
     </div>
