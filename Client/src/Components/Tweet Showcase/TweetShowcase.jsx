@@ -43,6 +43,9 @@ const deleteChannel = (channelName) => {
   return (
     <>
     <div className="mt-5 flex-col items-center justify-center mx-auto min-h-[70vh]">
+    <div className=" flex  justify-center">
+          <h1 className=" flex justify-center text-l mt-10  border-b-2 ">Channel Search</h1>
+          </div>
       <ChannelSearchBar fetchChannels={fetchChannels} />
  
        <FavChannels  favChannels={favoriteChannels} delBtn={deleteChannel}/> 

@@ -27,7 +27,11 @@ export function UserSearch() {
     <>
       <div className="relative mx-auto container   flex-col  ">
         <div className="h-[70vh]  ">
-        <h1 className=" flex justify-center text-l mt-10">Video Search</h1>
+          <div className=" flex  justify-center">
+          <h1 className=" flex justify-center text-l mt-10  border-b-2 ">Video Search</h1>
+          </div>
+       
+      
             <UserSearchBar fetchData={fetchData} />
 
             <UserList userData={apiState} /> 

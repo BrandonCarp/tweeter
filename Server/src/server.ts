@@ -10,7 +10,7 @@ const YOUTUBE_API_KEY = process.env.YOUTUBE_API_KEY;
 
 const app = express();
 app.use(cors({
-  origin: `http://localhost:3000`
+  origin: [`http://localhost:3000`, "https://dailyvid.onrender.com"]
 }))
 
 const PORT = 80;
