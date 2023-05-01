@@ -14,7 +14,7 @@ export function UserSearch() {
 
   const fetchData = async (query) => {
     const res = await axios.get(
-      `http://localhost:8000/data/search/?q=${query}`
+      `http://localhost:80/data/search/?q=${query}`
     );
 
     setApiState(res.data.items);

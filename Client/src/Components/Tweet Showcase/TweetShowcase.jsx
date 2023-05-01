@@ -2,11 +2,11 @@ import React, { useState } from "react";
 import { FavChannels } from "./FavChannels";
 import { ChannelSearchBar } from "./ChannelSearchBar";
 import { ChannelList } from "./ChannelList";
-import loading from './Imgs/loading.gif';
 import {Footer} from '../Footer';
 import axios from "axios";
 import { MobileFooter } from "../MobileFooter";
-// import {useQuery} from "@tanstack/react-query";
+import { ScrollButton } from "../ScrollButton";
+
 
 
 export const TweetShowcase = () => {
@@ -15,7 +15,7 @@ export const TweetShowcase = () => {
  
   const fetchChannels =  async (query) => {
     const res =  await axios.get(
-      `http://localhost:8000/data/channels/?q=${query}`
+      `http://localhost:80/data/channels/?q=${query}`
     );
     
     setChannelData(res.data.items);
@@ -34,15 +34,6 @@ export const TweetShowcase = () => {
   setFavoriteChannels(prevChannel => [...prevChannel, newChannel]);
 };
 
-// const {isLoading, data: youtubeChannels} = useQuery(
-//   [`fetchChannels`, channelData],
-//   () => fetchChannels()
-// );
-
-// const {isLoadingRecent, data: recentChannels} = useQuery(
-//   [`fetchRecent`, favoriteChannels],
-//   () => fetchRecent()
-// );
 
 const deleteChannel = (channelName) => {
   const newFavorites = favoriteChannels.filter((channel) => channel !== channelName);
@@ -58,7 +49,7 @@ const deleteChannel = (channelName) => {
       <div className="flex">
 <ChannelList myFetch={fetchRecent} channelData={channelData} /> 
       </div>
-    
+    <ScrollButton />
     </div>
     <Footer />
     <MobileFooter />
