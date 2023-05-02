@@ -2,6 +2,8 @@ import express, {NextFunction, Request, Response} from "express";
 require("dotenv").config();
 import { YoutubePlaylistItem, YoutubePlaylist, YoutubePlaylistItemsResponse } from "./interface";
 import { AxiosResponse } from "axios";
+import { videoJson } from "./videoJson";
+import { channelData } from "./channelJson";
 const axios = require('axios');
 
 const cors = require('cors');
@@ -37,6 +39,7 @@ axios.get(`https://www.googleapis.com/youtube/v3/search?key=${YOUTUBE_API_KEY}&q
  
   res.send(response.data)
 }).catch(function (error: Error) {
+  res.send(videoJson)
   console.log(error)
 })
 })
@@ -47,6 +50,7 @@ axios.get(`https://youtube.googleapis.com/youtube/v3/search?key=${YOUTUBE_API_KE
 .then(function (response: AxiosResponse<YoutubePlaylistItemsResponse[]>) {
    res.send(response.data)
 }).catch(function (error: Error) {
+  res.send(channelData)
   console.log(error)
 })
 })

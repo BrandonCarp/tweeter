@@ -8,6 +8,7 @@
 #light {
   background-color: #fff;
   color: black;
+  
 }
 .mainNav {
   border-bottom: .5px solid #737373;
@@ -24,6 +25,12 @@
 .userBorder {
   border: .5px solid #737373;
 }
+
+#borderTitle {
+  border: black;
+}
+
+
 
 
 

@@ -25,7 +25,7 @@ export function UserSearch() {
 
   return (
     <>
-      <div className="relative mx-auto container   flex-col  ">
+      <div className="relative mx-auto container   flex-col mt-5 ">
         <div className="h-[70vh]  ">
           <div className=" flex  justify-center">
           <h1 className=" flex justify-center text-l mt-10  border-b-2 ">Video Search</h1>
