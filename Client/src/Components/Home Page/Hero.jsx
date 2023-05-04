@@ -27,7 +27,7 @@ export const Hero = () => {
                 <motion.p whileHover={{ scale: 1.1 }}>
                   <NavLink to="/usersearch">
                     <BsArrowRightCircle className="inline text-baselg mb-1 mr-2 " />
-                    Find Some New Videos
+                    Check Out Some New Videos
                   </NavLink>
                 </motion.p>
               </li>

@@ -5,6 +5,7 @@ import { ScrollButton } from "../ScrollButton";
 import axios from "axios";
 import { Footer } from "../Footer";
 import { MobileFooter } from "../MobileFooter";
+import { SampleUsers } from "./SampleUsers";
 
 
 export function UserSearch() {
@@ -25,20 +26,21 @@ export function UserSearch() {
 
   return (
     <>
-      <div className="relative mx-auto container   flex-col mt-5 ">
-        <div className="h-[70vh]  ">
+      <div className="relative mx-auto container   flex-col ">
+       
+        <div className="h-[70vh]  mb-20 md:mb-0">
           <div className=" flex  justify-center">
           <h1 className=" flex justify-center text-l mt-10  border-b-2 ">Video Search</h1>
           </div>
        
       
             <UserSearchBar fetchData={fetchData} />
+      {apiState.length > 1 ? <UserList userData={apiState} /> : <SampleUsers />}
 
-            <UserList userData={apiState} /> 
     
             <ScrollButton />
           </div>
-         
+        
           <Footer />
         </div>
       <MobileFooter />

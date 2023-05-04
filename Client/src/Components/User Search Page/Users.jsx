@@ -1,5 +1,4 @@
 import React from "react";
-import templatePic from "./Imgs/youtubepic.jpg";
 
 
 import "../Styles/darkMode.css";

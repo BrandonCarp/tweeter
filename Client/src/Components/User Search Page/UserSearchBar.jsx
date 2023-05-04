@@ -3,6 +3,7 @@ import { BiSearch } from "react-icons/bi";
 import "../Styles/darkMode.css";
 import { ThemeContext } from "../Context/ThemeContext";
 
+
 export function UserSearchBar({ fetchData }) {
   const [query, setQuery] = useState("");
 
