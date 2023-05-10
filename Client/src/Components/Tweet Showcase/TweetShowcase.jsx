@@ -17,7 +17,7 @@ export const TweetShowcase = () => {
  
   const fetchChannels =  async (query) => {
     const res =  await axios.get(
-      `http://localhost:80/data/channels/?q=${query}`
+      `http://localhost:8080/data/channels/?q=${query}`
     );
     
     setChannelData(res.data.items);
