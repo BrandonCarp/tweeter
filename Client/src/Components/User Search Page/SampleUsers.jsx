@@ -13,7 +13,7 @@ export const SampleUsers = () => {
         <div className="my-5 text-center w-screen  md:w-[350px]">
           <iframe
             className="w-[100%] h-[300px]"
-            src={`https:/www.youtube.com/embed/LMTGQqUUyzk`}
+            src={`https:/www.youtube.com/embed/LMTGQqUUyzk&t`}
             allowFullScreen
           ></iframe>
 
