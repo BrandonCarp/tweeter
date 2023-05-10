@@ -17,14 +17,14 @@ export const TweetShowcase = () => {
  
   const fetchChannels =  async (query) => {
     const res =  await axios.get(
-      `http://localhost:8080/data/channels/?q=${query}`
+      `https://dailyvid-service.onrender.com/data/channels/?q=${query}`
     );
     
     setChannelData(res.data.items);
   };
 
   const fetchRecent = async (query, userName, thumbnail) => {
-    const res = await axios.get(`http://localhost:80/data/search/?q=${query}`);
+    const res = await axios.get(`https://dailyvid-service.onrender.com/data/search/?q=${query}`);
 
   const newChannel = {
     userName,
