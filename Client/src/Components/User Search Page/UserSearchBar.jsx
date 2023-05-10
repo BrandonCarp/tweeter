@@ -4,6 +4,7 @@ import "../Styles/darkMode.css";
 import { ThemeContext } from "../Context/ThemeContext";
 
 
+
 export function UserSearchBar({ fetchData }) {
   const [query, setQuery] = useState("");
 
@@ -37,6 +38,7 @@ export function UserSearchBar({ fetchData }) {
               className=" pl-3  rounded-lg  focus:outline-none  "
               placeholder="Search Videos"
               value={query}
+              
               onChange={handleChange}
             />
           </div>
