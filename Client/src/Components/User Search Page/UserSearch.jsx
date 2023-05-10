@@ -35,7 +35,7 @@ export function UserSearch() {
        
       
             <UserSearchBar fetchData={fetchData} />
-      {apiState.length > 1 ? <UserList userData={apiState} /> : <SampleUsers />}
+      {apiState.length > 1 ? <UserList userData={apiState} /> : null }
 
     
             <ScrollButton />
