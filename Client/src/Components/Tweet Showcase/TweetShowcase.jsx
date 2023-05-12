@@ -17,20 +17,20 @@ export const TweetShowcase = () => {
  
  
   const fetchChannels =  async (query) => {
-    const res =  await axios.get(
-      `https://dailyvid-service.onrender.com/data/channels/?q=${query}`
-    );
     // const res =  await axios.get(
+    //   `https://dailyvid-service.onrender.com/data/channels/?q=${query}`
+    // );
+    // const res = await axios.get(
     //   `http://localhost:8585/data/channels?q=${query}`
     // );
+    const res = await axios.get(`https://localhost:8585/data/search/?q=${query}`);
    
-    
     setChannelData(res.data.items);
   };
 
   const fetchRecent = async (query, userName, thumbnail) => {
-    const res = await axios.get(`https://dailyvid-service.onrender.com/data/search/?q=${query}`);
-    // const res = await axios.get(`https://localhost:8585/data/search/?q=${query}`);
+    // const res = await axios.get(`https://dailyvid-service.onrender.com/data/search/?q=${query}`);
+    const res = await axios.get(`https://localhost:8585/data/search/?q=${query}`);
   const newChannel = {
     userName,
     thumbnail,
@@ -38,6 +38,7 @@ export const TweetShowcase = () => {
   }
 
   setFavoriteChannels(prevChannel => [...prevChannel, newChannel]);
+  
 };
 
 const modalBtn = () => {
@@ -49,7 +50,8 @@ const deleteChannel = (channelName) => {
   const newFavorites = favoriteChannels.filter((channel) => channel.userName !== channelName);
   setFavoriteChannels(newFavorites);
 };
-  
+
+
 return (
   <>
   <div className="mt-5 flex-col items-center justify-center mx-auto min-h-[70vh] mb-5">
@@ -59,17 +61,11 @@ return (
         </div>
     <ChannelSearchBar fetchChannels={fetchChannels} />
 
-    { howToModal == false ? <div className="mx-auto relative container border-4 rounded pb-6 px-4 md:w-[40%] lg:w-[30%]">
-  <button className="pt-3" onClick={modalBtn}><AiOutlineClose className="" /></button>
-  <section className="flex-col justify-center items-center ">
-  <h1 className="text-center text-baselg">DailyVid's Favorite Channel Page</h1>
-   <p className="text-center">To use this page, just search a youtube channel you like. Once you see the list of channels appear, click on the desired channel to add it to your favorite channel list!</p>
-  </section>
-</div> : null }
+  <button onClick={e => console.log(channelData)}>Click</button>
 
      <FavChannels  favChannels={favoriteChannels} delBtn={deleteChannel}/> 
     <div className="flex">
-<ChannelList myFetch={fetchRecent} channelData={channelData} /> 
+{/* <ChannelList myFetch={fetchRecent} channelData={channelData} />  */}
     </div>
   <ScrollButton />
   </div>

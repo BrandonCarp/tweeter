@@ -15,12 +15,12 @@ export function UserSearch() {
  
 
   const fetchData = async (query) => {
-    const res = await axios.get(
-      `https://dailyvid-service.onrender.com/data/search/?q=${query}`
-    );
     // const res = await axios.get(
-    //   `http://localhost:8585/data/search/?q=${query}`
+    //   `https://dailyvid-service.onrender.com/data/search/?q=${query}`
     // );
+    const res = await axios.get(
+      `http://localhost:8585/data/search/?q=${query}`
+    );
 
     setApiState(res.data.items);
   
