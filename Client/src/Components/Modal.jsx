@@ -54,7 +54,7 @@ export const Modal = ( {closeModal} ) => {
                 </motion.li>
                 <motion.li whileHover={{ scale: 1.1 }}>
                   <NavLink to="/usersearch" className="">
-                    <button onClick={closeModal}>Video Search</button>
+                    <button onClick={closeModal}>Search</button>
                   </NavLink>
                 </motion.li>
                 <motion.li className="" whileHover={{ scale: 1.1 }}>

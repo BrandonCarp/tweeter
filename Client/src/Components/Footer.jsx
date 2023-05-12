@@ -8,7 +8,7 @@ export function Footer() {
   const windowWidth = useRef([window.innerWidth]);
 
   return (
-    <div id={theme} className=" container mx-auto invisible md:visible  bottom-0 left-0 right-0 mt-auto pt-8 ">
+    <div id={theme} className=" container mx-auto invisible md:visible bottom-0 left-0 right-0 pt-8 ">
       <div className="  flex flex-col items-center md:items-start md:ml-[20%] ">
         <div className="flex flex-col invisible md:visible  ">
           <h1 className="text-baselg font-bold">DailyVid</h1>
