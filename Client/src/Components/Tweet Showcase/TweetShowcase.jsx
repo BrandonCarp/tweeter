@@ -1,55 +1,29 @@
 import React, { useState } from "react";
-import { FavChannels } from "./FavChannels";
+import { VideoDisplay } from "./VideoDisplay";
 import { ChannelSearchBar } from "./ChannelSearchBar";
-import { ChannelList } from "./ChannelList";
+
 import {Footer} from '../Footer';
 import axios from "axios";
 import { MobileFooter } from "../MobileFooter";
 import { ScrollButton } from "../ScrollButton";
-import { AiOutlineClose } from "react-icons/ai";
+
 
 
 
 export const TweetShowcase = () => {
-  const [channelData, setChannelData] = useState([]);
-  const [favoriteChannels, setFavoriteChannels] = useState([]);
-  const [howToModal, setHowToModal] = useState(false);
- 
- 
-  const fetchChannels =  async (query) => {
-    // const res =  await axios.get(
-    //   `https://dailyvid-service.onrender.com/data/channels/?q=${query}`
-    // );
-    // const res = await axios.get(
-    //   `http://localhost:8585/data/channels?q=${query}`
-    // );
-    const res = await axios.get(`https://localhost:8585/data/search/?q=${query}`);
-   
-    setChannelData(res.data.items);
-  };
+  const [randomVideo, setRandomVideo] = useState([]);
 
-  const fetchRecent = async (query, userName, thumbnail) => {
+ 
+
+  const fetchVideo = async (query) => {
     // const res = await axios.get(`https://dailyvid-service.onrender.com/data/search/?q=${query}`);
-    const res = await axios.get(`https://localhost:8585/data/search/?q=${query}`);
-  const newChannel = {
-    userName,
-    thumbnail,
-    data: res.data
-  }
+    const res = await axios.get(`https://localhost:8585/data/random/?q=${query}`);
 
-  setFavoriteChannels(prevChannel => [...prevChannel, newChannel]);
+ setRandomVideo(res.data)
   
 };
 
-const modalBtn = () => {
-  setHowToModal(true);
-}
 
-
-const deleteChannel = (channelName) => {
-  const newFavorites = favoriteChannels.filter((channel) => channel.userName !== channelName);
-  setFavoriteChannels(newFavorites);
-};
 
 
 return (
@@ -59,13 +33,12 @@ return (
         <h1 id="" className=" flex justify-center text-l mt-10  border-b-2  ">Video Roulette</h1>
 
         </div>
-    <ChannelSearchBar fetchChannels={fetchChannels} />
+    <ChannelSearchBar fetchVideo={fetchVideo} />
 
-  <button onClick={e => console.log(channelData)}>Click</button>
+  <button onClick={e => console.log(randomVideo)}>Test Click</button>
 
-     <FavChannels  favChannels={favoriteChannels} delBtn={deleteChannel}/> 
+   <VideoDisplay randomVideo={randomVideo} />
     <div className="flex">
-{/* <ChannelList myFetch={fetchRecent} channelData={channelData} />  */}
     </div>
   <ScrollButton />
   </div>
