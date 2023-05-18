@@ -16,8 +16,8 @@ export const TweetShowcase = () => {
  
 
   const fetchVideo = async (query) => {
-    // const res = await axios.get(`https://dailyvid-service.onrender.com/data/search/?q=${query}`);
-    const res = await axios.get(`https://localhost:8585/data/random/?q=${query}`);
+    const res = await axios.get(`https://dailyvid-service.onrender.com/data/random/?q=${query}`);
+    // const res = await axios.get(`https://localhost:8585/data/random/?q=${query}`);
 
  setRandomVideo(res.data)
   
