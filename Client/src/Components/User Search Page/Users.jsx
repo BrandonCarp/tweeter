@@ -11,7 +11,6 @@ export const Users = ({
 
   channelTitle,
   
-  videoPic,
 
   publishTime,
 }) => {

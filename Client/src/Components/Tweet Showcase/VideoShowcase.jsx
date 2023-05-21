@@ -1,25 +1,25 @@
-import React, { useState } from "react";
-import { VideoDisplay } from "./VideoDisplay";
+import React, { useState, useEffect } from "react";
 import { ChannelSearchBar } from "./ChannelSearchBar";
-
 import {Footer} from '../Footer';
 import axios from "axios";
 import { MobileFooter } from "../MobileFooter";
 import { ScrollButton } from "../ScrollButton";
+import { RandomVideos } from "./RandomVideos";
 
 
 
 
-export const TweetShowcase = () => {
-  const [randomVideo, setRandomVideo] = useState([]);
 
- 
+export const VideoShowcase = ({}) => {
+  const [randomVideo, setRandomVideo] = useState(null);
+
+
 
   const fetchVideo = async (query) => {
     const res = await axios.get(`https://dailyvid-service.onrender.com/data/random/?q=${query}`);
-    // const res = await axios.get(`https://localhost:8585/data/random/?q=${query}`);
+    // const res = await axios.get(`http://localhost:8585/data/random/?q=${query}`);
 
- setRandomVideo(res.data)
+ setRandomVideo(res.data.items[0])
   
 };
 
@@ -35,9 +35,9 @@ return (
         </div>
     <ChannelSearchBar fetchVideo={fetchVideo} />
 
-  <button onClick={e => console.log(randomVideo)}>Test Click</button>
 
-   <VideoDisplay randomVideo={randomVideo} />
+
+  {randomVideo ? <RandomVideos video={randomVideo} /> : null} 
     <div className="flex">
     </div>
   <ScrollButton />

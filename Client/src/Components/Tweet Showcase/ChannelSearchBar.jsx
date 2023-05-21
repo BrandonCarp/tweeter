@@ -22,8 +22,8 @@ export function ChannelSearchBar({ fetchVideo }) {
 
   return (
     <div id={theme} className="sticky  mx-auto container  mt-5 ">
-      <div className=" px-5 pt-1 pb-10  pt-5    flex flex-col md:items-center ">
-          <button onClick={fetchRandom}>Click Here</button>
+      <div className=" px-5 pt-1 pb-10  pt-5    flex flex-col items-center ">
+          <button className="  random  font-semibold py-2 px-4 rounded-full" onClick={fetchRandom}>Fetch Video</button>
         
       </div>
     </div>

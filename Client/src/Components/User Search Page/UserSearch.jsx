@@ -21,9 +21,7 @@ export function UserSearch() {
     // const res = await axios.get(
     //   `http://localhost:8585/data/search/?q=${query}`
     // );
-
     setApiState(res.data.items);
-  
   };
 
  
@@ -39,10 +37,10 @@ export function UserSearch() {
           
       
             <UserSearchBar fetchData={fetchData} />
+
       {apiState.length > 1 ? <UserList userData={apiState} /> :  <SuggestedVideo /> }
             <ScrollButton />
           </div>
-        
           <Footer />
         </div>
       <MobileFooter />
