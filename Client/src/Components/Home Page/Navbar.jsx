@@ -1,11 +1,11 @@
 import React, { useState, useContext } from "react";
 import "../Styles/darkMode.css";
-import ReactSwitch from "react-switch";
 import { NavLink } from "react-router-dom";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { Modal } from "../Modal";
 import { motion } from "framer-motion";
 import { ThemeContext } from "../Context/ThemeContext";
+import {DarkModeSwitch} from 'react-toggle-dark-mode';
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -42,20 +42,20 @@ export function Navbar() {
             <NavLink to="/" className="font-bold ">
               DailyVid
             </NavLink>
+           
           </li>
 
-          <div className="invisible absolute right-0 mr-5  space-x-5 flex  md:visible">
+          <div className="invisible absolute items-center right-0 mr-5  space-x-5 flex  md:visible">
             <motion.li className="" whileHover={{ scale: 1.1 }}>
               <NavLink to="/usersearch">Video Search</NavLink>
             </motion.li>
             <motion.li whileHover={{ scale: 1.1 }}>
               <NavLink to="/showcase">Explore</NavLink>
             </motion.li>
-            <ReactSwitch
-              className="visible absolute bottom-8 md:bottom-0  md:static"
-              onChange={toggleTheme}
-              checked={theme === "dark"}
-            />
+             <DarkModeSwitch className="visible absolute right-0 bottom-5 md:bottom-6 md:bottom-0  md:static" 
+            onChange={toggleTheme} 
+            checked={theme === 'dark'}
+            size={45}/>
           </div>
         </ul>
       </nav>

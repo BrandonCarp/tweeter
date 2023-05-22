@@ -13,7 +13,7 @@ export const RandomVideos = ({video}) => {
 
           <div className="py-3">
             <a className='text-center' href={`https://www.youtube.com/watch?v=${video.id.videoId}`}>
-              {video.snippet.description}
+              {video.snippet.title}
             </a>
             <h5 className="text-gray-400 text-base">{video.snippet.channelTitle}</h5>
             <DateSort publishTime={video.snippet.publishTime}/>
