@@ -47,7 +47,7 @@ export function Navbar() {
 
           <div className="invisible absolute items-center right-0 mr-5  space-x-5 flex  md:visible">
             <motion.li className="" whileHover={{ scale: 1.1 }}>
-              <NavLink to="/usersearch">Video Search</NavLink>
+              <NavLink to="/usersearch">Search</NavLink>
             </motion.li>
             <motion.li whileHover={{ scale: 1.1 }}>
               <NavLink to="/showcase">Explore</NavLink>

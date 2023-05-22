@@ -14,8 +14,8 @@ export function Footer() {
           <h1 className="text-baselg font-bold">DailyVid</h1>
           <ul className=" flex space-x-5 text-sm ">
             <NavLink to="/">Home</NavLink>
-            <NavLink to="/usersearch">Video Search</NavLink>
-            <NavLink to="/showcase">Showcase</NavLink>
+            <NavLink to="/usersearch">Search</NavLink>
+            <NavLink to="/showcase">Explore</NavLink>
           </ul>
         </div>
         <div className="border-b-2 border-black-800 w-[80%]"></div>
