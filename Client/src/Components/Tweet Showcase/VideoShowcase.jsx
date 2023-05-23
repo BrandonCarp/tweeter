@@ -28,7 +28,7 @@ export const VideoShowcase = ({}) => {
 
 return (
   <>
-  <div className="mt-5 flex-col items-center justify-center mx-auto min-h-[45vh] lg:min-h-[75vh] mb-5">
+  <div className="mt-5 flex-col items-center justify-center mx-auto min-h-[45vh] lg:min-h-[70vh] mb-5">
   <div className=" flex  justify-center">
         <h1 id="" className=" flex justify-center text-l mt-10  border-b-2  ">Video Roulette</h1>
 
